@@ -1,7 +1,6 @@
 <?php
 
-require __DIR__."/../model/dbcontext/Database.php";
-require __DIR__."/Router.php";
+require __DIR__."/init.php";
 
 class App {
     use Database;

@@ -1,7 +1,5 @@
 <?php
 
-require __DIR__."/../core/interfaces/Controller.php";
-
 class BaseController implements Controller {
 
 

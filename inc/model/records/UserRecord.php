@@ -1,9 +1,5 @@
 <?php
 
-    include_once __DIR__."/../dbcontext/Database.php";
-    include_once __DIR__."/../../core/interfaces/Record.php";
-
-
     class UserRecord implements Record {
         use Database;
 

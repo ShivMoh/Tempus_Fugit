@@ -1,7 +1,5 @@
 <?php
 
-    include_once __DIR__."/../model/managers/UserManager.php";
-    include_once __DIR__."/../model/records/UserRecord.php";
     include_once __DIR__."/BaseController.php";
     
     class UserController extends BaseController {

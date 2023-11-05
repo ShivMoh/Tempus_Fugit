@@ -13,7 +13,13 @@ class Router {
         $path = $_SERVER["REQUEST_URI"];
         $url = $this->getUrl($path);
 
-        if(count($url) !== 0) {
+        if(count($url) === 0) { 
+            // set default controller and method for when app starts
+            $this->controller = $this->getControllerName("User");
+            $this->getController($this->controller);
+            $this->method = "index";
+        } else {
+            echo "This not working right";
             $this->controller = $this->getControllerName($url[0]);
         
             if($this->controllerExists($this->controller)) {
@@ -33,7 +39,8 @@ class Router {
                 // set default controller for when App starts
                 $this->controller = "";
             }
-        }
+        } 
+        
 
         if($this->controller !== "" && $this->method !== "") {
             call_user_func_array([$this->controller,$this->method], []);
