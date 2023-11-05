@@ -1,0 +1,100 @@
+<?php
+
+    include_once __DIR__."/../dbcontext/Database.php";
+    include_once __DIR__."/../../core/interfaces/Record.php";
+
+
+    class UserRecord implements Record {
+        use Database;
+
+        private $id;
+        private $first_name;
+        private $last_name;
+        private $email;
+        private $passcode;
+        private $role;
+
+        public function __construct() {
+            $this->connect();
+        }
+        
+        public function create() {
+            $sql =  "INSERT INTO account(first_name, last_name, email, passcode, role)
+                VALUES (:first_name,:last_name,:email,:passcode,:role)";
+
+            $new_user = [
+                "first_name"=> $this->first_name,
+                "last_name"=> $this->last_name,
+                "email"=> $this->email,
+                "passcode"=> $this->passcode,
+                "role"=> $this->role
+            ];
+
+            $statement = $this->connection->prepare($sql);
+            $statement->execute($new_user);
+
+            $this->id = $this->connection->lastInsertId();
+            header("location: /personal/Practice/oop-mvc");
+        }
+
+        public function find_all() {
+            $statement = $this->connection->query("SELECT * FROM account");
+            return $statement->fetchAll(PDO::FETCH_CLASS, 'UserRecord');
+        }
+
+        public function find_by_id($id) {
+            $sql = "SELECT * FROM account WHERE id = :id";
+
+            $statement = $this->connection->prepare($sql);
+            $statement->execute(['id' => $id]);
+
+            return $statement->fetchObject();
+        }
+
+        public function update() {}
+
+        public function delete() {}
+
+        public function get_first_name() {
+            return $this->first_name;
+        }
+
+        public function get_last_name() {
+            return $this->last_name;
+        }
+
+        public function get_email() {
+            return $this->email;
+        }
+
+        public function get_passcode() {
+            return $this->passcode;
+        }
+
+        public function get_role() {
+            return $this->role;
+        }
+
+        public function set_role($role) {
+            return $this->role = $role;
+        }
+
+        public function set_first_name($first_name) {
+            return $this->first_name = $first_name;
+        }
+        public function set_last_name($last_name) {
+            return $this->last_name = $last_name;
+        }
+
+        public function set_email($email) {
+            return $this->email = $email;
+        }
+
+        public function set_passcode($passcode) {
+            return $this->passcode = $passcode;
+        }
+
+
+    }
+
+?>
