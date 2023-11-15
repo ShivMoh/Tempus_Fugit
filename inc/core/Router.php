@@ -47,6 +47,7 @@ class Router {
             $this->controller = "";
             $this->method = "";
         } else {
+            // redirect to 404 page
             echo "404 Page Not available";
             $this->controller = "";
             $this->method = "";
