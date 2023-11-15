@@ -1,7 +1,5 @@
 <?php
 
-include_once __DIR__."/../records/UserRecord.php";
-
     class UserManager {
 
         public function create_standard_user($user) {

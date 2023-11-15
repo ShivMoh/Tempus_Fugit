@@ -19,7 +19,6 @@ class Router {
             $this->getController($this->controller);
             $this->method = "index";
         } else {
-            echo "This not working right";
             $this->controller = $this->getControllerName($url[0]);
         
             if($this->controllerExists($this->controller)) {

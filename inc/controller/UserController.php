@@ -11,13 +11,14 @@
         }
 
         public function index() {
-            $this->find_users();
+            $this->findUsers();
         }
 
-        public function create_user() {
+        public function createUser() {
             $method = $_SERVER["REQUEST_METHOD"];
             if($method == "GET") {
-                $this->view("user_registration");
+                
+                $this->view("UserRegistration");
             }
             else {
                 $new_user = new UserRecord();
@@ -31,14 +32,14 @@
      
         }
 
-        public function find_users() {
+        public function findUsers() {
             $method = $_SERVER["REQUEST_METHOD"];
             if($method != "GET") return;
 
             $user_record = new UserRecord();
             $users = $user_record->find_all();
         
-            $this->view("users_table", $data = $users);
+            $this->view("UserTable", $data = $users);
         }
 
         public function create() {}
