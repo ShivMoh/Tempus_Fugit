@@ -3,8 +3,7 @@
     // just leaving this here
     // will have to fix the naming conventions
     // for any records we make
-    class UserRecord implements Record {
-        use Database;
+    class UserRecord extends Database implements Record {
 
         private $id;
         private $first_name;

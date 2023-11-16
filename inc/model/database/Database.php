@@ -1,7 +1,7 @@
 <?php
   
     
-    trait Database {
+    class Database {
 
         protected $connection;
 
