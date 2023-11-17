@@ -9,7 +9,7 @@
   </thead>
 
   <tbody>
-    <form action="" method="post">
+    <form action="/personal/Practice/oop-mvc/user/createUser" method="POST">
         <input type="hidden" name="add-user">
         <button class="btn" type="submit">Add New User</button>
     </form>

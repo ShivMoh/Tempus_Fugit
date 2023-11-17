@@ -3,7 +3,7 @@
     // just leaving this here
     // will have to fix the naming conventions
     // for any records we make
-    class UserRecord extends Database implements Record {
+    class UserRecord extends Database implements Model {
 
         private $id;
         private $first_name;
@@ -11,12 +11,14 @@
         private $email;
         private $passcode;
         private $role;
+        
 
         public function __construct() {
             $this->connect();
         }
         
         public function create() {
+
             $sql =  "INSERT INTO account(first_name, last_name, email, passcode, role)
                 VALUES (:first_name,:last_name,:email,:passcode,:role)";
 
@@ -28,6 +30,7 @@
                 "role"=> $this->role
             ];
 
+
             $statement = $this->connection->prepare($sql);
             $statement->execute($new_user);
 
@@ -35,12 +38,12 @@
             header("location: /personal/Practice/oop-mvc");
         }
 
-        public function find_all() {
+        public function findAll() {
             $statement = $this->connection->query("SELECT * FROM account");
             return $statement->fetchAll(PDO::FETCH_CLASS, 'UserRecord');
         }
 
-        public function find_by_id($id) {
+        public function findById($id) {
             $sql = "SELECT * FROM account WHERE id = :id";
 
             $statement = $this->connection->prepare($sql);

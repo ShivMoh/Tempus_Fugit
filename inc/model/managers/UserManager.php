@@ -1,8 +1,10 @@
 <?php
 
-    class UserManager {
+
+    class UserManager  {
 
         public function create_standard_user($user) {
+
             // then create user
             $user->set_role("public");
             $user->set_passcode(password_hash($user->get_passcode(), PASSWORD_DEFAULT));
@@ -19,7 +21,6 @@
             */
             // then create user
         }
-
 
     }
 
