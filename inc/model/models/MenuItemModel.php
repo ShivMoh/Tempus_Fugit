@@ -1,6 +1,6 @@
 <?php
 
-class BillModel extends Database implements Model {
+class BillModel extends BaseModel {
     private $id;
     private $name;
     private $price;
@@ -144,5 +144,5 @@ class BillModel extends Database implements Model {
         return $this->ingredients = $ingredients;
     }
 }
-?>
+
    

@@ -1,6 +1,6 @@
 <?php
 
-class BillModel extends Database implements Model {
+class BillModel extends BaseModel {
     private $id;
     private $customer;
     private $number_of_items;
@@ -108,4 +108,3 @@ class BillModel extends Database implements Model {
         return $this->status = $status;
     }
 }
-?>

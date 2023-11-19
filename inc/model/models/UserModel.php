@@ -3,7 +3,7 @@
     // just leaving this here
     // will have to fix the naming conventions
     // for any records we make
-    class UserRecord extends Database implements Model {
+    class UserRecord extends BaseModel {
 
         private $id;
         private $first_name;
@@ -98,4 +98,3 @@
 
     }
 
-?>

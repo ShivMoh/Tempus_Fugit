@@ -64,7 +64,7 @@ class Router {
 
     // requires the controller so that we can use it 
     private function getController($controller_name = "") {
-        require __DIR__."/../controller/".$controller_name.".php";
+        require __DIR__."/../controller/controllers/".$controller_name.".php";
         $this->controller = new $this->controller;
     }
 
@@ -75,7 +75,7 @@ class Router {
 
     // checks if controller 
     private function controllerExists($filename) {
-        $filename = __DIR__."/../controller/".$filename.".php";
+        $filename = __DIR__."/../controller/controllers/".$filename.".php";
 		if(file_exists($filename)) return true;
         return false;
     }

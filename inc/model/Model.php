@@ -1,8 +1,4 @@
 <?php
-    // just leaving this here
-    // will have to fix the naming conventions
-    // for any records we make
-
     // only these functions defined here along
     // with any setter and getters for relevant attributes
     // should be allowed in records/models
@@ -15,4 +11,3 @@
         public function delete();
     }
 
-?>

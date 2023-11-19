@@ -3,7 +3,7 @@
 // just leaving this here
 // will have to fix the naming conventions
 // for any records we make
-class EmployeeModel extends Database implements Model {
+class EmployeeModel extends BaseModel {
     private $id;
     private $first_name;
     private $last_name;
@@ -164,4 +164,3 @@ class EmployeeModel extends Database implements Model {
     }
 
 }
-?>
