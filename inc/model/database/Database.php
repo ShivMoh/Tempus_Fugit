@@ -24,6 +24,17 @@
                 status BOOLEAN,
                 PRIMARY KEY(id)
                 );",
+            "CREATE TABLE IF NOT EXISTS MenuItem(
+                id INT AUTO_INCREMENT,
+                name VARCHAR(30) NOT NULL,
+                price INT(10) NOT NULL,
+                description TEXT,
+                image VARCHAR(20),
+                discount FLOAT(2, 2),
+                tags VARCHAR(100),
+                ingredients VARCHAR(100),
+                PRIMARY KEY(id)
+            );",
             "CREATE TABLE IF NOT EXISTS BillItem(
                 id INT AUTO_INCREMENT,
                 name VARCHAR(30) NOT NULL,
@@ -47,18 +58,7 @@
                 email VARCHAR(20) NOT NULL,
                 contact_number VARCHAR(20) NOT NULL,
                 PRIMARY KEY(id)
-            );",
-            "CREATE TABLE IF NOT EXISTS MenuItem(
-                id INT AUTO_INCREMENT,
-                name VARCHAR(30) NOT NULL,
-                price INT(10) NOT NULL,
-                description TEXT,
-                image VARCHAR(20),
-                discount FLOAT(2, 2),
-                tags VARCHAR(100),
-                ingredients VARCHAR(100),
-                PRIMARY KEY(id)
-            );",
+            );"
         ];
 
         private $initUserSQL = 
