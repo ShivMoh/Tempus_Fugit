@@ -10,37 +10,44 @@
   </thead>
   <tbody>
     <form action="/personal/Practice/oop-mvc/test/test" method="POST">
+        <?php for($x = 0; $x < 10; $x++) : ?>
+            <tr>
+                <th scope='row'>
+                    <input type='text' name=<?='id'.$x; ?>>
+                </th>
+                <td>
+                    <input type='text' name=<?='name'.$x; ?>>
+                </td>
+                <td>
+                    <input type='text' name=<?='amount'.$x; ?>>
+                </td>
+                <td>
+                    <input type='text' name=<?='discount'.$x; ?>>
+                </td>
+                <td>
+                    <input type='text' name=<?='total'.$x; ?>>
+                </td> 
+            </tr>
+        <?php endfor; ?>
+        
         <tr>
-        <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope='row'>
+                <button type="submit">Pay Bill</button>
+            </th>
+            <td>
+                
+            </td>
+            <td>
+                
+            </td>
+            <td>
+                
+            </td>
+            <td>
+                
+            </td> 
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-        <button type="submit">Pay Bill</button>
+        
     </form>
  
   </tbody>
