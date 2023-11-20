@@ -1,6 +1,6 @@
 <?php
 
-class BillModel extends BaseModel {
+class MenuItemModel extends BaseModel {
     private $id;
     private $name;
     private $price;
@@ -116,33 +116,31 @@ class BillModel extends BaseModel {
     public function set_id($id) {
         return $this->id = $id;
     }
-    public function set_last_name($name) {
+    public function set_name($name) {
         return $this->name = $name;
     }
 
-    public function set_other_names($price) {
+    public function set_price($price) {
         return $this->price = $price;
     }
 
-    public function set_gender($description) {
+    public function set_description($description) {
         return $this->description = $description;
     }
 
-    public function set_age($image) {
+    public function set_image($image) {
         return $this->image = $image;
     }
 
-    public function set_dob($discount) {
+    public function set_discount($discount) {
         return $this->discount = $discount;
     }
 
-    public function set_job_role($tags) {
+    public function set_tags($tags) {
         return $this->tags = $tags;
     }
 
-    public function set_email($ingredients) {
+    public function set_ingredients($ingredients) {
         return $this->ingredients = $ingredients;
     }
 }
-
-   
