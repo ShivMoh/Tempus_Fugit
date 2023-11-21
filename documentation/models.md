@@ -19,7 +19,6 @@
 - Bill Id - links to bill (many to one)
 - Menu Item Id - links to the menu item (one to one)
 
-
 ## Employee
 
 - Employee Id
@@ -44,4 +43,3 @@
 - Discount
 - Tags
 - Ingredients
-
