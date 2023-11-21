@@ -2,54 +2,78 @@
     
     class UserController extends BaseController {
 
+        private $user_manager;
         private $user_model;
 
         public function __construct() {
-            $this->user_model = new UserManager();
+            $this->user_manager = new UserManager();
+            $this->user_model = new UserRecord();
         }
 
         public function index() {
             $this->findUsers();
         }
 
-        public function createUser() {
-            $method = $_SERVER["REQUEST_METHOD"];
-            echo $method;
-            if($method == "POST") {
-                $this->view("UserRegistration");
+        public function create() {
+            if(METHOD === POST) {
+                $this->user_model->set_first_name($_POST["fName"]);
+                $this->user_model->set_last_name($_POST["lName"]);
+                $this->user_model->set_passcode($_POST["passcode"]);
+                $this->user_model->set_email($_POST["email"]);
 
-                if(isset($_POST['fName'])) {
-                    $new_user = new UserRecord(); 
-                    $new_user->set_first_name($_POST["fName"]);
-                    $new_user->set_last_name($_POST["lName"]);
-                    $new_user->set_passcode($_POST["passcode"]);
-                    $new_user->set_email($_POST["email"]);
-    
-                    $this->user_model->create_standard_user($new_user);
-                }
+                $this->user_manager->create_standard_user($this->user_model);
+            
             }
-            else {
-                
-                echo "Bitch, this is your problem";
-            }
-     
         }
 
-        public function findUsers() {
-            $method = $_SERVER["REQUEST_METHOD"];
-            if($method != "GET") return;
-
+        public function findAll() {
             $user_record = new UserRecord();
             $users = $user_record->findAll();
         
             $this->view("UserTable", $data = $users);
         }
+        public function findOne() {
+            if (METHOD === POST) {
+                if(isset($_POST['select-user'])) {
+                    $id = $_POST['select-user'];
+                    $user = $this->user_model->findById($id);
+                    // this should use the view to select a single one
+                    // like $this->view("SingleUserDisplay", $data = $user)
+                    echo "A single user is selected";
+                }
+           }
+        }
 
-        public function create() {}
-        public function findAll() {}
-        public function findOne() {}
-        public function delete() {}
-        public function update() {}
+        public function delete() {
+           if (METHOD === POST) {
+                if(isset($_POST['delete-user'])) {
+                    $id = $_POST['delete-user'];
+                    $this->user_model->delete($id);
+                    $this->findUsers();
+                }
+           }
+        }
+        public function update() {
+            if (METHOD === POST) {
+                if(isset($_POST['update-user'])) {
+                    echo "Some";
+                    $id = $_POST['update-user'];
+                    $this->user_model->update($id);
+                    $this->findUsers();
+                }
+           }
+        }
+
+        public function findUsers() {
+        
+            // if(METHOD != GET) return;
+
+            $user_record = new UserRecord();
+            $users = $user_record->findAll();
+          
+        
+            $this->view("UserTable", $data = $users);
+        }
 
     }
 
