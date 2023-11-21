@@ -5,7 +5,7 @@
 class TestController extends BaseController{
 
     public function index() {
-        $this->view("Register");
+        $this->view("TestRegister");
     }
 
     public function test() {
