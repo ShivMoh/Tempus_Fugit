@@ -6,7 +6,8 @@ class Router {
     private $params = [];
 
     private $valid_get_paths = [
-        "index"
+        "index",
+        "test"
     ];
 
     private $valid_post_paths = [
@@ -74,7 +75,7 @@ class Router {
                 return;
             }
 
-            print_r($this->params[0]);
+            // print_r($this->params[0]);
 
             // print_r($url);
 

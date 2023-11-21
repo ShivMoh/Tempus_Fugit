@@ -9,8 +9,12 @@ class TestController extends BaseController{
     }
 
     public function test() {
-        $this->view("/test/Test");
+        $this->view("Navbar");
     }
+
+    // public function NavBar() {
+    //     $this->view("Navbar");
+    // }
 
     // public function create() {}
     // public function findAll() {}

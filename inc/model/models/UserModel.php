@@ -43,18 +43,18 @@
             return $statement->fetchAll(PDO::FETCH_CLASS, 'UserRecord');
         }
 
-        public function findById($id) {
+        public function findById() {
             $sql = "SELECT * FROM account WHERE id = :id";
 
             $statement = $this->connection->prepare($sql);
-            $statement->execute(['id' => $id]);
+            $statement->execute(['id' => $this->id]);
 
             return $statement->fetchObject();
         }
 
-        public function update($id) {}
+        public function update() {}
 
-        public function delete($id) {
+        public function delete() {
             // now must delete
             echo "Object being deleted";
         }
