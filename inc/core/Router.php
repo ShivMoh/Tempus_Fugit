@@ -3,6 +3,7 @@
 class Router {
     private $controller = '';
     private $method = '';
+    private $params = [];
 
     public function __construct() {
         $this->loadController();
@@ -42,9 +43,16 @@ class Router {
         
 
         if($this->controller !== "" && $this->method !== "") {
-            call_user_func_array([$this->controller,$this->method], []);
+            if(!empty($url[2])) $this->params = [$url[2]];
+
+            call_user_func_array(
+                [$this->controller,$this->method], 
+                $this->params
+            );
+           
             $this->controller = "";
             $this->method = "";
+            $this->params = [];
         } else {
             // redirect to 404 page
             echo "404 Page Not available";
