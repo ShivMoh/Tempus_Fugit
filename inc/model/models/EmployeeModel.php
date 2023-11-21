@@ -51,11 +51,11 @@ class EmployeeModel extends BaseModel {
                                                     //for handling the return
     }
 
-    public function findById($id) {
+    public function findById() {
         $sql = "SELECT * FROM Employee WHERE id = :id";
 
         $statement = $this->connection->prepare($sql);
-        $statement->execute(['id' => $id]);
+        $statement->execute(['id' => $this->id]);
 
         return $statement->fetchObject();
     }

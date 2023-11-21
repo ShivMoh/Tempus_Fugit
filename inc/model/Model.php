@@ -6,8 +6,8 @@
     interface Model {
         public function create();
         public function findAll();
-        public function findById($id);
-        public function update($id);
-        public function delete($id);
+        public function findById();
+        public function update();
+        public function delete();
     }
 
