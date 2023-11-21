@@ -52,9 +52,16 @@
             return $statement->fetchObject();
         }
 
-        public function update() {}
+        public function update($id) {}
 
-        public function delete() {}
+        public function delete($id) {
+            // now must delete
+            echo "Object being deleted";
+        }
+
+        public function get_id() {
+            return $this->id;
+        }
 
         public function get_first_name() {
             return $this->first_name;

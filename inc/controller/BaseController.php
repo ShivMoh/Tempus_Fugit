@@ -9,7 +9,7 @@ class BaseController implements Controller {
     public function index() {}
     public function create() {}
     public function findAll() {}
-    public function findOne() {}
-    public function delete() {}
-    public function update() {}
+    public function findOne($id) {}
+    public function delete($id) {}
+    public function update($id) {}
 } 

@@ -5,11 +5,17 @@
 class TestController extends BaseController{
 
     public function index() {
-        $this->view("TestRegister");
+        $this->view("/test/TestRegister");
     }
 
     public function test() {
-        $this->view("Test");
+        $this->view("/test/Test");
     }
+
+    // public function create() {}
+    // public function findAll() {}
+    // public function findOne() {}
+    // public function delete() {}
+    // public function update() {}
 
 }

@@ -7,7 +7,7 @@
                         Register Your Account
                     </h5>
                     <div class="card-text">
-                        <form method="post" action="">
+                        <form method="post" action="/personal/Practice/oop-mvc/user/create">
                             <div class="mb-3">
                                 <label for="fName" class="form-label">First Name</label>
                                 <input type="text" class="form-control" name="fName" id="fName">
