@@ -5,25 +5,11 @@ class Router {
     private $method = '';
     private $params = [];
 
-    private $valid_get_paths = [
-        "index"
-    ];
-
-    private $valid_post_paths = [
-        "findAll",
-        "view",
-        "create",
-        "update",
-        "delete",
-        "findOne"
-    ];
-
     public function __construct() {
         $this->loadController();
     }
 
     private function loadController() {
-
 
         $path = $_SERVER["REQUEST_URI"];
         $url = $this->getUrl($path);
@@ -57,26 +43,7 @@ class Router {
         
 
         if($this->controller !== "" && $this->method !== "") {
-
             if(!empty($url[2])) $this->params = [$url[2]];
-            
-            // decisions based on HTTP requests
-
-            // if the request is post but is not a valid post request path, then return
-            if (METHOD === POST && !in_array($this->method, $this->valid_post_paths)) {
-                echo "INVALID REQUEST ON METHOD: $this->method";
-                return;
-            }
-            
-            // if the request is get but is not a valid post request path, then return
-            if (METHOD === GET && !in_array($this->method, $this->valid_get_paths)) {
-                echo "INVALID REQUEST ON METHOD: $this->method";
-                return;
-            }
-
-            print_r($this->params[0]);
-
-            // print_r($url);
 
             call_user_func_array(
                 [$this->controller,$this->method], 

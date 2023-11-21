@@ -21,24 +21,31 @@
             <td><?=$user->get_last_name() ?></td>
             <td><?=$user->get_email() ?></td>
             <td><?=$user->get_role() ?></td>
-            <td>
-              <form action="/personal/Practice/oop-mvc/user/delete" method="post">
-                  <input type="hidden" name="delete-user" value="<? $user->get_id() ?>">
-                  <button class="btn" type="submit">Delete User</button>
-              </form>
-            </td>
-            <td>
-              <form action="/personal/Practice/oop-mvc/user/update" method="post">
-                  <input type="hidden" name="update-user" value="<? $user->get_id() ?>">
-                  <button class="btn" type="submit">Update User</button>
-              </form>
-            </td>
-            <td>
-              <form action="/personal/Practice/oop-mvc/user/findOne" method="post">
-                  <input type="hidden" name="select-user" value="<? $user->get_id() ?>">
-                  <button class="btn" type="submit">Select User</button>
-              </form>
-            </td>
+            
+              <?php
+                $user_id = $user->get_id();
+                 echo "<td>
+                  <form action='/personal/Practice/oop-mvc/user/delete/$user_id' method='POST'>
+                      <button class='btn' type='submit'>Delete User</button>
+                  </form>
+                 </td>";
+                
+                 echo "
+                  <td>
+                    <form action='/personal/Practice/oop-mvc/user/update/$user_id' method='POST'>
+                        <button class='btn' type='submit'>Update User</button>
+                    </form>
+                  </td>";
+
+                 echo "
+                  <td>
+                    <form action='/personal/Practice/oop-mvc/user/findOne/$user_id' method='POST'>
+                      <button class='btn' type='submit'>Select User</button>
+                    </form>
+                  </td>
+                 ";
+               ?>
+           
         </tr>
     <?php endforeach; ?>
   </tbody>

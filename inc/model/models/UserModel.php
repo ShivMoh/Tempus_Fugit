@@ -59,7 +59,7 @@
             echo "Object being deleted";
         }
 
-        public function get_id($id) {
+        public function get_id() {
             return $this->id;
         }
 

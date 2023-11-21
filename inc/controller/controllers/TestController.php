@@ -12,10 +12,10 @@ class TestController extends BaseController{
         $this->view("/test/Test");
     }
 
-    public function create() {}
-    public function findAll() {}
-    public function findOne() {}
-    public function delete() {}
-    public function update() {}
+    // public function create() {}
+    // public function findAll() {}
+    // public function findOne() {}
+    // public function delete() {}
+    // public function update() {}
 
 }
