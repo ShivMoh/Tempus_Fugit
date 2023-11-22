@@ -1,21 +1,27 @@
 .bill-preview-heading-1 {
-    margin-bottom: 10px;
-    font-size: 42px;
-    font-style: italic;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .bill-preview-heading-2 {
     font-size: 22px;
     font-weight: bold;
+    font-family: 'iter', sans-serif;
 }
 
 .bill-preview-heading-3 {
     font-size: 18px;
     font-weight: 500;
+    font-family: 'iter', sans-serif;
 }
 
 .bill-preview-title-row {
     margin-top: 10px;
+}
+
+.bill-preview-item-row {
+    font-family: 'iter', sans-serif;
+    margin-bottom: 5px;
 }
 
 .separator {
@@ -24,7 +30,7 @@
 }
 
 .bill-preview-container {
-    width: 95%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,8 +39,20 @@
     padding: 10px;
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #fafcff;
-   
+    background-color: #f0f6ff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: solid #b6d3ff 5px;
+}
+
+.bill-preview-container::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .bill-preview-container {
+        width: 100%;
+    }
 }
 
 .bill-preview-cancel-button {
@@ -46,6 +64,7 @@
     color: white;
     cursor: pointer;
     transition: all 0.2s linear;
+    margin-bottom: 10px;
 }
 
 .bill-preview-print-button {
@@ -57,6 +76,7 @@
     color: white;
     cursor: pointer;
     transition: all 0.2s linear;
+    
 }
 
 .bill-preview-cancel-button:hover {
