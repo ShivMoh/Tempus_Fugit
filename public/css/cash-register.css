@@ -1,21 +1,3 @@
-table {
-    margin: 4vh auto;
-    width: 80%;
-    border-collapse: collapse;
-}
-
-th {
-    background-color: #8DCFFF;
-    color: white;
-    font-size: 1.2em;
-    padding: 1vh;
-}
-
-td {
-    border: 1px solid #C0DFFF;
-    height: 3vh;
-}
-
 input, select {
     width: 100%;
     height: 100%;
