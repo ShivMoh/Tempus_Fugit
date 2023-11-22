@@ -14,38 +14,35 @@
     <title>MenuTabView</title>
 </head>
 <body>
-    <div class="div">
-        <div class="div-2">
+    <div class="header-container">
+        <div class="logo-section">
             <img
                 loading="lazy"
                 srcset="../../public/images/img.png"
-                class="img"
+                class="logo-img"
             />
-            <div class="div-3">Search Menu Item by name or id</div>
+            <div class="search-box">Search Menu Item by name or id</div>
         </div>
-        <div class="div-4">
-            <div class="div-5">Tags</div>
+        <div class="menu-section">
+            <div class="tags-title">Tags</div>
             <img
                 loading="lazy"
                 src="../../public/images/img-2.png"
-                class="img-2"
+                class="tags-img"
             />
-            <div class="div-6">Price</div>
+            <div class="price-title">Price</div>
             <img
                 loading="lazy"
                 src="../../public/images/img-3.png"
-                class="img-3"
+                class="price-img"
             />
         </div>
         <img
             loading="lazy"
             srcset="../../public/images/img-4.png"
-            class="img-4"
+            class="background-img"
         />
     </div>
     <div class="rectangle"></div>
-
-
-
 </body>
 </html>
