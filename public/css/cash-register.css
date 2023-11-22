@@ -1,0 +1,35 @@
+table {
+    margin: 4vh auto;
+    width: 80%;
+    background-color: #DFEEFF;
+    border-collapse: collapse;
+    border-spacing: 0;
+ }
+ 
+ th {
+    background-color: #8DCFFF;
+    color: white;
+    font-size: 1.2em;
+    padding: 1vh;
+ }
+ 
+ td {
+    border: 1px solid #C0DFFF;
+    height: 2.5vh;
+ }
+ 
+ input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 0.1;
+ }
+ 
+ .col1, .col3, .col4, .col5 {
+    width: 15%;
+ }
+ 
+ .col2 {
+    width: 40%;
+ }
+ 
