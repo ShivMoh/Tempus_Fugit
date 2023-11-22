@@ -1,5 +1,6 @@
 <?php
 
+// WILL PROBABLY BE DELETED
 define("BILL_ID", "id");
 define("BILL_NUMBER_OF_ITEMS", "number_of_items");
 define("BILL_TOTAL_COST", "total_cost");

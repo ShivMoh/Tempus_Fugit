@@ -26,10 +26,10 @@ class EmployeeModel extends BaseModel {
             VALUES (:first_name,:last_name, :other_names, :gender, :age, :dob, :job_role, :email, :contact_number)";
 
         $new_employee = [
-            EMPLOYEE_FIRST_NAME=> $this->first_name,
-            EMPLOYEE_LAST_NAME=> $this->last_name,
-            EMPLOYEE_LAST_NAME=> $this->other_names,
-            EMPLOYEE_GENDER=> $this->gender,
+            "first_name"=> $this->first_name,
+            "last_name"=> $this->last_name,
+            "other_names"=> $this->other_names,
+            "gender"=> $this->gender,
             "age"=> $this->age,
             "dob"=> $this->dob,
             "job_role"=> $this->job_role,

@@ -1,6 +1,5 @@
 <?php
 
-require __DIR__."/modelConstants.php";
 // include database
 require __DIR__."/database/Database.php";
 
