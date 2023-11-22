@@ -1,35 +1,85 @@
 table {
     margin: 4vh auto;
     width: 80%;
-    background-color: #DFEEFF;
     border-collapse: collapse;
-    border-spacing: 0;
- }
- 
- th {
+}
+
+th {
     background-color: #8DCFFF;
     color: white;
     font-size: 1.2em;
     padding: 1vh;
- }
- 
- td {
+}
+
+td {
     border: 1px solid #C0DFFF;
-    height: 2.5vh;
- }
- 
- input {
+    height: 3vh;
+}
+
+input, select {
     width: 100%;
     height: 100%;
     border: none;
-    opacity: 0.1;
- }
- 
- .col1, .col3, .col4, .col5 {
+    color: black;
+    text-align: center;
+}
+
+.col1, .col3, .col4, .col5 {
     width: 15%;
- }
- 
- .col2 {
+}
+
+.col2 {
     width: 40%;
- }
- 
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: right;
+}
+
+label {
+    font-size: 1.6em;
+    margin-right: 1%;
+}
+
+
+#total {
+    resize: none;
+    width: 15%;
+}
+
+button {
+    display: block;
+    margin: 5px 0 0 auto;
+    width: 15%;
+    height: 3.5vh;
+    border: #449AFF solid 1px;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+.button-1,
+.button-2 {
+    transition: 0.3s;
+}
+
+.button-1 {
+    color: white;
+    background-color: #449AFF;
+}
+
+.button-1:hover {
+    color: #449AFF;
+    background-color: white;
+}
+
+.button-2 {
+    color: #449AFF;
+    background-color: white;
+}
+
+.button-2:hover {
+    color: white;
+    background-color: #449AFF;
+}
