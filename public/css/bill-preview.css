@@ -1,0 +1,72 @@
+.bill-preview-heading-1 {
+    margin-bottom: 10px;
+    font-size: 42px;
+    font-style: italic;
+}
+
+.bill-preview-heading-2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.bill-preview-heading-3 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.bill-preview-title-row {
+    margin-top: 10px;
+}
+
+.separator {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.bill-preview-container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: blue;
+    margin: 20px auto;
+    padding: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #fafcff;
+   
+}
+
+.bill-preview-cancel-button {
+    width: 250px;
+    height: 30px;
+    border: none;
+    background-color: red;
+    border-radius: 0.5vw;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.bill-preview-print-button {
+    width: 250px;
+    height: 30px;
+    border: none;
+    background-color: #449AFF;
+    border-radius: 0.5vw;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.bill-preview-cancel-button:hover {
+    transform: scale(1.05);
+}
+
+.bill-preview-print-button:hover {
+    transform: scale(1.05);
+}
+
+.bill-preview-button-container {
+    margin-top: 40px;
+}
