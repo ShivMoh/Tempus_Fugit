@@ -40,10 +40,10 @@
                 name VARCHAR(30) NOT NULL,
                 price FLOAT(10, 5) NOT NULL,
                 amount INT(20) NOT NULL,
-                billId INT NOT NULL,
-                menuItemId INT NOT NULL,
-                FOREIGN KEY (billId) REFERENCES Bill(id) ON DELETE CASCADE, 
-                FOREIGN KEY (menuItemId) REFERENCES MenuItem(id) ON DELETE CASCADE, 
+                bill_id INT NOT NULL,
+                menu_item_id INT NOT NULL,
+                FOREIGN KEY (bill_id) REFERENCES Bill(id) ON DELETE CASCADE, 
+                FOREIGN KEY (menu_item_id) REFERENCES MenuItem(id) ON DELETE CASCADE, 
                 PRIMARY KEY(id)
                 );",
             "CREATE TABLE IF NOT EXISTS Employee(
