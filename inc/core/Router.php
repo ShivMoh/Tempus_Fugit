@@ -8,7 +8,8 @@ class Router {
     // you can use get requests to call these methods
     private $validGetPaths = [
         "index",
-        "test"
+        "test",
+        "test2"
     ];
 
     // you can use post requests to call these methods

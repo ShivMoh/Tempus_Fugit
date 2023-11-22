@@ -12,6 +12,9 @@ class TestController extends BaseController{
         $this->view("Navbar");
     }
 
+    public function test2() {
+        $this->view("BillPreview");
+    }
     // public function NavBar() {
     //     $this->view("Navbar");
     // }
