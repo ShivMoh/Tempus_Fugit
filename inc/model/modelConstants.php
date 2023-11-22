@@ -32,3 +32,6 @@ define("EMPLOYEE_DOB", "dob");
 define("EMPLOYEE_JOB_ROLE", "job_role");
 define("EMPLOYEE_EMAIL", "email");
 define("EMPLOYEE_CONTACT_NUMBER", "contact_number");
+
+//    <?php foreach($items as $item) : ?>
+    <?php endforeach; ?>
