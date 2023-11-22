@@ -69,7 +69,7 @@ class Router {
                 return;
             }
             
-            // if the request is get but is not a valid post request path, then return
+            // if the request is get but is not a valid get request path, then return
             if (METHOD === GET && !in_array($this->method, $this->valid_get_paths)) {
                 echo "INVALID REQUEST ON METHOD: $this->method";
                 return;
