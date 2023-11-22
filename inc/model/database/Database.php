@@ -17,7 +17,6 @@
             );",
             "CREATE TABLE IF NOT EXISTS Bill(
                 id INT AUTO_INCREMENT,
-                customer VARCHAR(30) NOT NULL,
                 number_of_items INT(20) NOT NULL,
                 total_cost FLOAT(10, 5) NOT NULL,
                 order_date DATE,
