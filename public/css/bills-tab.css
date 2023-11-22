@@ -1,0 +1,19 @@
+img {
+    width: 1vw;
+    height: auto;
+    margin: 5% auto;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.column-1, .column-3{
+    width: 15%;
+}
+
+.column-2, .column-4 {
+    width: 20%;
+}
