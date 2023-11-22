@@ -5,12 +5,14 @@ class Router {
     private $method = '';
     private $params = [];
 
-    private $valid_get_paths = [
+    // you can use get requests to call these methods
+    private $validGetPaths = [
         "index",
         "test"
     ];
 
-    private $valid_post_paths = [
+    // you can use post requests to call these methods
+    private $validPostPaths = [
         "findAll",
         "view",
         "create",
@@ -64,13 +66,13 @@ class Router {
             // decisions based on HTTP requests
 
             // if the request is post but is not a valid post request path, then return
-            if (METHOD === POST && !in_array($this->method, $this->valid_post_paths)) {
+            if (METHOD === POST && !in_array($this->method, $this->validPostPaths)) {
                 echo "INVALID REQUEST ON METHOD: $this->method";
                 return;
             }
             
-            // if the request is get but is not a valid post request path, then return
-            if (METHOD === GET && !in_array($this->method, $this->valid_get_paths)) {
+            // if the request is get but is not a valid get request path, then return
+            if (METHOD === GET && !in_array($this->method, $this->validGetPaths)) {
                 echo "INVALID REQUEST ON METHOD: $this->method";
                 return;
             }

@@ -48,9 +48,8 @@
             $this->user_model->update($id);
             $this->findUsers();
         }
-
-        public function findUsers() {
         
+        public function findUsers() {
             // if(METHOD != GET) return;
 
             $user_record = new UserRecord();
@@ -62,4 +61,3 @@
 
     }
 
-?>

@@ -10,7 +10,9 @@
 - Status
 - MenuItemsList
 
-## MenuItemForBill
+_Note to self: When creating a Bill, the attached Bill Items must afterwards be created and linked to the newly created Bill_
+
+## BillItem
 
 - ItemId
 - Name
@@ -18,6 +20,7 @@
 - Amount
 - Bill Id - links to bill (many to one)
 - Menu Item Id - links to the menu item (one to one)
+
 
 ## Employee
 
@@ -39,7 +42,7 @@
 - Name
 - Price
 - Description
-- Image (s)
+- Image url (s)
 - Discount
 - Tags
 - Ingredients

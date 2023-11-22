@@ -42,11 +42,11 @@ class MenuItemModel extends BaseModel {
                                                     //to accept this return
    }
 
-   public function findById($id) {
+   public function findById() {
     $sql = "SELECT * FROM MenuItem WHERE id = :id";
 
     $statement = $this->connection->prepare($sql);
-    $statement->execute(['id' => $id]);
+    $statement->execute(['id' => $this->id]);
 
     return $statement->fetchObject();
    }
