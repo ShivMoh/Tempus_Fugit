@@ -19,17 +19,17 @@
     <div class="search-bar-container">
         <input class="search-bar" type="text" placeholder="Search Bills by Transaction ID">
         <button class="search-button"><img title="Search" class="search-icon" src="../../public/images/search.png" alt="Search Button"></button>
-        <select class="search-bar-dropdown-1" name="tags" id="tags">
-            <option disabled selected>Tags</option>
-            <option value="savory">Savory</option>
-            <option value="healthy">Healthy</option>
-            <option value="dessert">Dessert</option>
+        <select class="search-bar-dropdown-1" name="status" id="status">
+            <option disabled selected>Status</option>
+            <option value="completed">Completed</option>
+            <option value="pending">Pending</option>
+            <option value="cancelled">Cancelled</option>
         </select>
-        <select class="search-bar-dropdown-2" name="price" id="price">
-            <option disabled selected>Price</option>
-            <option value="under-1000">Under 1000</option>
-            <option value="1000-to-5000">1000 to 5000</option>
-            <option value="over-5000">Over 5000</option>
+        <select class="search-bar-dropdown-2" name="date" id="date">
+            <option disabled selected>Date</option>
+            <option value="last-week">Last Week</option>
+            <option value="last-month">Last Month</option>
+            <option value="last-six-months">Last 6 Months</option>
         </select>
         <button class="search-bar-add-button"><img title="Add Bill" class="add-icon" src="../../public/images/add.png" alt="Add button"></button>
     </div>

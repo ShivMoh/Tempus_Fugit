@@ -16,3 +16,15 @@ td {
     height: 3vh;
     text-align: center;
 }
+
+img {
+    width: 1vw;
+    height: auto;
+    margin: 5% auto;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
