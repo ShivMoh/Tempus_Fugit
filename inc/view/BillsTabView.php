@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/css/main.css">
+    <link rel="stylesheet" href="../../public/css/search-bar.css">
     <link rel="stylesheet" href="../../public/css/table.css">
     <link rel="stylesheet" href="../../public/css/bills-tab.css">
     <title>Data Table</title>
@@ -15,7 +16,23 @@
 
 <body>
     <!-- SEARCH BAR -->
-
+    <div class="search-bar-container">
+        <input class="search-bar" type="text" placeholder="Search Bills by Transaction ID">
+        <button class="search-button"><img title="Search" class="search-icon" src="../../public/images/search.png" alt="Search Button"></button>
+        <select class="search-bar-dropdown-1" name="tags" id="tags">
+            <option disabled selected>Tags</option>
+            <option value="savory">Savory</option>
+            <option value="healthy">Healthy</option>
+            <option value="dessert">Dessert</option>
+        </select>
+        <select class="search-bar-dropdown-2" name="price" id="price">
+            <option disabled selected>Price</option>
+            <option value="under-1000">Under 1000</option>
+            <option value="1000-to-5000">1000 to 5000</option>
+            <option value="over-5000">Over 5000</option>
+        </select>
+        <button class="search-bar-add-button"><img title="Add Bill" class="add-icon" src="../../public/images/add.png" alt="Add button"></button>
+    </div>
     <!-- SEARCH BAR -->
 
     <?php

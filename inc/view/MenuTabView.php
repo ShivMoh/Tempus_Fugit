@@ -1,6 +1,5 @@
 <?php
     include "NavBarView.php";
-    echo "Menu tab";
 ?>
 
 <!DOCTYPE html>
@@ -11,9 +10,31 @@
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../public/css/menu-tab.css">
+    <link rel="stylesheet" href="../../public/css/search-bar.css">
     <title>MenuTabView</title>
 </head>
-<body><div class="div">
+<body>
+  <!-- SEARCH BAR -->
+  <div class="search-bar-container">
+        <input class="search-bar" type="text" placeholder="Search Menu item by name or id">
+        <button class="search-button"><img title="Search" class="search-icon" src="../../public/images/search.png" alt="Search Button"></button>
+        <select class="search-bar-dropdown-1" name="tags" id="tags">
+            <option disabled selected>Tags</option>
+            <option value="savory">Savory</option>
+            <option value="healthy">Healthy</option>
+            <option value="dessert">Dessert</option>
+        </select>
+        <select class="search-bar-dropdown-2" name="price" id="price">
+            <option disabled selected>Price</option>
+            <option value="under-1000">Under 1000</option>
+            <option value="1000-to-5000">1000 to 5000</option>
+            <option value="over-5000">Over 5000</option>
+        </select>
+        <button class="search-bar-add-button"><img title="Add Item" class="add-icon" src="../../public/images/add.png" alt="Add button"></button>
+    </div>
+    <!-- SEARCH BAR -->
+
+  <div class="div">
   <div class="div-2">
     <div class="div-3">
       <div class="column">
