@@ -55,7 +55,7 @@
         ];
     ?>
 
-    <table class="table">
+    <table class="bills-table">
         <thead>
             <tr>
                 <th class="column-1">Bill ID</th>

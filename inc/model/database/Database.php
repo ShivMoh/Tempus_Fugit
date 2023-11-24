@@ -7,32 +7,32 @@
 
         private $create_statements = [
             "CREATE TABLE IF NOT EXISTS Account( 
-                id INT AUTO_INCREMENT,
-                first_name  VARCHAR(30) NOT NULL,
-                last_name   VARCHAR(30) NOT NULL,
-                email       VARCHAR(50) NOT NULL,
-                passcode    VARCHAR(100) NOT NULL,
-                role   VARCHAR(10),
-                PRIMARY KEY(id)
+                id              INT AUTO_INCREMENT,
+                first_name      VARCHAR(30) NOT NULL,
+                last_name       VARCHAR(30) NOT NULL,
+                email           VARCHAR(50) NOT NULL,
+                passcode        VARCHAR(100) NOT NULL,
+                role            VARCHAR(10),
+                PRIMARY KEY     (id)
             );",
             "CREATE TABLE IF NOT EXISTS Bill(
-                id INT AUTO_INCREMENT,
-                number_of_items INT(20) NOT NULL,
-                total_cost FLOAT(10, 5) NOT NULL,
-                order_date DATE,
-                status BOOLEAN,
-                PRIMARY KEY(id)
+                id                  INT AUTO_INCREMENT,
+                number_of_items     INT(20) NOT NULL,
+                total_cost          FLOAT(10, 5) NOT NULL,
+                order_date          DATE,
+                status              BOOLEAN,
+                PRIMARY KEY         (id)
                 );",
             "CREATE TABLE IF NOT EXISTS MenuItem(
-                id INT AUTO_INCREMENT,
-                name VARCHAR(30) NOT NULL,
-                price INT(10) NOT NULL,
-                description TEXT,
-                image VARCHAR(20),
-                discount FLOAT(2, 2),
-                tags VARCHAR(100),
-                ingredients VARCHAR(100),
-                PRIMARY KEY(id)
+                id                  INT AUTO_INCREMENT,
+                name                VARCHAR(30) NOT NULL,
+                price               INT(10) NOT NULL,
+                description         TEXT,
+                image               VARCHAR(20),
+                discount            FLOAT(2, 2),
+                tags                VARCHAR(100),
+                ingredients         VARCHAR(100),
+                PRIMARY KEY         (id)
             );",
             "CREATE TABLE IF NOT EXISTS BillItem(
                 id INT AUTO_INCREMENT,

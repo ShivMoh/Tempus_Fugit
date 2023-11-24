@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="../../public/css/search-bar.css">
     <title>MenuTabView</title>
 </head>
+
 <body>
-  <!-- SEARCH BAR -->
-  <div class="search-bar-container">
+    <!-- SEARCH BAR -->
+    <div class="search-bar-container">
         <input class="search-bar" type="text" placeholder="Search Menu item by name or id">
         <button class="search-button"><img title="Search" class="search-icon" src="../../public/images/search.png" alt="Search Button"></button>
         <select class="search-bar-dropdown-1" name="tags" id="tags">
@@ -34,147 +35,56 @@
     </div>
     <!-- SEARCH BAR -->
 
-  <div class="div">
-  <div class="div-2">
-    <div class="div-3">
-      <div class="column">
-        <div class="div-4">
-          <div class="div-5">
-            <div class="div-6">
-              <img
-                loading="lazy"
-                src="../../public/images/icecream.png"
-                class="img-2"
-              />
+    <!-- SELECT * QUERY -->
+    <?php
+        $data = [
+            [
+                'id' => 1,
+                'name' => 'Chocolate Chip Ice Cream',
+                'price' => 1000,
+                'description' => 'Creamy vanilla ice cream with swirls of chocolate chips.',
+                'image' => 'chocolate-chip-ice-cream.png',
+                'discount' => 150,
+                'tags' => ['chocolate', 'dessert'],
+                'ingredients' => ['ice cream', 'chocolate chips'],
+            ],
+            [
+                'id' => 2,
+                'name' => 'Strawberry Swirl Sundae',
+                'price' => 1500,
+                'description' => 'Fresh strawberries layered with vanilla ice cream and topped with whipped cream.',
+                'image' => 'strawberry-swirl-sundae.png',
+                'discount' => 200,
+                'tags' => ['strawberry', 'dessert'],
+                'ingredients' => ['strawberries', 'ice cream'],
+            ],
+        ];
+    ?>
+
+    <?php foreach ($data as $item): ?>
+        <div class="menu-item-container">
+            <div class="image-and-tags">
+                <img class="menu-item-img" src="../../public/images/<?php echo $item['image']; ?>" alt="<?php echo $item['name']; ?>">
+                <div class="tag-buttons">
+                    <?php foreach ($item['tags'] as $tag): ?>
+                        <button class="tag-button"><?php echo $tag; ?></button>
+                    <?php endforeach; ?>
+                </div>
             </div>
-          </div>
-          <div class="div-7">
-            <div class="div-8">Desert</div>
-            <div class="div-9">Savory</div>
-          </div>
-        </div>
-      </div>
-      <div class="column-2">
-        <div class="div-10">
-          <div class="div-11">
-            <div class="div-12">Savory Icecream</div>
-            <div class="div-13">
-              <img
-                loading="lazy"
-                src="../../public/images/up-icon.png"
-                class="img-3"
-              />
-              <img
-                loading="lazy"
-                src="../../public/images/writing-icon.png"
-                class="img-4"
-              />
-              <div class="div-14">
-                <img
-                  loading="lazy"
-                  src=../../public/images/trash-icon.png
-                  class="img-5"
-                />
-              </div>
+
+            <div class="menu-item-details">
+                <p class="item-name"><?php echo $item['name']; ?></p>
+                <p class="item-description"><?php echo $item['description']; ?></p>
+                <p class="item-price">Price: $<?php echo $item['price']; ?></p>
             </div>
-          </div>
-          <div class="div-15">
-            This is a brief description of the menu item This is a brief
-            description of the menu item. This is a brief description of the
-            menu item. This is a brief description of the menu item.
-          </div>
-          <div class="div-16">
-            <span
-              style="
-                font-family: Inter, sans-serif;
-                font-weight: 700;
-              "
-            >
-              Price:
-            </span>
-            <span
-              style="
-                font-family: Inter, sans-serif;
-                font-weight: 400;
-              "
-            >
-              $xxxx
-            </span>
-          </div>
+
+            <div class="action-buttons">
+            <button class="action-button"><img class="action-button-image" src="../../public/images/up-icon.png" alt="Expand" title="Expand"></button>
+            <button class="action-button"><img class="action-button-image" src="../../public/images/edit-icon.png" alt="Edit" title="Edit"></button>
+            <button class="action-button-right-most"><img class="action-button-image" src="../../public/images/delete-icon.png" alt="Delete" title="Delete"></button>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="div-17">
-    <div class="div-18">
-      <div class="column-3">
-        <div class="div-19">
-          <div class="div-20">
-            <img
-              loading="lazy"
-              src="../../public/images/icecream-2.png"
-              class="img"
-            />
-          </div>
         </div>
-      </div>
-      <div class="column-4">
-        <div class="div-21">
-          <div class="div-22">
-            <div class="div-23">Savory Icecream</div>
-            <div class="div-24">
-              <img
-                loading="lazy"
-                srcset="../../public/images/up-icon.png"
-                class="img-7"
-              />
-              <img
-                loading="lazy"
-                srcset="../../public/images/writing-icon.png"
-                class="img-8"
-              />
-              <div class="div-25">
-                <img
-                  loading="lazy"
-                  srcset="../../public/images/trash-icon.png"
-                  class="img-9"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="div-26">
-            This is a brief description of the menu item This is a brief
-            description of the menu item. This is a brief description of the
-            menu item. This is a brief description of the menu item.
-          </div>
-          <div class="div-27">
-            <span
-              style="
-                font-family: Inter, sans-serif;
-                font-weight: 700;
-              "
-            >
-              Price:
-            </span>
-            <span
-              style="
-                font-family: Inter, sans-serif;
-                font-weight: 400;
-              "
-            >
-              $xxxx
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="div-28">
-    <div class="div-29">Desert</div>
-    <div class="div-30">Savory</div>
-    <div class="div-31">Vegan</div>
-  </div>
-</div>
-  </body>
+    <?php endforeach; ?>
+
+</body>
 </html>
-  
