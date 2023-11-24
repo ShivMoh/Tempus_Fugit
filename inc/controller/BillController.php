@@ -1,5 +1,6 @@
 <?php
 
+//dir for the model here
 
 class BillController extends BaseController{
 
@@ -28,7 +29,8 @@ class BillController extends BaseController{
 
             $billModel->create();
 
-        // view logic pending
+        // view logic pending 
+        // back to index
         }
     }
 

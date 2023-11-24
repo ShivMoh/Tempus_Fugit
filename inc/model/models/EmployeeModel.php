@@ -22,7 +22,7 @@ class EmployeeModel extends BaseModel {
     
     public function create() {
 
-        $sql =  "INSERT INTO Employee(first_name, last_name, other_names, gender, age, dob, job_role email, contact_number)
+        $sql =  "INSERT INTO Employee(first_name, last_name, other_names, gender, age, dob, job_role, email, contact_number)
             VALUES (:first_name,:last_name, :other_names, :gender, :age, :dob, :job_role, :email, :contact_number)";
 
         $new_employee = [
@@ -126,6 +126,10 @@ class EmployeeModel extends BaseModel {
 
     public function get_contact_number() {
         return $this->contact_number;
+    }
+
+    public function set_id($id){
+        return $this->id = $id;
     }
 
     public function set_first_name($first_name) {
