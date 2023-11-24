@@ -2,6 +2,8 @@ table {
     margin: 4vh auto;
     width: 80%;
     border-collapse: collapse;
+    border-bottom: 4px solid #085993;
+    border-right: 4px solid #085993;
 }
 
 th {
