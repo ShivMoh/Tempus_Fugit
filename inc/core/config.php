@@ -8,7 +8,7 @@ define("DB_USER", "root");
 define("DB_USER_PASSWORD", '');
 
 // change this to match your base directory 
-define("BASE_URL", "/personal/Practice/oop-mvc/");
+define("BASE_URL", "/proj");
 
 // define constants
 // to get some intellisense
