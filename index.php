@@ -13,7 +13,7 @@
 
         <?php 
             require __DIR__."/inc/core/App.php";
-            new App();
+            $app = new App();
            
         ?>
 

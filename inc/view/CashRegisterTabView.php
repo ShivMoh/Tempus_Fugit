@@ -7,14 +7,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../public/css/main.css">
-    <link rel="stylesheet" href="../../public/css/table.css">
-    <link rel="stylesheet" href="../../public/css/cash-register.css">
+    <link rel="stylesheet" href="<?=CSS_URL."main.css"?>">
+    <link rel="stylesheet" href="<?=CSS_URL."table.css"?>">
+    <link rel="stylesheet" href="<?=CSS_URL."cash-register.css"?>">
     <title>Document</title>
 </head>
 
 <body>
-    <form action="/personal/Practice/oop-mvc/test/test" method="POST" id="order-form">
+    <form action="<?=BASE_URL."test/test"?>" method="POST" id="order-form">
         <table>
             <thead>
                 <tr>
