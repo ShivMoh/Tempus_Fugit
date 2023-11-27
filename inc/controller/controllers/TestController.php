@@ -9,11 +9,11 @@ class TestController extends BaseController{
     }
 
     public function test() {
-        $this->view("Navbar");
+        $this->view("EmployeesTab");
     }
 
     public function test2() {
-        $this->view("BillPreview");
+        $this->view("CashRegisterTab");
     }
     // public function NavBar() {
     //     $this->view("Navbar");
