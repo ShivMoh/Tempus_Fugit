@@ -1,20 +1,54 @@
-.employee-view-container {
-    display: block;
+.employee-view-cancel-button {
+    width: 250px;
+    height: 40px;
+    border: none;
+    background-color: red;
+    border-radius: 0.5vw;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
-.employee-view-picture-container {
-    display: block;
+.employee-view-save-button {
+    width: 250px;
+    height: 40px;
+    border: none;
+    background-color: #449AFF;
+    border-radius: 0.5vw;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    margin-left: 10px;
 }
 
-.employee-view-picture
-{
-    display: block;
+.employee-view-edit-button {
+    outline: none;
+    border: none;
+    background-color: transparent;
 }
 
-.employee-view.picture
-img
-{
-    display: block;
+.employee-view-delete-button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.employee-view-cancel-button:hover {
+    transform: scale(1.05);
+}
+
+.employee-view-save-button:hover {
+    transform: scale(1.05);
+}
+
+.employee-view-cancel-button:disabled {
+    opacity: 0;
+}
+
+.employee-view-save-button:disabled {
+    opacity: 0;
 }
 
 .employee-view-status-container {
