@@ -1,46 +1,57 @@
 .search-bar-container {
+    border-radius: 60px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
+    justify-content: center;
     align-items: center;
-    background-color: #DBD9D9;
-    width: 85%;
-    height: 7vh;
-    margin: 2vh auto;
-}
-
-.search-button, .search-bar-add-button {
-    background-color: transparent;
-    border: none;
-    height: 40px;
-}
-
-.search-bar-add-button {
-    margin: 0 0 0 3%;
-}
-
-.search-icon, .add-icon {
-    align-items: center;
-    height: 100%;
+    max-width: 85%; /* Set a maximum width for the container */
     width: 100%;
+    padding: 15px; /* Add padding as needed */
+    margin: 30px auto; /* Center the container horizontally */
 }
 
+/* Style for the text input */
 .search-bar {
-    width: 40%;
-    height: 90%;
-    border: none;
-    background-color: transparent;
-
-    font-size: 1em;
-    padding: 0 0.5vw;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+    flex-grow: 1; /* Take remaining space */
 }
 
-.search-bar-dropdown-1, .search-bar-dropdown-2 {
-    margin-left: 25%;
-    height: 100%;
-    font-size: 1em;
-    background-color: transparent;
-    border: none;
+.search-icon,.add-icon {
+    width: 20px; /* Adjust the width to your preference */
+    height: 20px; /* Adjust the height to your preference */
 }
 
+/* Style for the search button */
+.search-button {
+    background-color: #fff; /* Green background color */
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Style for the dropdowns */
+.search-bar-dropdown-1,
 .search-bar-dropdown-2 {
-    margin-left: 5%;
+    padding: 8px;
+    margin-right: 5px;
+}
+
+/* Style for the add button */
+.search-bar-add-button {
+    background-color: #fff; /* Blue background color */
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Add some space between the elements */
+.search-bar-container > * {
+    margin-right: 5px;
 }

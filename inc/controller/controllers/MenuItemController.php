@@ -32,9 +32,6 @@ class MenuItemController extends BaseController{
             $MenuItem->set_ingredients($ingredients);
 
             $MenuItem->create();
-
-        // view logic pending 
-        // back to index
         }
     }
 
