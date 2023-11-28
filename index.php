@@ -12,10 +12,9 @@
     <body>
         <main>
 
-        <?php 
+        <?php
             require __DIR__."/inc/core/App.php";
             $app = new App();
-           
         ?>
 
         </main>

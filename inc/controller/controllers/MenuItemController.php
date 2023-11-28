@@ -1,6 +1,5 @@
 <?php
 
-//dir for the model here
 
 class MenuItemController extends BaseController{
 
@@ -9,7 +8,7 @@ class MenuItemController extends BaseController{
         $MenuItem = new MenuItemModel();
         $Menu = $MenuItem->findAll();
 
-        // view logic pending
+        $this->view("/MenuTab");
     }
 
     public function create(){

@@ -34,7 +34,7 @@ class Router {
 
         if(count($url) === 0) { 
             // set default controller and method for when app starts
-            $this->controller = $this->getControllerName("Employee");
+            $this->controller = $this->getControllerName("MenuItem");
             $this->getController($this->controller);
             $this->method = "index";
         } else {

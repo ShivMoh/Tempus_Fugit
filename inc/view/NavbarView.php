@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <a href="#">Register</a>
-        <a href="#">Menu</a>
-        <a href="#">Employees</a>
-        <a href="#">Bills</a>
+    <div class="navigation-bar">
+        <a class="nav-button" href="#">Register</a>
+        <a class="nav-button" href="#">Menu</a>
+        <a class="nav-button" href="#">Employees</a>
+        <a class="nav-button" href="#">Bills</a>
     </div>
 </body>
 </html>

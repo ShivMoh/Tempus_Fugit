@@ -7,10 +7,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../public/css/menu-tab.css">
-    <link rel="stylesheet" href="../../public/css/search-bar.css">
+    <link rel="stylesheet" href=<?=CSS_URL."main.css"?>>
+    <link rel="stylesheet" href=<?=CSS_URL."search-bar.css"?>>
+    <link rel="stylesheet" href=<?=CSS_URL."menu-tab.css"?>>
     <title>MenuTabView</title>
 </head>
 
@@ -18,7 +17,7 @@
     <!-- SEARCH BAR -->
     <div class="search-bar-container">
         <input class="search-bar" type="text" placeholder="Search Menu item by name or id">
-        <button class="search-button"><img title="Search" class="search-icon" src="../../public/images/search.png" alt="Search Button"></button>
+        <button class="search-button"><img title="Search" class="search-icon" src="<?= RESOURCE_URL."search.png"?>" alt="Search Button"></button>
         <select class="search-bar-dropdown-1" name="tags" id="tags">
             <option disabled selected>Tags</option>
             <option value="savory">Savory</option>
@@ -31,7 +30,7 @@
             <option value="1000-to-5000">1000 to 5000</option>
             <option value="over-5000">Over 5000</option>
         </select>
-        <button class="search-bar-add-button"><img title="Add Item" class="add-icon" src="../../public/images/add.png" alt="Add button"></button>
+        <button class="search-bar-add-button"><img title="Add Item" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
     </div>
     <!-- SEARCH BAR -->
 
@@ -64,7 +63,7 @@
     <?php foreach ($data as $item): ?>
         <div class="menu-item-container">
             <div class="image-and-tags">
-                <img class="menu-item-img" src="../../public/images/<?php echo $item['image']; ?>" alt="<?php echo $item['name']; ?>">
+                <img class="menu-item-img" src="<?= RESOURCE_URL . $item['image']; ?>" alt="<?php echo $item['name']; ?>">
                 <div class="tag-buttons">
                     <?php foreach ($item['tags'] as $tag): ?>
                         <button class="tag-button"><?php echo $tag; ?></button>
@@ -79,9 +78,9 @@
             </div>
 
             <div class="action-buttons">
-            <button class="action-button"><img class="action-button-image" src="../../public/images/up-icon.png" alt="Expand" title="Expand"></button>
-            <button class="action-button"><img class="action-button-image" src="../../public/images/edit-icon.png" alt="Edit" title="Edit"></button>
-            <button class="action-button-right-most"><img class="action-button-image" src="../../public/images/delete-icon.png" alt="Delete" title="Delete"></button>
+            <button class="action-button"><img class="action-button-image" src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand" title="Expand"></button>
+            <button class="action-button"><img class="action-button-image" src="<?= RESOURCE_URL."edit-icon.png"?>" alt="Edit" title="Edit"></button>
+            <button class="action-button-right-most"><img class="action-button-image" src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete" title="Delete"></button>
         </div>
         </div>
     <?php endforeach; ?>
