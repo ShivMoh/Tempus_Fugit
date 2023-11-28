@@ -47,6 +47,7 @@
                 'dob' => '2005-01-23',
                 'job-role' => 'Manager',
                 'email' => 'ricardo@gmail.com',
+                'status' => 'True',
                 'contact-number' => '666-1234',
             ],
             [
@@ -59,19 +60,22 @@
                 'dob' => '2004-01-23',
                 'job-role' => 'Cashier',
                 'email' => 'monica@gmail.com',
+                'status' => 'True',
                 'contact-number' => '666-4321',
+                
             ],
         ];
     ?>
 
-    <table class="table">
+    <table class="employees-table">
         <thead>
             <tr>
                 <th class="column-1">Name</th>
                 <th class="column-2">Role</th>
                 <th class="column-3">Email</th>
                 <th class="column-4">Contact Number</th>
-                <th class="column-5">Actions</th>
+                <th class="column-5">Status</th>
+                <th class="column-6">Actions</th>
             </tr>
         </thead>
 
@@ -82,6 +86,7 @@
                     <td><?= $row['job-role'] ?></td>
                     <td><?= $row['email'] ?></td>
                     <td><?= $row['contact-number'] ?></td>
+                    <td><?= $row['status'] ?></td>
                     <td>
                         <button><img src="<?=RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="Expand"></button>
                         <button><img src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete Icon" title="Delete"></button>
