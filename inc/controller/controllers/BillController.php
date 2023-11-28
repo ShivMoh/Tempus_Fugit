@@ -5,7 +5,7 @@
 class BillController extends BaseController{
 
     public function index(){
-
+        echo "I am working";
         $billModel = new BillModel();
         $bill = $billModel->findAll();
 
@@ -27,11 +27,13 @@ class BillController extends BaseController{
             $billModel->set_order_date($order_date);
             $billModel->set_status($status);
 
-            $billModel->create();
-
+            $billModel->create();   
+            
+            
         // view logic pending 
         // back to index
         }
+
     }
 
     public function findBill($id){
@@ -41,6 +43,7 @@ class BillController extends BaseController{
         $bill = $billModel -> findById();
 
         // view logic pending
+        $this->view("Whatever", $bill);
 
     }
 
