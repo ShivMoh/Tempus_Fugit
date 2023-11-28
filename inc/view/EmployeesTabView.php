@@ -91,3 +91,4 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+</body>
