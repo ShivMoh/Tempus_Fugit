@@ -1,0 +1,110 @@
+.employee-view-container {
+    display: block;
+}
+
+.employee-view-picture-container {
+    display: block;
+}
+
+.employee-view-picture
+{
+    display: block;
+}
+
+.employee-view.picture
+img
+{
+    display: block;
+}
+
+.employee-view-status-container {
+   
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+
+    align-items: center;
+    margin-top: 10px;
+}
+
+.employee-view-status {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+.employee-view-status-icon {
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    margin-top: -15px;
+}
+
+.employee-view-row-container {
+    width: calc(100% + 30px);
+    display: flex;
+    flex-direction: row;
+}
+
+.employee-view-actions-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.employee-view-actions-container img {
+    width: 30px;
+    height: 30px;
+    transition: all 0.2s linear;
+}
+
+.employee-view-actions-container img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+.first-name-container{
+    width: calc(50% - 10px);
+    margin-right: 10px;
+}
+
+.last-name-container{
+    width: calc(50% - 10px);
+    margin-left: 10px;
+}
+
+.employee-view-input-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #F5FAFF;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.employee-view-input-container label {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.employee-view-input-container input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+ 
+}
+
+.employee-view-input-container input:focus {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.phone-number-container {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+}
+
+.email-container {
+    width: calc(50% - 10px);
+    margin-left: 10px;
+}
