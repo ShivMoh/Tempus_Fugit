@@ -7,18 +7,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../public/css/main.css">
-    <link rel="stylesheet" href="../../public/css/search-bar.css">
-    <link rel="stylesheet" href="../../public/css/table.css">
-    <link rel="stylesheet" href="../../public/css/bills-tab.css">
-    <title>Data Table</title>
+    <link rel="stylesheet" href=<?=CSS_URL."main.css"?>>
+    <link rel="stylesheet" href=<?=CSS_URL."search-bar.css"?>>
+    <link rel="stylesheet" href=<?=CSS_URL."table.css"?>>
+    <link rel="stylesheet" href=<?=CSS_URL."bills-tab.css"?>>
+    <title>Bills Table</title>
 </head>
 
 <body>
     <!-- SEARCH BAR -->
     <div class="search-bar-container">
         <input class="search-bar" type="text" placeholder="Search Bills by Transaction ID">
-        <button class="search-button"><img title="Search" class="search-icon" src="../../public/images/search.png" alt="Search Button"></button>
+        <button class="search-button"><img title="Search" class="search-icon" src="<?= RESOURCE_URL."search.png"?>" alt="Search Button"></button>
         <select class="search-bar-dropdown-1" name="status" id="status">
             <option disabled selected>Status</option>
             <option value="completed">Completed</option>
@@ -31,7 +31,7 @@
             <option value="last-month">Last Month</option>
             <option value="last-six-months">Last 6 Months</option>
         </select>
-        <button class="search-bar-add-button"><img title="Add Bill" class="add-icon" src="../../public/images/add.png" alt="Add button"></button>
+        <button class="search-bar-add-button"><img title="Add Bill" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
     </div>
     <!-- SEARCH BAR -->
 
@@ -76,8 +76,8 @@
                     <td><?= $row['order_date'] ?></td>
                     <td><?=$row['status'] ?></td>
                     <td>
-                        <button><img src="../../public/images/expand-icon.png" alt="Expand Icon" title="Expand"></button>
-                        <button><img src="../../public/images/delete-icon.png" alt="Delete Icon" title="Delete"></button>
+                        <button><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="Expand"></button>
+                        <button><img src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete Icon" title="Delete"></button>
                     </td>
                 </tr>
             <?php endforeach; ?>
