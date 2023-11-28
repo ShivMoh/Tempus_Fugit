@@ -7,9 +7,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href=<?=CSS_URL."main.css"?>> -->
+    <link rel="stylesheet" href=<?=CSS_URL."main.css"?>>
     <link rel="stylesheet" href=<?=CSS_URL."search-bar.css"?>>
     <link rel="stylesheet" href=<?=CSS_URL."menu-tab.css"?>>
+    <link rel="stylesheet" href=<?=CSS_URL."modal.css"?>>
     <title>MenuTabView</title>
 </head>
 
@@ -17,9 +18,7 @@
     <!-- SEARCH BAR -->
     <div class="search-bar-container">
         <input class="search-bar" type="text" placeholder="Search Menu item by name or id">
-
         <button class="search-button"><img title="Search" class="search-icon" src="<?= RESOURCE_URL."search.png"?>" alt="Search Button"></button>
-        
         <select class="search-bar-dropdown-1" name="tags" id="tags">
             <option disabled selected>Tags</option>
             <option value="savory">Savory</option>
@@ -33,7 +32,6 @@
             <option value="1000-to-5000">1000 to 5000</option>
             <option value="over-5000">Over 5000</option>
         </select>
-        
         <button class="search-bar-add-button"><img title="Add Item" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
     </div>
     <!-- SEARCH BAR -->
@@ -82,12 +80,58 @@
             </div>
 
             <div class="action-buttons">
-            <button class="action-button"><img class="action-button-image" src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand" title="Expand"></button>
-            <button class="action-button"><img class="action-button-image" src="<?= RESOURCE_URL."edit-icon.png"?>" alt="Edit" title="Edit"></button>
-            <button class="action-button-right-most"><img class="action-button-image" src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete" title="Delete"></button>
+                <button class="action-button expand-button" data-id="<?php echo $item['id']; ?>">
+                    <img class="action-button-image" src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand" title="Expand">
+                </button>
+                <button class="action-button"><img class="action-button-image" src="<?= RESOURCE_URL."edit-icon.png"?>" alt="Edit" title="Edit"></button>
+                <button class="action-button-right-most"><img class="action-button-image" src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete" title="Delete"></button>
+            </div>
         </div>
-        </div>
-    <?php endforeach; ?>
+    </div>
 
+    <!-- Modal -->
+    <div class="modal" id="modal-<?php echo $item['id']; ?>">
+        <div class="modal-content">
+            <span class="close" data-id="<?php echo $item['id']; ?>">&times;</span>
+            <p><?php echo $item['name']; ?></h2>
+            <p>Description: <?php echo $item['description']; ?></p>
+            <p>Price: $<?php echo $item['price']; ?></p>
+            <p>Discount: $<?php echo $item['discount']; ?></p>
+            <p>Tags: <?php echo implode(', ', $item['tags']); ?></p>
+        </div>
+    </div>
+
+    <script>
+        var modals = document.querySelectorAll('.modal');
+        var expandButtons = document.querySelectorAll('.expand-button');
+        var closeButtons = document.querySelectorAll('.close');
+
+        // Loop through each modal and add click event listeners to the expand buttons
+        expandButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                var modalId = this.getAttribute('data-id');
+                var modal = document.getElementById('modal-' + modalId);
+                modal.style.display = 'block';
+            });
+        });
+
+        // Closes the modal
+        closeButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                var modalId = this.getAttribute('data-id');
+                var modal = document.getElementById('modal-' + modalId);
+                modal.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', function (event) {
+            modals.forEach(function (modal) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+<?php endforeach; ?>
 </body>
 </html>
