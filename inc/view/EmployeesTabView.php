@@ -88,7 +88,7 @@
                     <td><?= $row['contact-number'] ?></td>
                     <td><?= $row['status'] ?></td>
                     <td>
-                        <button><img src="<?=RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="Expand"></button>
+                        <button><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="Expand"></button>
                         <button><img src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete Icon" title="Delete"></button>
                         <button><img src="<?= RESOURCE_URL."trash-icon.png"?>" alt="Edit Icon" title="Edit"></button>
                     </td>
