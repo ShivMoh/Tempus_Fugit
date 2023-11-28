@@ -1,15 +1,11 @@
 <?php 
-
-    // you can use this to switch into edit mode
-    // ture means you cannot use the input fields
-    // false means that you can use the input fields
-    $disabled = true;
+    include "NavbarView.php";
 
     $data = [
         "id"=>1,
         "first_name"=>"John",
         "last_name"=>"Doe",
-        "other_names"=>"",
+        "other_names"=>" ",
         "gender"=>"M",
         "age"=>34,
         "dob"=>"yyyy/mm/dd",
@@ -38,49 +34,62 @@
             <div class="row employee-view-row-container">
                 <div class="employee-view-input-container first-name-container">
                     <label for="first-name">First Name</label>
-                    <input type="text" name="first-name" id="first-name" value=<?=$data['first_name']?> disabled=<?=$disabled?>>
+                    <input type="text" name="first-name" id="first-name" value=<?=$data['first_name'];?>>
                 </div>
                 <div class="employee-view-input-container last-name-container">
                     <label for="last-name">Last Name</label>
-                    <input type="text" name="last-name" id="last-name" value=<?=$data['last_name']?> disabled=<?=$disabled?>>
+                    <input type="text" name="last-name" id="last-name" value=<?=$data['last_name'];?> >
                 </div>
             </div>
             <div class="row employee-view-input-container">
                 <label for="other-names">Other Names</label>
-                <input type="text" name="other-names" id="other-names" value=<?=$data['other_names']?> disabled=<?=$disabled?>>
+                <input type="text" name="other-names" id="other-names" value=<?=$data['other_names'] ?>>
             </div>
             <div class="row employee-view-input-container">
                 <label for="gender">Gender</label>
-                <input type="text" name="gender" id="gender" value=<?=$data['gender']?> disabled=<?=$disabled?>>
+                <input type="text" name="gender" id="gender" value=<?=$data['gender'];?>>
             </div>
             <div class="row employee-view-input-container">
                 <label for="age">Age</label>
-                <input type="text" name="age" id="age" value=<?=$data['age']?> disabled=<?=$disabled?>>
+                <input type="text" name="age" id="age" value=<?=$data['age'];?>>
             </div>
             <div class="row employee-view-input-container">
                 <label for="dob">Date of Birth</label>
-                <input type="text" name="dob" id="dob" value=<?=$data['dob']?> disabled=<?=$disabled?>>
+                <input type="text" name="dob" id="dob" value=<?=$data['dob'];?>>
             </div>
             <div class="row employee-view-input-container">
                 <label for="job-role">Job Role</label>
-                <input type="text" name="job-role" id="job-role" value=<?=$data['job_role']?> disabled=<?=$disabled?>>
+                <input type="text" name="job-role" id="job-role" value=<?=$data['job_role'];?>>
             </div>
             <div class="row employee-view-row-container">
                 <div class="employee-view-input-container phone-number-container">
                     <label for="contact-number">Phone Number</label>
-                    <input type="text" name="contact-number" id="contact-number" value=<?=$data['contact_number']?> disabled=<?=$disabled?>>
+                    <input type="text" name="contact-number" id="contact-number"  value=<?=$data['contact_number'];?>>
                 </div>
                 <div class="employee-view-input-container email-container">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" value=<?=$data['email']?> disabled=<?=$disabled?>>
+                    <input type="text" name="email" id="email"  value=<?=$data['email'];?>>
                 </div>
             </div>
-            <button clas="row" type="submit" disabled=<?=$disabled?> >Save Changes</button>
+            <div class="row">
+                <button class="employee-view-cancel-button" type="submit">Cancel</button>
+                <button class="employee-view-save-button" type="submit">Save Changes</button>
+            </div>
+            
         </div>
 
         <div class="col-1 employee-view-actions-container">
-            <img src=<?=RESOURCE_URL."edit-icon.png"?> alt="Edit">
-            <img src=<?=RESOURCE_URL."trash-icon.png"?> alt="Delete">
+            <form action=<?=BASE_URL."/employee/view/employee"?>>
+                <button class="employee-view-edit-button" type="submit">
+                    <img src=<?=RESOURCE_URL."edit-icon.png"?> alt="Edit">
+                </button>
+            </form>
+          
+            <form action=<?=BASE_URL."/employee/view/employee"?>>
+                <button class="employee-view-ed-button" type="submit">
+                    <img src=<?=RESOURCE_URL."trash-icon.png"?> alt="Delete">
+                </button>
+            </form>
         </div>
     </div>
 
