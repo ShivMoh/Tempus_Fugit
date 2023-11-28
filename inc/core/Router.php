@@ -34,7 +34,7 @@ class Router {
 
         if(count($url) === 0) { 
             // set default controller and method for when app starts
-            $this->controller = $this->getControllerName("User");
+            $this->controller = $this->getControllerName("Employee");
             $this->getController($this->controller);
             $this->method = "index";
         } else {
@@ -67,26 +67,24 @@ class Router {
             // decisions based on HTTP requests
 
             // if the request is post but is not a valid post request path, then return
-            if (METHOD === POST && !in_array($this->method, $this->validPostPaths)) {
-                echo "INVALID REQUEST ON METHOD: $this->method";
-                return;
-            }
+            // if (METHOD === POST && !in_array($this->method, $this->validPostPaths)) {
+            //     echo "INVALID REQUEST ON METHOD: $this->method";
+            //     return;
+            // }
             
-            // if the request is get but is not a valid get request path, then return
-            if (METHOD === GET && !in_array($this->method, $this->validGetPaths)) {
-                echo "INVALID REQUEST ON METHOD: $this->method";
-                return;
-            }
-
-            // print_r($this->params[0]);
-
-            // print_r($url);
-
+            // // if the request is get but is not a valid get request path, then return
+            // if (METHOD === GET && !in_array($this->method, $this->validGetPaths)) {
+            //     echo "INVALID REQUEST ON METHOD: $this->method";
+            //     return;
+            // }
+            
+            // calls the assigned controller and method
             call_user_func_array(
                 [$this->controller,$this->method], 
                 $this->params
             );
-           
+            
+            // reset attributes
             $this->controller = "";
             $this->method = "";
             $this->params = [];
@@ -99,7 +97,7 @@ class Router {
       
     }
 
-    
+    // gets the url relative to the BASE_URL
     private function getUrl($url)
 	{
 		$url = explode("/", trim($url,"/"));
@@ -118,7 +116,7 @@ class Router {
         return ucfirst($path)."Controller";
     }
 
-    // checks if controller 
+    // checks if controller exists
     private function controllerExists($filename) {
         $filename = __DIR__."/../controller/controllers/".$filename.".php";
 		if(file_exists($filename)) return true;

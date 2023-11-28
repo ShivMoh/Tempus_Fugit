@@ -56,6 +56,7 @@
                 job_role ENUM('val1', 'val2', 'val3', 'val4') NOT NULL,
                 email VARCHAR(20) NOT NULL,
                 contact_number VARCHAR(20) NOT NULL,
+                image_url VARCHAR(20),
                 PRIMARY KEY(id)
             );"
         ];
