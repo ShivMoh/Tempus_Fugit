@@ -17,7 +17,7 @@
 <body>
     <!-- SEARCH BAR -->
     <div class="search-bar-container">
-        <input class="search-bar" type="text" placeholder="Search Menu item by name or id">
+        <input class="search-bar" type="text" placeholder="Search Menu item by name">
         <button class="search-button"><img title="Search" class="search-icon" src="<?= RESOURCE_URL."search.png"?>" alt="Search Button"></button>
         <select class="search-bar-dropdown-1" name="tags" id="tags">
             <option disabled selected>Tags</option>
@@ -40,30 +40,6 @@
     <!-- SEARCH BAR -->
 
     <!-- SELECT * QUERY -->
-    <?php
-        $data = [
-            [
-                'id' => 1,
-                'name' => 'Chocolate Chip Ice Cream',
-                'price' => 1000,
-                'description' => 'Creamy vanilla ice cream with swirls of chocolate chips.',
-                'image' => 'chocolate-chip-ice-cream.png',
-                'discount' => 150,
-                'tags' => ['chocolate', 'dessert'],
-                'ingredients' => ['ice cream', 'chocolate chips'],
-            ],
-            [
-                'id' => 2,
-                'name' => 'Strawberry Swirl Sundae',
-                'price' => 1500,
-                'description' => 'Fresh strawberries layered with vanilla ice cream and topped with whipped cream.',
-                'image' => 'strawberry-swirl-sundae.png',
-                'discount' => 200,
-                'tags' => ['strawberry', 'dessert'],
-                'ingredients' => ['strawberries', 'ice cream'],
-            ],
-        ];
-    ?>
 
     <?php foreach ($data as $item): ?>
         <div class="menu-item-container">

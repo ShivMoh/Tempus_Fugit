@@ -31,8 +31,8 @@ class MenuItemController extends BaseController{
             $MenuItem->set_ingredients($ingredients);
 
             $MenuItem->create();
-        }
-        
+        } 
+        $this->index();
     }
 
     public function findBill($id){
