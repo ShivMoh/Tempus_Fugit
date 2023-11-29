@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form class="menu-item-add-form" action="<?=BASE_URL."/MenuItem/create"?> method="post">
+    <form class="menu-item-add-form" action="<?=BASE_URL."/MenuItem/create"?>" method="post">
         <p class="form-name-text">
             MENU ITEM REGISTRATION
         </p>
