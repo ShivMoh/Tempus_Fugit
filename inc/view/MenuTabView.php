@@ -92,12 +92,25 @@
     <!-- Modal -->
     <div class="modal" id="modal-<?php echo $item['id']; ?>">
         <div class="modal-content">
-            <span class="close" data-id="<?php echo $item['id']; ?>">&times;</span>
-            <p><?php echo $item['name']; ?></h2>
-            <p>Description: <?php echo $item['description']; ?></p>
-            <p>Price: $<?php echo $item['price']; ?></p>
-            <p>Discount: $<?php echo $item['discount']; ?></p>
-            <p>Tags: <?php echo implode(', ', $item['tags']); ?></p>
+            <div class="image-and-tags-modal-div">
+                <img class="modal-menu-item-img" src="<?= RESOURCE_URL . $item['image']; ?>" alt="<?php echo $item['name']; ?>">
+                <div class="modal-tag-buttons">
+                    <?php foreach ($item['tags'] as $tag): ?>
+                        <button class="modal-tag-button"><?php echo $tag; ?></button>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+            <div class="menu-item-details-modal-div">
+                <p class="modal-item-name"><?php echo $item['name']; ?></p>
+                <p class="modal-item-description"><?php echo $item['description']; ?></p>
+                <ul class="item-ingredients">
+                    <p class="modal-item-ingredients">Ingredients</p>
+                    <?php foreach ($item['ingredients'] as $ingredient): ?>
+                        <li><?php echo $ingredient; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
         </div>
     </div>
 
