@@ -13,7 +13,7 @@
 /* Style for the text input */
 .search-bar {
     padding: 8px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 4px;
     margin-right: 5px;
     flex-grow: 1; /* Take remaining space */
@@ -37,6 +37,7 @@
 /* Style for the dropdowns */
 .search-bar-dropdown-1,
 .search-bar-dropdown-2 {
+    border: none;
     padding: 8px;
     margin-right: 5px;
 }
@@ -53,5 +54,6 @@
 
 /* Add some space between the elements */
 .search-bar-container > * {
+
     margin-right: 5px;
 }
