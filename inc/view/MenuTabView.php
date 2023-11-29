@@ -32,7 +32,10 @@
             <option value="1000-to-5000">1000 to 5000</option>
             <option value="over-5000">Over 5000</option>
         </select>
-        <button class="search-bar-add-button"><img title="Add Item" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
+
+        <form action="<?=BASE_URL."/MenuItem/view/MenuItemAdd"?>" method="POST">        
+            <button class="search-bar-add-button"><img title="Add Item" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
+        </form>
     </div>
     <!-- SEARCH BAR -->
 

@@ -8,12 +8,11 @@ class MenuItemController extends BaseController{
         $MenuItem = new MenuItemModel();
         $Menu = $MenuItem->findAll();
 
-        $this->view("/MenuTab");
+        $this->view("/MenuTab", $data = $Menu);
     }
 
     public function create(){
         if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-
             $name = $_POST['name'];
             $price = $_POST['price'];
             $description = $_POST['description'];
@@ -33,6 +32,7 @@ class MenuItemController extends BaseController{
 
             $MenuItem->create();
         }
+        
     }
 
     public function findBill($id){
