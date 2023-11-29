@@ -1,100 +1,67 @@
 <?php
 
 class RegisterController extends BaseController {
-    private $billModel;
+
     private $registerManager;
-    private $cacheData;
+    private $billItemModel;
+   
+    // things I gotta do
+    // create an empty bill for every submission
+
 
     public function __construct() {
-        $this->billModel = new BillModel();
         $this->registerManager = new RegisterManager();
-
-        $this->cacheData = [
-            [
-                "itemId" => 10,
-                "name" => "some",
-                "amount" => "123",
-                "discount" => "some",
-                "total" => "120",
-            ],
-            [
-                "itemId" => 20,
-                "name" => "something else",
-                "amount" => "435",
-                "discount" => 23,
-                "total" => "134",
-            ],
-            [
-                "itemId" => 0,
-                "name" => "Select an item",
-                "amount" => 0,
-                "discount" => "",
-                "total" => 0,
-            ],
-            [
-                "itemId" => 0,
-                "name" => "Select an item",
-                "amount" => 0,
-                "discount" => "",
-                "total" => 0,
-            ],
-            [
-                "itemId" => 0,
-                "name" => "Select an item",
-                "amount" => 0,
-                "discount" => "",
-                "total" => 0,
-            ],
-            [
-                "itemId" => 0,
-                "name" => "Select an item",
-                "amount" => 0,
-                "discount" => "",
-                "total" => 0,
-            ],
-    
-        ];
-
-        session_start();
-        $_SESSION['test'] = $this->cacheData;
-        $this->cacheData = $_SESSION['test']
+        $this->billItemModel = new BillItemModel();
     }
 
     public function index() {
-        $this->view("CashRegisterTab", [$this->cacheData]);
+        $this->registerManager->createEmptyBill();
+        $this->findAll();
     }
 
-    public function test() {
-        list($row, $id) = $this->getRow();
-        $menuItem = $this->registerManager->queryDiscount($id);
+    public function findAll()
+    {
+       
+        $this->billItemModel->set_bill_id(
+            $this->registerManager->retrieveLastBillId()
+        );
 
-        if (isset($_POST["total-$row"])) 
-            $this->cacheData[$row]["total"] = $_POST["total-$row"];
+        $data = [
+            "billItems"=>$this->billItemModel->findAllForBill(),
+            "menuList"=>$this->registerManager->getMenuItemsList()
+        ];
 
-        
-        if (isset($_POST["amount-$row"])) 
-            $this->cacheData[$row]["amount"] = $_POST["amount-$row"];
-
-        if (isset($_POST["name-$row"])) {
-            $this->cacheData[$row]["discount"] = $menuItem["discount"];
-        }
-           
-            
-            
-        
-
-        $this->view("CashRegisterTab", [$this->cacheData, $menuItem, $row]);
+        $this->view("CashRegisterTab", $data);
     }
 
-    private function getRow() {
-        for($x = 0; $x < 15; $x++) {
-            $string = "name-$x";
-            if (isset($_POST[$string])) {
-                return [$x, explode("-", $_POST[$string])[0]];
-            }
-        }
+    public function create() {
 
-        echo "Default";
-        return [0,0];
+        list($menu_id, $name) = explode(",", $_POST['name']);
+        $amount = $_POST['amount'];
+        $discount = $this->registerManager->queryDiscountForMenuItem($menu_id);
+        $price = 
+            ($amount * 
+            $this->registerManager->queryPriceForMenuItem($menu_id))
+            - $discount;
+        $bill_id = $this->registerManager->retrieveLastBillId();
+
+        $this->billItemModel->set_name($name);
+        $this->billItemModel->set_price($price);
+        $this->billItemModel->set_amount($amount);
+        $this->billItemModel->set_bill_id($bill_id);
+        $this->billItemModel->set_discount($discount);
+        $this->billItemModel->set_menu_item_id($menu_id);
+        $this->billItemModel->create();
+        $this->findAll();
+   
     }
+
+    public function delete($id) {
+        $this->billItemModel->set_id($id);
+        $this->billItemModel->delete();
+        $this->findAll();
+    }
+    
+
+    
 }

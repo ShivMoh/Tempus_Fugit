@@ -17,7 +17,7 @@ class TestController extends BaseController{
     }
 
     public function test3() {
-        $this->view("Employee");
+        $this->view("MenuItemAdd");
     }
     
     // public function NavBar() {

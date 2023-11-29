@@ -37,7 +37,7 @@ class MenuItemModel extends BaseModel {
 
    public function findAll() {
         $statement = $this->connection->query("SELECT * FROM MenuItem");
-        return $statement->fetchAll(PDO::FETCH_OBJ); //specifies the return as an array of objects
+        return $statement->fetchAll(); //specifies the return as an array of objects
                                                      //a manager will probably need to be implemented
                                                     //to accept this return
    }
