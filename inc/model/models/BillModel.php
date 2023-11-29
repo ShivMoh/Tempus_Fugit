@@ -93,26 +93,26 @@ class BillModel extends BaseModel {
     }
 
     public function set_id($id) {
-        return $this->id = $id;
+        $this->id = $id;
     }
 
     public function set_customer($customer) {
-        return $this->customer = $customer;
+        $this->customer = $customer;
     }
     
     public function set_number_of_items($number_of_items) {
-        return $this->number_of_items = $number_of_items;
+        $this->number_of_items = $number_of_items;
     }
 
     public function set_total_cost($total_cost) {
-        return $this->total_cost = $total_cost;
+        $this->total_cost = $total_cost;
     }
 
     public function set_order_date($order_date) {
-        return $this->order_date = $order_date;
+        $this->order_date = $order_date;
     }
 
     public function set_status($status) {
-        return $this->status = $status;
+        $this->status = $status;
     }
 }

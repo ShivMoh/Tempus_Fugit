@@ -129,42 +129,41 @@ class EmployeeModel extends BaseModel {
     }
 
     public function set_id($id){
-        return $this->id = $id;
+        $this->id = $id;
     }
 
     public function set_first_name($first_name) {
-        return $this->first_name = $first_name;
+        $this->first_name = $first_name;
     }
     public function set_last_name($last_name) {
-        return $this->last_name = $last_name;
+        $this->last_name = $last_name;
     }
 
     public function set_other_names($other_names) {
-        return $this->other_names = $other_names;
+        $this->other_names = $other_names;
     }
 
     public function set_gender($gender) {
-        return $this->gender = $gender;
+        $this->gender = $gender;
     }
 
     public function set_age($age) {
-        return $this->age = $age;
+        $this->age = $age;
     }
 
     public function set_dob($dob) {
-        return $this->dob = $dob;
+        $this->dob = $dob;
     }
 
     public function set_job_role($job_role) {
-        return $this->job_role = $job_role;
+        $this->job_role = $job_role;
     }
 
     public function set_email($email) {
-        return $this->email = $email;
+        $this->email = $email;
     }
 
     public function set_contact_number($contact_number) {
-        return $this->contact_number = $contact_number;
+        $this->contact_number = $contact_number;
     }
-
 }

@@ -84,24 +84,22 @@
         }
 
         public function set_role($role) {
-            return $this->role = $role;
+            $this->role = $role;
         }
 
         public function set_first_name($first_name) {
-            return $this->first_name = $first_name;
+            $this->first_name = $first_name;
         }
         public function set_last_name($last_name) {
-            return $this->last_name = $last_name;
+            $this->last_name = $last_name;
         }
 
         public function set_email($email) {
-            return $this->email = $email;
+            $this->email = $email;
         }
 
         public function set_passcode($passcode) {
-            return $this->passcode = $passcode;
+            $this->passcode = $passcode;
         }
-
-
     }
 
