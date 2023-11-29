@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <form action="<?=BASE_URL."test/test"?>" method="POST" id="order-form">
+    <form action="<?=BASE_URL."/register/test"?>" method="POST" id="order-form">
         <table>
             <thead>
                 <tr>
@@ -30,23 +30,35 @@
                 <?php for($x = 0; $x < 15; $x++) : ?>
                     <tr>
                         <td class="col1">
-                            <input type='text' name=<?='id'.$x; ?>>
+                            <input type='text' name=<?='id'.$x;?> value=<?=!empty($data[0][$x]["itemId"]) ? $data[0][$x]["itemId"] : ($x == $data[2] ? $data[1]['id'] : 0) ?>>
                         </td>
                         <td class="col2">
-                            <select name=<?='name'.$x; ?> form="order-form">
-                                <option disabled selected>Select an item</option>
-                                <option value="Option 1">Option 1</option>
-                                <option value="Option 2">Option 2</option>
-                                <option value="Option 3">Option 3</option>
+
+                            <?php if(empty($data[0][$x]["discount"])) :?>
+                                <select name=<?='name-'.$x; ?> onchange="this.form.submit()">
+                                    <option disabled selected>Select an item</option>
+                                    <option value="0">Option 1</option>
+                                    <option value="1">Option 2</option>
+                                    <option value="2">Option 3</option>
+                                </select>
+                            <?php else: ?>
+                                <select name=<?='name-'.$x;?>>
+                                    <option disabled selected><?=($data[0][$x]["name"])?></option>
+                                </select>
+                            <?php endif; ?>
                         </td>
                         <td class="col3">
-                            <input type='text' name=<?='amount'.$x; ?>>
+                            <input type='text' name=<?='amount'.$x; ?> value=<?=$data[0][$x]["amount"] ?? 0 ?>>
                         </td>
                         <td class="col4">
-                            <input type='text' name=<?='discount'.$x; ?>>
+                            <input type='text' name=<?='discount'.$x;?> value=<?=!empty($data[1]) ? ($x == $data[2] ? $data[1]['discount'] : 0) : 0?>>
                         </td>
                         <td class="col5">
-                            <input type='text' name=<?='total'.$x; ?>>
+                            <input 
+                                type='text' 
+                                name=<?='total'.$x; ?> 
+                                value=<?=$data[0][$x]["total"] ?? 0 ?>
+                                onchange="this.form.submit()">
                         </td>
                     </tr>
                 <?php endfor; ?>

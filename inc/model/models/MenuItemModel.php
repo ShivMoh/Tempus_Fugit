@@ -48,7 +48,7 @@ class MenuItemModel extends BaseModel {
     $statement = $this->connection->prepare($sql);
     $statement->execute(['id' => $this->id]);
 
-    return $statement->fetchObject();
+    return $statement->fetch();
    }
 
    public function update() {

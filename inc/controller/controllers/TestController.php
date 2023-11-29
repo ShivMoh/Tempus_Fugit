@@ -19,6 +19,7 @@ class TestController extends BaseController{
     public function test3() {
         $this->view("Employee");
     }
+    
     // public function NavBar() {
     //     $this->view("Navbar");
     // }
