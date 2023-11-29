@@ -31,8 +31,9 @@ class MenuItemController extends BaseController{
             $MenuItem->set_ingredients($ingredients);
 
             $MenuItem->create();
+            $this->index();
+
         } 
-        $this->index();
     }
 
     public function findBill($id){
@@ -45,14 +46,16 @@ class MenuItemController extends BaseController{
 
     }
 
-    public function delete($id){
-        //id from where?
-        $MenuItem = new MenuItemModel();
-        $MenuItem->set_id($id);
-        $MenuItem-> delete();
-
-        // view logic pending
-
+    public function delete(){
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = $_POST['id'];
+    
+            $MenuItem = new MenuItemModel();
+            $MenuItem->set_id($id);
+            $MenuItem->delete();
+    
+            $this->index();
+        }
     }
 
     public function update($id){
