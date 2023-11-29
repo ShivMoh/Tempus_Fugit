@@ -14,11 +14,10 @@ class BillModel extends BaseModel {
 
    public function create() {
 
-        $sql =  "INSERT INTO Bill(customer, number_of_items, total_cost, order_date, status)
-            VALUES (:customer, :number_of_items, :total_cost, :order_date, :status)";
+        $sql =  "INSERT INTO Bill(number_of_items, total_cost, order_date, status)
+            VALUES (:number_of_items, :total_cost, :order_date, :status)";
 
         $new_bill = [
-            "customer"=> $this->customer,
             "number_of_items"=> $this->number_of_items,
             "total_cost"=> $this->total_cost,
             "order_date"=> $this->order_date,
@@ -45,7 +44,7 @@ class BillModel extends BaseModel {
     $statement = $this->connection->prepare($sql);
     $statement->execute(['id' => $this->id]);
 
-    return $statement->fetchObject();
+    return $statement->fetch();
    }
 
    public function update() {}
@@ -58,6 +57,15 @@ class BillModel extends BaseModel {
         
             $statement = $this->connection->prepare($sql);
             $statement->execute($deleted_bill);
+   }
+
+   public function findByStatus() {
+        $sql = "SELECT * FROM Bill WHERE status = :status";
+
+        $statement = $this->connection->prepare($sql);
+        $statement->execute(['status' => $this->status]);
+
+        return $statement->fetch();
    }
 
    public function get_id() {

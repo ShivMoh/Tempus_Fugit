@@ -45,7 +45,16 @@ class BillItemModel extends BaseModel {
     $statement = $this->connection->prepare($sql);
     $statement->execute(['id' => $this->id]);
 
-    return $statement->fetchObject();
+    return $statement->fetch();
+   }
+
+   public function findAllForBill() {
+    $sql = "SELECT * FROM BillItem WHERE bill_id = :bill_id";
+
+    $statement = $this->connection->prepare($sql);
+    $statement->execute(['bill_id' => $this->id]);
+
+    return $statement->fetch();
    }
 
    public function update() {
