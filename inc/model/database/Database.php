@@ -67,6 +67,11 @@
             "INSERT INTO account(first_name, last_name, email, passcode, role)
              VALUES (:fName,:lName,:email,:passcode, 'superuser')
             ";
+        
+        private $initMenuItemSQL =
+            "INSERT INTO MenuItem(name, price, description, image, discount, tags, ingredients)
+             VALUES (:name, :price, :description, :image, :discount, :tags, :ingredients)
+            ";
 
         public function connect() {
             $driver = DB_DRIVER;
@@ -90,6 +95,7 @@
                         $this->connection->exec($statement);
                     }
                     $this->seed();
+                    $this->menuItemInit();
                 }
             } catch (PDOException $e) {
                 echo $e->getMessage();
@@ -111,6 +117,39 @@
             $statement = $this->connection->prepare($this->initUserSQL);
             $statement->execute($superuser);
         }
+
+        private function menuItemInit(){
+            $result = $this->connection->query("SELECT count(id) as count FROM MenuItem");
+            $data = $result->fetch();
+            if($data["count"] > 0) return;
+            
+            $menu_data_1 = [
+                'name' => 'Chocolate Chip Ice Cream',
+                'price' => 1000,
+                'description' => 'Creamy vanilla ice cream with swirls of chocolate chips.',
+                'image' => 'chocolate-chip-ice-cream.png',
+                'discount' => 0.15,
+                'tags' => 'chocolate, desert',
+                'ingredients' => 'ice cream, chocolate chip, chocolate syrup'
+            ];
+
+            $menu_data_2 = [
+                'name' => 'Strawberry Swirl Sundae',
+                'price' => 1500,
+                'description' => 'Fresh strawberries layered with vanilla ice cream and topped with whipped cream.',
+                'image' => 'strawberry-swirl-sundae.png',
+                'discount' => 200,
+                'tags' => 'strawberry, dessert',
+                'ingredients' => 'strawberries, ice cream'
+            ];
+        
+
+        $statement = $this->connection->prepare($this->initMenuItemSQL);
+        $statement2 = $this->connection->prepare($this->initMenuItemSQL);
+        $statement->execute($menu_data_1);
+        $statement2->execute($menu_data_2);
+    }
+        
 
         public function getConnection() {
             return $this->connection;
