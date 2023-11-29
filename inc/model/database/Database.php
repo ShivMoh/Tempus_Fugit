@@ -28,7 +28,7 @@
                 name                VARCHAR(30) NOT NULL,
                 price               INT(10) NOT NULL,
                 description         TEXT,
-                image               VARCHAR(20),
+                image               VARCHAR(100),
                 discount            FLOAT(10, 2),
                 tags                VARCHAR(100),
                 ingredients         VARCHAR(100),
@@ -57,19 +57,19 @@
                 job_role            ENUM('val1', 'val2', 'val3', 'val4') NOT NULL,
                 email               VARCHAR(20) NOT NULL,
                 contact_number      VARCHAR(20) NOT NULL,
-                image_url           VARCHAR(20),
+                image_url           VARCHAR(100),
                 status              BOOLEAN,
                 PRIMARY KEY         (id)
             );"
         ];
 
         private $initUserSQL = 
-            "INSERT INTO account(first_name, last_name, email, passcode, role)
+            "INSERT IGNORE INTO account(first_name, last_name, email, passcode, role)
              VALUES (:fName,:lName,:email,:passcode, 'superuser')
             ";
         
         private $initMenuItemSQL =
-            "INSERT INTO MenuItem(name, price, description, image, discount, tags, ingredients)
+            "INSERT IGNORE INTO MenuItem(name, price, description, image, discount, tags, ingredients)
              VALUES (:name, :price, :description, :image, :discount, :tags, :ingredients)
             ";
 
