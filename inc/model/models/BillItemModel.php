@@ -5,6 +5,7 @@ class BillItemModel extends BaseModel {
     private $name;
     private $price;
     private $amount;
+    private $discount;
     private $bill_id;
     private $menu_item_id;
 
@@ -14,13 +15,14 @@ class BillItemModel extends BaseModel {
 
    public function create() {
 
-        $sql =  "INSERT INTO BillItem(name, price, amount, bill_id, menu_item_id)
-            VALUES (:name, :price, :amount, :bill_id, :menu_item_id)";
+        $sql =  "INSERT INTO BillItem(name, price, amount, discount, bill_id,  menu_item_id)
+            VALUES (:name, :price, :amount, :discount, :bill_id, :menu_item_id)";
 
         $new_bill = [
             "name"=> $this->name,
             "price"=> $this->price,
             "amount"=> $this->amount,
+            "discount"=>$this->discount,
             "bill_id"=> $this->bill_id,
             "menu_item_id"=> $this->menu_item_id
         ];
@@ -52,9 +54,9 @@ class BillItemModel extends BaseModel {
     $sql = "SELECT * FROM BillItem WHERE bill_id = :bill_id";
 
     $statement = $this->connection->prepare($sql);
-    $statement->execute(['bill_id' => $this->id]);
+    $statement->execute(['bill_id' => $this->bill_id]);
 
-    return $statement->fetch();
+    return $statement->fetchAll();
    }
 
    public function update() {
@@ -100,6 +102,10 @@ class BillItemModel extends BaseModel {
         return $this->amount;
     }
 
+    public function get_discount() {
+        return $this->discount;
+    }
+
     public function get_bill_id() {
         return $this->bill_id;
     }
@@ -130,5 +136,9 @@ class BillItemModel extends BaseModel {
 
     public function set_menu_item_id($menu_item_id) {
         return $this->menu_item_id = $menu_item_id;
+    }
+
+    public function set_discount($discount) {
+        return $this->discount = $discount;
     }
 }
