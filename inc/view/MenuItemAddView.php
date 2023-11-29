@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../public/css/menu-item-add.css">
+    <link rel="stylesheet" href=<?=CSS_URL."main.css"?>>
+    <link rel="stylesheet" href=<?=CSS_URL."menu-item-add.css"?>>
     <title>Menu Item Form</title>
 </head>
 
