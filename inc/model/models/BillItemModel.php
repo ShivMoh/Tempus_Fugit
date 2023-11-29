@@ -115,30 +115,30 @@ class BillItemModel extends BaseModel {
     }
 
     public function set_id($id) {
-        return $this->id = $id;
+        $this->id = $id;
     }
 
     public function set_name($name) {
-        return $this->name = $name;
+        $this->name = $name;
     }
     
     public function set_price($price) {
-        return $this->price = $price;
+        $this->price = $price;
     }
 
     public function set_amount($amount) {
-        return $this->amount = $amount;
+        $this->amount = $amount;
     }
 
     public function set_bill_id($bill_id) {
-        return $this->bill_id = $bill_id;
+        $this->bill_id = $bill_id;
     }
 
     public function set_menu_item_id($menu_item_id) {
-        return $this->menu_item_id = $menu_item_id;
+        $this->menu_item_id = $menu_item_id;
     }
 
     public function set_discount($discount) {
-        return $this->discount = $discount;
+        $this->discount = $discount;
     }
 }

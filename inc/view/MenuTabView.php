@@ -32,7 +32,6 @@
             <option value="1000-to-5000">1000 to 5000</option>
             <option value="over-5000">Over 5000</option>
         </select>
-
         <form action="<?=BASE_URL."/MenuItem/view/MenuItemAdd"?>" method="POST">        
             <button class="search-bar-add-button"><img title="Add Item" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
         </form>
@@ -64,7 +63,11 @@
                     <img class="action-button-image" src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand" title="Expand">
                 </button>
                 <button class="action-button"><img class="action-button-image" src="<?= RESOURCE_URL."edit-icon.png"?>" alt="Edit" title="Edit"></button>
-                <button class="action-button-right-most"><img class="action-button-image" src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete" title="Delete"></button>
+                
+                <form action="<?=BASE_URL."/MenuItem/delete"?>" method="post">
+                    <input type="hidden" name="id" value="<?= $item['id']; ?>">
+                    <button class="action-button-right-most" formaction="<?=BASE_URL."/MenuItem/delete/".$item['id']?>"><img class="action-button-image" src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete" title="Delete"></button>
+                </form>
             </div>
         </div>
     </div>
