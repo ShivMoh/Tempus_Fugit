@@ -56,8 +56,8 @@ class RegisterController extends BaseController {
    
     }
 
-    public function delete($id) {
-        $this->billItemModel->set_id($id);
+    public function delete() {
+        //$this->billItemModel->set_id($id);
         $this->billItemModel->delete();
         $this->findAll();
     }
