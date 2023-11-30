@@ -79,7 +79,8 @@
                
                 <img class="modal-menu-item-img" src="<?=RESOURCE_URL.$item['image'];?>" alt="<?php echo $item['name']; ?>">
                 <div class="modal-tag-buttons">
-                    <?php foreach ($item['tags'] as $tag): ?>
+                    <?php $tags = explode(',', $item['tags']); ?>
+                    <?php foreach ($tags as $tag): ?>
                         <button class="modal-tag-button"><?php echo $tag; ?></button>
                     <?php endforeach; ?>
                 </div>
@@ -90,7 +91,8 @@
                 <p class="modal-item-description"><?php echo $item['description']; ?></p>
                 <ul class="item-ingredients">
                     <p class="modal-item-ingredients">Ingredients</p>
-                    <?php foreach ($item['ingredients'] as $ingredient): ?>
+                    <?php $ingredients = explode(',', $item['ingredients']); ?>
+                    <?php foreach ($ingredients as $ingredient): ?>
                         <li><?php echo $ingredient; ?></li>
                     <?php endforeach; ?>
                 </ul>
