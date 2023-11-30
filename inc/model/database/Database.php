@@ -124,8 +124,6 @@
 
         private function menuItemInit(){
 
-            //this logic needs to be adjusted to prevent database re insertion on page refresh
-
             if(isset($_SESSION['initialized']) && $_SESSION['initialized']){
                 return;
             }
