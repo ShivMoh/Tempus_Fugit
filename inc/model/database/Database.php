@@ -130,7 +130,7 @@
                 'description' => 'Creamy vanilla ice cream with swirls of chocolate chips.',
                 'image' => 'chocolate-chip-ice-cream.png',
                 'discount' => 0.15,
-                'tags' => 'chocolate, desert',
+                'tags' => 'chocolate, dessert',
                 'ingredients' => 'ice cream, chocolate chip, chocolate syrup'
             ];
 
