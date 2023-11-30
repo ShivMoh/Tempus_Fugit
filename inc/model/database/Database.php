@@ -119,10 +119,7 @@
         }
 
         private function menuItemInit(){
-            $result = $this->connection->query("SELECT count(id) as count FROM MenuItem");
-            $data = $result->fetch();
-            if($data["count"] > 0) return;
-            
+
             $menu_data_1 = [
                 'name' => 'Chocolate Chip Ice Cream',
                 'price' => 1000,
@@ -138,7 +135,7 @@
                 'price' => 1500,
                 'description' => 'Fresh strawberries layered with vanilla ice cream and topped with whipped cream.',
                 'image' => 'strawberry-swirl-sundae.png',
-                'discount' => 200,
+                'discount' => 0.20,
                 'tags' => 'strawberry, dessert',
                 'ingredients' => 'strawberries, ice cream'
             ];
