@@ -7,6 +7,6 @@ interface Controller {
     public function create();  
     public function findAll();
     public function findOne($id);
-    public function delete($id);
+    public function delete();
     public function update($id);
 }
