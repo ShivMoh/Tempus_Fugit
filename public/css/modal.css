@@ -9,11 +9,12 @@
 }
 
 .modal-content {
-    margin: 8vh auto;
+    margin: 6vh auto;
     padding: 20px;
-    width: 80%;
-    height: 70%;
+    width: 90vw;
+    max-height: 90vh; 
+    overflow-y: auto; 
+    background-color: #EDF5FF;
     display: flex;
     flex-wrap: wrap;
-    background-color: #EDF5FF;
 }
