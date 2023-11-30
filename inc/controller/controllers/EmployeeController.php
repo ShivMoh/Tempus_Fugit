@@ -63,7 +63,7 @@ class EmployeeController extends BaseController{
         // view logic pending
     }
 
-    public function update($id){
+    public function update(){
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -78,7 +78,7 @@ class EmployeeController extends BaseController{
             $contact_number = $_POST['contact_number'];
 
             $this->model = new EmployeeModel();
-            $this->model-> set_id($id);
+            //$this->model-> set_id();
             $employee = $this->model -> findById();
 
             $this->model->set_first_name($first_name);

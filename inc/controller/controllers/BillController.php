@@ -55,7 +55,7 @@ class BillController extends BaseController{
 
     }
 
-    public function update($id){
+    public function update(){
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -66,7 +66,7 @@ class BillController extends BaseController{
             $status = $_POST['status'];
 
             $billModel = new BillModel();
-            $billModel->set_id($id);
+            //$billModel->set_id();
             $existingBill = $billModel->findById();
 
             $existingBill->set_customer($customer);
