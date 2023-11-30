@@ -69,7 +69,7 @@
             ";
         
         private $initMenuItemSQL =
-            "INSERT IGNORE INTO MenuItem(name, price, description, image, discount, tags, ingredients)
+            "INSERT INTO MenuItem(name, price, description, image, discount, tags, ingredients)
              VALUES (:name, :price, :description, :image, :discount, :tags, :ingredients)
             ";
 
@@ -120,13 +120,17 @@
 
         private function menuItemInit(){
 
+        $result = $this->connection->query("SELECT count(id) as count FROM MenuItem");
+        $data = $result->fetch();
+        if($data["count"] > 0) return;
+
             $menu_data_1 = [
                 'name' => 'Chocolate Chip Ice Cream',
                 'price' => 1000,
                 'description' => 'Creamy vanilla ice cream with swirls of chocolate chips.',
                 'image' => 'chocolate-chip-ice-cream.png',
                 'discount' => 0.15,
-                'tags' => 'chocolate, desert',
+                'tags' => 'chocolate, dessert',
                 'ingredients' => 'ice cream, chocolate chip, chocolate syrup'
             ];
 
