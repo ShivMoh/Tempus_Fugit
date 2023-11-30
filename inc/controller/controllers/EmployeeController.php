@@ -10,11 +10,8 @@ class EmployeeController extends BaseController{
     }
 
     public function index(){
-
         $employee = $this->model->findAll();
-        echo "I am on Employee Tab";
-
-        // view logic pending
+        $this->view("/EmployeesTab", $data = $employee);
     }
 
     public function create(){
@@ -58,11 +55,10 @@ class EmployeeController extends BaseController{
 
     }
 
-    public function delete($id){
+    public function delete(){
         //id from where?
         $this->model = new EmployeeModel();
-        $this->model->set_id($id);
-        $this->model-> delete();
+        //$this->model-> delete();
 
         // view logic pending
     }

@@ -5,11 +5,9 @@
 class BillController extends BaseController{
 
     public function index(){
-        echo "I am working";
         $billModel = new BillModel();
         $bill = $billModel->findAll();
-
-        // view logic pending
+        $this->view("/BillsTab", $data = $bill);
     }
 
     public function create(){
@@ -47,10 +45,10 @@ class BillController extends BaseController{
 
     }
 
-    public function delete($id){
+    public function delete(){
         //id from where?
         $billModel = new BillModel();
-        $billModel->set_id($id);
+        //$billModel->set_id();
         $billModel-> delete();
 
         // view logic pending
