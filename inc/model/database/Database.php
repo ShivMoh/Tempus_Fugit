@@ -120,9 +120,11 @@
 
         private function menuItemInit(){
 
-        $result = $this->connection->query("SELECT count(id) as count FROM MenuItem");
-        $data = $result->fetch();
-        if($data["count"] > 0) return;
+            //this logic needs to be adjusted to prevent database re insertion on page refresh
+
+            $result = $this->connection->query("SELECT count(id) as count FROM MenuItem");
+            $data = $result->fetch();
+            if($data["count"] > 0) return;
 
             $menu_data_1 = [
                 'name' => 'Chocolate Chip Ice Cream',
