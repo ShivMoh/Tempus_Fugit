@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../public/css/main.css">
-    <link rel="stylesheet" href="../../public/css/employee-add.css">
+    <link rel="stylesheet" href=<?=CSS_URL."main.css"?>>
+    <link rel="stylesheet" href=<?=CSS_URL."employee-add.css"?>>
     <title>Employee Registration Form</title>
 </head>
 
