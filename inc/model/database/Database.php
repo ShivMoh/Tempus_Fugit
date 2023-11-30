@@ -1,5 +1,9 @@
 <?php
-  
+
+    // Start the session if it hasn't been started yet
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
     
     class Database {
 
@@ -122,9 +126,9 @@
 
             //this logic needs to be adjusted to prevent database re insertion on page refresh
 
-            $result = $this->connection->query("SELECT count(id) as count FROM MenuItem");
-            $data = $result->fetch();
-            if($data["count"] > 0) return;
+            if(isset($_SESSION['initialized']) && $_SESSION['initialized']){
+                return;
+            }
 
             $menu_data_1 = [
                 'name' => 'Chocolate Chip Ice Cream',
@@ -151,6 +155,9 @@
         $statement2 = $this->connection->prepare($this->initMenuItemSQL);
         $statement->execute($menu_data_1);
         $statement2->execute($menu_data_2);
+
+        // Mark the initialization as done
+        $_SESSION['initialized'] = true;
     }
         
 
