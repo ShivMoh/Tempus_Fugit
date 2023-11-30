@@ -48,32 +48,29 @@ class MenuItemController extends BaseController{
 
     public function delete(){
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $id = $_POST['id'];
-    
+            $id = $_POST['id']; 
             $MenuItem = new MenuItemModel();
             $MenuItem->set_id($id);
             $MenuItem->delete();
-    
             $this->index();
         }
     }
 
-    public function update($id){
+    public function update(){
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-            $name = $_POST['name'];
-            $price = $_POST['price'];
-            $description = $_POST['description'];
-            $image = $_POST['image'];
-            $discount = $_POST['discount'];
-            $tags = $_POST['tags'];
-            $ingredients = $_POST['ingredients'];
+            $id =$_POST['id'];
+            $name = $_POST['edit-item-name'];
+            $price = $_POST['edit-item-price'];
+            $description = $_POST['edit-item-description'];
+            $image = $_POST['edit-item-image'];
+            $discount = $_POST['edit-item-discount'];
+            $tags = $_POST['edit-item-tags'];
+            $ingredients = $_POST['edit-item-ingredients'];
 
             $MenuItem = new MenuItemModel();
+            
             $MenuItem-> set_id($id);
-            $Menu = $MenuItem -> findById();
-
             $MenuItem->set_name($name);
             $MenuItem->set_price($price);
             $MenuItem->set_description($description);
@@ -83,8 +80,8 @@ class MenuItemController extends BaseController{
             $MenuItem->set_ingredients($ingredients);
 
             $MenuItem->update();
-            
-            // view logic pending
+            $this->index();
+
         }   
     }
 }

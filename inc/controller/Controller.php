@@ -8,5 +8,5 @@ interface Controller {
     public function findAll();
     public function findOne($id);
     public function delete();
-    public function update($id);
+    public function update();
 }

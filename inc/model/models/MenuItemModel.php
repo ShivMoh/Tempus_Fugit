@@ -53,7 +53,7 @@ class MenuItemModel extends BaseModel {
 
    public function update() {
     
-    $sql = "UPDATE MenuItem SET name = :name, price = :price, amount = :amount, description = :description, image = :image, discount = :discount tags = :tags, ingredients = :ingredients WHERE id = :id";
+    $sql = "UPDATE MenuItem SET name = :name, price = :price, description = :description, image = :image, discount = :discount, tags = :tags, ingredients = :ingredients WHERE id = :id";
     
     $updated_menu_item = [
         "id"=> $this->id,

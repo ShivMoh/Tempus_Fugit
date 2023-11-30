@@ -101,7 +101,10 @@
         <!-- Edit Modal -->
         <div class="modal edit-modal" id="edit-modal-<?php echo $item['id']; ?>">
             <div class="modal-content">
-                <form action="<?= BASE_URL . "/MenuItem/edit/" . $item['id']; ?>" method="post">
+
+                <form action="<?= BASE_URL . "/MenuItem/update"?>" method="post">
+                    <input type="hidden" name="id" value="<?= $item['id']; ?>">
+
                     <label for="edit-item-name">Name</label>
                     <input type="text" id="edit-item-name" name="edit-item-name" value="<?php echo $item['name']; ?>" required>
 
@@ -112,7 +115,7 @@
                     <input type="text" id="edit-item-ingredients" name="edit-item-ingredients" value="<?php echo $item['ingredients']; ?>" required>
 
                     <label for="edit-item-price">Price</label>
-                    <input type="number" id="edit-item-price" name="edit-item-price" value="<?php echo $item['price']; ?>" required>
+                    <input type="text" id="edit-item-price" name="edit-item-price" value="<?php echo $item['price']; ?>" required>
 
                     <label for="edit-item-image">Image</label>
                     <input type="text" id="edit-item-image" name="edit-item-image" value="<?php echo $item['image']; ?>" required>
@@ -120,7 +123,13 @@
                     <label for="edit-item-discount">Discount</label>
                     <input type="text" id="edit-item-discount" name="edit-item-discount" value="<?php echo $item['discount']; ?>" required>
 
+                    <label for="edit-item-discount">Tags</label>
+                    <input type="text" id="edit-item-tags" name="edit-item-tags" value="<?php echo $item['tags']; ?>" required>
+
+
+
                     <button type="submit">Save Changes</button>
+                    
                 </form>
             </div>
         </div>
