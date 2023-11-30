@@ -45,7 +45,8 @@
             <div class="image-and-tags">
                 <img class="menu-item-img" src="<?= RESOURCE_URL . $item['image']; ?>" alt="<?php echo $item['name']; ?>">
                 <div class="tag-buttons">
-                    <?php foreach ($item['tags'] as $tag): ?>
+                    <?php $tags = explode(',', $item['tags']); ?>
+                    <?php foreach ($tags as $tag): ?>
                         <button class="tag-button"><?php echo $tag; ?></button>
                     <?php endforeach; ?>
                 </div>
@@ -75,7 +76,8 @@
     <div class="modal" id="modal-<?php echo $item['id']; ?>">
         <div class="modal-content">
             <div class="image-and-tags-modal-div">
-                <img class="modal-menu-item-img" src="<?= RESOURCE_URL . $item['image']; ?>" alt="<?php echo $item['name']; ?>">
+               
+                <img class="modal-menu-item-img" src="<?=RESOURCE_URL.$item['image'];?>" alt="<?php echo $item['name']; ?>">
                 <div class="modal-tag-buttons">
                     <?php foreach ($item['tags'] as $tag): ?>
                         <button class="modal-tag-button"><?php echo $tag; ?></button>
