@@ -46,7 +46,7 @@ class MenuItemController extends BaseController{
 
     }
 
-    public function delete(){
+    public function delete($id = 0){
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id']; 
             $MenuItem = new MenuItemModel();
@@ -56,7 +56,7 @@ class MenuItemController extends BaseController{
         }
     }
 
-    public function update(){
+    public function update($id = 0){
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id =$_POST['id'];

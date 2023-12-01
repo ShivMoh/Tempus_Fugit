@@ -55,7 +55,7 @@ class EmployeeController extends BaseController{
 
     }
 
-    public function delete(){
+    public function delete($id = 0){
         //id from where?
         $this->model = new EmployeeModel();
         //$this->model-> delete();
@@ -63,7 +63,7 @@ class EmployeeController extends BaseController{
         // view logic pending
     }
 
-    public function update(){
+    public function update($id = 0){
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 

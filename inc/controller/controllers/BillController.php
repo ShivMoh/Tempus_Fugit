@@ -45,7 +45,7 @@ class BillController extends BaseController{
 
     }
 
-    public function delete(){
+    public function delete($id = 0){
         //id from where?
         $billModel = new BillModel();
         //$billModel->set_id();
@@ -55,7 +55,7 @@ class BillController extends BaseController{
 
     }
 
-    public function update(){
+    public function update($id = 0){
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 

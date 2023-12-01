@@ -11,5 +11,5 @@ class BaseController implements Controller {
     public function findAll() {}
     public function findOne($id) {}
     public function delete($id) {}
-    public function update() {}
+    public function update($id) {}
 } 
