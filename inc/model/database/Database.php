@@ -130,7 +130,7 @@
 
         private function menuItemInit(){
 
-            if(isset($_SESSION['initialized']) && $_SESSION['initialized']){
+            if(isset($_SESSION['menu_initialized']) && $_SESSION['menu_initialized']){
                 return;
             }
 
@@ -153,7 +153,6 @@
                 'tags' => 'strawberry, dessert',
                 'ingredients' => 'strawberries, ice cream'
             ];
-        
 
         $statement = $this->connection->prepare($this->initMenuItemSQL);
         $statement2 = $this->connection->prepare($this->initMenuItemSQL);
@@ -161,14 +160,14 @@
         $statement2->execute($menu_data_2);
 
         // Mark the initialization as done
-        $_SESSION['initialized'] = true;
+        $_SESSION['menu_initialized'] = true;
     }
 
     private function employeeDataInit(){
 
-        /*if(isset($_SESSION['initialized']) && $_SESSION['initialized']){
+        if(isset($_SESSION['employee_initialized']) && $_SESSION['employee_initialized']){
             return;
-        }*/
+        }
 
         $employee_data_1 = [
                 'first_name' => "Ricardo",
@@ -203,11 +202,9 @@
         $statement2 = $this->connection->prepare($this->initEmployeeDataSQL);
         $statement->execute($employee_data_1);
         $statement2->execute($employee_data_2);
-        
 
-        //$_SESSION['initialized'] = true;
-    }
-        
+        $_SESSION['employee_initialized'] = true;
+        } 
 
         public function getConnection() {
             return $this->connection;
