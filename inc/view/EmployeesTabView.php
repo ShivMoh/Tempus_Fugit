@@ -34,39 +34,6 @@
     </div>
     <!-- SEARCH BAR -->
 
-    <?php
-        // Select * query here
-        $data = [
-            [
-                'id' => 1,
-                'first-name' => "Ricardo",
-                'last-name' => "Narine",
-                'other-names' => "Joshua",
-                'gender' => "True",
-                'age' => 18,
-                'dob' => '2005-01-23',
-                'job-role' => 'Manager',
-                'email' => 'ricardo@gmail.com',
-                'status' => 'True',
-                'contact-number' => '666-1234',
-            ],
-            [
-                'id' => 2,
-                'first-name' => "Monica",
-                'last-name' => "Lee",
-                'other-names' => "Amy",
-                'gender' => "False",
-                'age' => 19,
-                'dob' => '2004-01-23',
-                'job-role' => 'Cashier',
-                'email' => 'monica@gmail.com',
-                'status' => 'True',
-                'contact-number' => '666-4321',
-                
-            ],
-        ];
-    ?>
-
     <table class="employees-table">
         <thead>
             <tr>

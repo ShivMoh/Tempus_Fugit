@@ -62,7 +62,7 @@
                 email               VARCHAR(20) NOT NULL,
                 contact_number      VARCHAR(20) NOT NULL,
                 image_url           VARCHAR(100),
-                status              BOOLEAN,
+                status              BOOLEAN DEFAULT FALSE,
                 PRIMARY KEY         (id)
             );"
         ];
@@ -75,6 +75,11 @@
         private $initMenuItemSQL =
             "INSERT INTO MenuItem(name, price, description, image, discount, tags, ingredients)
              VALUES (:name, :price, :description, :image, :discount, :tags, :ingredients)
+            ";
+        
+        private $initEmployeeDataSQL =
+            "INSERT INTO Employee(first_name, last_name, other_names, gender, age, dob, job_role, email, contact_number, image_url, status)
+             VALUES (:first_name, :last_name, :other_names, :gender, :age, :dob, :job_role, :email, :contact_number, :image_url, :status)
             ";
 
         public function connect() {
@@ -100,6 +105,7 @@
                     }
                     $this->seed();
                     $this->menuItemInit();
+                    $this->employeeDataInit();
                 }
             } catch (PDOException $e) {
                 echo $e->getMessage();
@@ -156,6 +162,50 @@
 
         // Mark the initialization as done
         $_SESSION['initialized'] = true;
+    }
+
+    private function employeeDataInit(){
+
+        /*if(isset($_SESSION['initialized']) && $_SESSION['initialized']){
+            return;
+        }*/
+
+        $employee_data_1 = [
+                'first_name' => "Ricardo",
+                'last_name' => "Narine",
+                'other_names' => "Joshua",
+                'gender' => true,
+                'age' => 18,
+                'dob' => '2005-01-23',
+                'job_role' => 'val1',
+                'email' => 'ricardo@gmail.com',
+                'contact_number' => '666-1234',
+                'image_url' => 'place',
+                'status' => true
+            ];
+
+        $employee_data_2 = [
+                'first_name' => "Monica",
+                'last_name' => "Lee",
+                'other_names' => "Amy",
+                'gender' => false,
+                'age' => 19,
+                'dob' => '2004-01-23',
+                'job_role' => 'val2',
+                'email' => 'monica@gmail.com',
+                'contact_number' => '666-4321',
+                'image_url' => 'place',
+                'status' => true
+            ];
+        
+
+        $statement = $this->connection->prepare($this->initEmployeeDataSQL);
+        $statement2 = $this->connection->prepare($this->initEmployeeDataSQL);
+        $statement->execute($employee_data_1);
+        $statement2->execute($employee_data_2);
+        
+
+        //$_SESSION['initialized'] = true;
     }
         
 
