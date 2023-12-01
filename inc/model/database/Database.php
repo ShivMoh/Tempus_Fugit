@@ -153,7 +153,6 @@
                 'tags' => 'strawberry, dessert',
                 'ingredients' => 'strawberries, ice cream'
             ];
-        
 
         $statement = $this->connection->prepare($this->initMenuItemSQL);
         $statement2 = $this->connection->prepare($this->initMenuItemSQL);

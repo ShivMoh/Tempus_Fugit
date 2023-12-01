@@ -49,10 +49,10 @@
         <tbody>
             <?php foreach ($data as $row): ?>
                 <tr>
-                    <td><?= $row['first-name'] . ' ' . $row['other-names'] . ' ' . $row['last-name'] ?></td>
-                    <td><?= $row['job-role'] ?></td>
+                    <td><?= $row['first_name'] . ' ' . $row['other_names'] . ' ' . $row['last_name'] ?></td>
+                    <td><?= $row['job_role'] ?></td>
                     <td><?= $row['email'] ?></td>
-                    <td><?= $row['contact-number'] ?></td>
+                    <td><?= $row['contact_number'] ?></td>
                     <td><?= $row['status'] ?></td>
                     <td>
                         <button><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="Expand"></button>
