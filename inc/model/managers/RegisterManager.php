@@ -3,12 +3,10 @@
 class RegisterManager {
     private $menuItemModel;
     private $billModel;
-    private $billItemModel;
 
     public function __construct() {
         $this->menuItemModel = new MenuItemModel();
         $this->billModel = new BillModel();
-        $this->billItemModel = new BillItemModel();
     }
     public function queryDiscountForMenuItem($id) {
         $this->menuItemModel->set_id($id);
@@ -32,15 +30,22 @@ class RegisterManager {
         $this->billModel->set_number_of_items(0);
         $this->billModel->set_total_cost(0);
         $this->billModel->set_order_date("");
-        $this->billModel->set_status("Empty");
+        $this->billModel->set_status("empty");
         $this->billModel->create();
     }
 
     public function retrieveLastBillId() {
-        $this->billModel->set_status("Empty");
+        $this->billModel->set_status("empty");
         return $this->billModel->findByStatus()['id'];
     }
 
-
+    public function submitBill($bill) {
+        $this->billModel->set_id($bill['id']);
+        $this->billModel->set_number_of_items($bill['number_of_items']);
+        $this->billModel->set_total_cost($bill['total_cost']);
+        $this->billModel->set_order_date(date("Y/m/d"));
+        $this->billModel->set_status("Pending");
+        $this->billModel->update();
+    }
 
 }

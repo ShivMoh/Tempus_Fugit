@@ -47,7 +47,20 @@ class BillModel extends BaseModel {
     return $statement->fetch();
    }
 
-   public function update() {}
+   public function update() {
+        $sql = "UPDATE Bill SET number_of_items = :number_of_items, total_cost = :total_cost, order_date = :order_date, status = :status WHERE id = :id";
+            
+        $updated_bill = [
+            "id"=>$this->id,
+            "number_of_items"=>$this->number_of_items,
+            "total_cost"=>$this->total_cost,
+            "order_date"=>$this->order_date,
+            "status"=>$this->status
+        ];
+
+        $statement = $this->connection->prepare($sql);
+        $statement->execute($updated_bill);
+    }
    public function delete() {
     $sql = "DELETE FROM Bill WHERE id = :id";
         

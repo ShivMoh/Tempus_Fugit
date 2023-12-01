@@ -24,7 +24,7 @@
                 number_of_items     INT(20) NOT NULL,
                 total_cost          FLOAT(10, 5) NOT NULL,
                 order_date          DATE,
-                status              BOOLEAN,
+                status              ENUM('empty', 'pending', 'cancelled', 'completed') NOT NULL,
                 PRIMARY KEY         (id)
                 );",
             "CREATE TABLE IF NOT EXISTS MenuItem(

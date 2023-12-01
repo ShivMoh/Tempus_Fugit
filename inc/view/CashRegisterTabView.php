@@ -1,6 +1,7 @@
 <?php
     include "NavbarView.php";
     $total = 0;
+    $numberOfItems = 0;
 ?>
 
 <!DOCTYPE html>
@@ -54,10 +55,6 @@
         
         </div>
       
- 
-
-
-        
     </form>
             <table>
             <thead>
@@ -107,31 +104,42 @@
                     >   
                 </td>
                 <td>
-
-           
                     <form action="<?=BASE_URL."/register/delete/".$item['id']?>" method="POST" id="order-form">
                         <button type="submit">Delete</button>   
                     </form>
                 </td>
             </tr>
-        <?php $total += $item['price']?>
+        <?php 
+            $total += $item['price'];
+            $numberOfItems += 1;
+        ?>
         <?php endforeach ?>
         </tbody>
         </table>
         
-        <form action="<?=BASE_URL."/register/create"?>" method="POST" id="order-form">
+        <form action="<?=BASE_URL."/register/updatebill"?>" method="POST" id="confirm-and-print-bill">
             <div class="container">
                 <label for="total">Total</label>
                 <textarea 
                     name="total" 
                     id="total"
-                  
                     >
                     <?=$total?>
                 </textarea>
+                <input type="hidden" name="number-of-items" $value=<?=$numberOfItems?>>
+                
+                <button class="button-1" type="submit" form="confirm-and-print-bill">Confirm & Print Bill</button>
+            </div>
+        </form>
 
-                <button class="button-1" type="submit" form="order-form">Confirm & Print Bill</button>
+        <form action="<?=BASE_URL."/register/updatebill"?>" method="POST" id="order-form">
+            <div class="container">         
                 <button class="button-2" type="submit" form="order-form">Confirm</button>
+            </div>
+        </form>
+
+        <form action="<?=BASE_URL."/register/create"?>" method="POST" id="order-form">
+            <div class="container">         
                 <button class="button-1" type="submit" form="order-form">Manage Bills</button>
             </div>
         </form>

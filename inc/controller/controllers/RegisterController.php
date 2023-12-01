@@ -4,10 +4,6 @@ class RegisterController extends BaseController {
 
     private $registerManager;
     private $billItemModel;
-   
-    // things I gotta do
-    // create an empty bill for every submission
-
 
     public function __construct() {
         $this->registerManager = new RegisterManager();
@@ -19,9 +15,7 @@ class RegisterController extends BaseController {
         $this->findAll();
     }
 
-    public function findAll()
-    {
-       
+    public function findAll() {
         $this->billItemModel->set_bill_id(
             $this->registerManager->retrieveLastBillId()
         );
@@ -35,14 +29,11 @@ class RegisterController extends BaseController {
     }
 
     public function create() {
-
         list($menu_id, $name) = explode(",", $_POST['name']);
         $amount = $_POST['amount'];
+
         $discount = $this->registerManager->queryDiscountForMenuItem($menu_id);
-        $price = 
-            ($amount * 
-            $this->registerManager->queryPriceForMenuItem($menu_id))
-            - $discount;
+        $price = ($amount * $this->registerManager->queryPriceForMenuItem($menu_id)) - $discount;
         $bill_id = $this->registerManager->retrieveLastBillId();
 
         $this->billItemModel->set_name($name);
@@ -53,13 +44,27 @@ class RegisterController extends BaseController {
         $this->billItemModel->set_menu_item_id($menu_id);
         $this->billItemModel->create();
         $this->findAll();
-   
     }
 
-    public function delete() {
-        //$this->billItemModel->set_id($id);
+    public function delete($id) {
+        $this->billItemModel->set_id($id);
         $this->billItemModel->delete();
         $this->findAll();
+    }
+
+    public function updateBill() {
+        $bill_id = $this->registerManager->retrieveLastBillId();
+        
+        $bill = [
+            "id"=>$bill_id,
+            "number_of_items"=>10,
+            "total_cost"=>$_POST['total']
+        ];
+
+        $this->registerManager->submitBill($bill);
+
+        $this->index();
+
     }
     
 
