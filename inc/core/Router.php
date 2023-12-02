@@ -100,9 +100,7 @@ class Router {
     // gets the url relative to the BASE_URL
     private function getUrl($url)
 	{
-        $url = explode("?", trim($url))[0];
-		$url = explode("/", trim($url,"/"));
-        print_r($url);
+        $url = explode("/", trim(explode("?", trim($url))[0], "/"));
         $base_url = explode("/", trim(BASE_URL,"/"));
 		return array_slice($url, count($base_url));	
 	}
