@@ -82,14 +82,16 @@
                     <tr>
                         <td class="col1">
                             <input type='text' 
-                            name=<?='id-x';?>
-                            value=<?=$item['id']?>
+                                name=<?='id-x';?>
+                                value=<?=$item['id']?>
+                                readonly
                             >
                         </td>
                         <td class="col2">
                             <input type='text' 
-                            name=<?='name-x';?>
-                            value=<?=$item['name']?>
+                                name=<?='name-x';?>
+                                value=<?=$item['name']?>
+                                readonly
                         >
                         </td>
                         <td class="col3">
@@ -97,6 +99,7 @@
                                 type='text' 
                                 name=<?='amount-x'?>
                                 value=<?=$item['amount']?> 
+                                readonly
                             >
                         </td>
                         <td class="col4">
@@ -104,18 +107,23 @@
                                 type='text' 
                                 name=<?='price-x'?>
                                 value=<?=$item['price']?> 
+                                readonly
                             >
                         </td>
                         <td class="col5">
                             <input type='text' 
                                 name=<?='discount-x';?>
-                                value=<?=$item['discount'];?>>
+                                value=<?=$item['discount'];?>
+                                readonly
+                                >
+                                
                         </td>
                         <td class="col6">
                             <input 
                                 type='text' 
                                 name=<?='total-x'?>
                                 value=<?=$item['total']?>
+                                readonly
                             >   
                         </td>
                         <td>

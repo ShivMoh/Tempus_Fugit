@@ -1,7 +1,7 @@
 <?php
 
     // Start the session if it hasn't been started yet
-    if(session_status() == PHP_SESSION_NONE){
+    if(session_status() == PHP_SESSION_NONE) {
         session_start();
     }
     
@@ -50,7 +50,7 @@
                 FOREIGN KEY         (bill_id) REFERENCES Bill(id) ON DELETE CASCADE, 
                 FOREIGN KEY         (menu_item_id) REFERENCES MenuItem(id) ON DELETE CASCADE, 
                 PRIMARY KEY         (id)
-                );",
+            );",
             "CREATE TABLE IF NOT EXISTS Employee(
                 id                  INT AUTO_INCREMENT,
                 first_name          VARCHAR(30) NOT NULL,
@@ -59,7 +59,7 @@
                 gender              BOOLEAN,
                 age                 INT(20),
                 dob                 DATE,
-                job_role            ENUM('val1', 'val2', 'val3', 'val4') NOT NULL,
+                job_role            ENUM('clerk', 'manager', 'cook', 'server') NOT NULL,
                 email               VARCHAR(20) NOT NULL,
                 contact_number      VARCHAR(20) NOT NULL,
                 image_url           VARCHAR(100),
@@ -131,80 +131,78 @@
 
         private function menuItemInit(){
 
-            if(isset($_SESSION['menu_initialized']) && $_SESSION['menu_initialized']){
-                return;
-            }
+            if($_SESSION['menu_initialized']) return;
 
-            $menu_data_1 = [
-                'name' => 'Chocolate Chip Ice Cream',
-                'price' => 1000,
-                'description' => 'Creamy vanilla ice cream with swirls of chocolate chips.',
-                'image' => 'chocolate-chip-ice-cream.png',
-                'discount' => 0.15,
-                'tags' => 'chocolate, dessert',
-                'ingredients' => 'ice cream, chocolate chip, chocolate syrup'
-            ];
-
-            $menu_data_2 = [
-                'name' => 'Strawberry Swirl Sundae',
-                'price' => 1500,
-                'description' => 'Fresh strawberries layered with vanilla ice cream and topped with whipped cream.',
-                'image' => 'strawberry-swirl-sundae.png',
-                'discount' => 0.20,
-                'tags' => 'strawberry, dessert',
-                'ingredients' => 'strawberries, ice cream'
-            ];
-
-        $statement = $this->connection->prepare($this->initMenuItemSQL);
-        $statement2 = $this->connection->prepare($this->initMenuItemSQL);
-        $statement->execute($menu_data_1);
-        $statement2->execute($menu_data_2);
-
-        // Mark the initialization as done
-        $_SESSION['menu_initialized'] = true;
-    }
-
-    private function employeeDataInit(){
-
-        if(isset($_SESSION['employee_initialized']) && $_SESSION['employee_initialized']){
-            return;
-        }
-
-        $employee_data_1 = [
-                'first_name' => "Ricardo",
-                'last_name' => "Narine",
-                'other_names' => "Joshua",
-                'gender' => true,
-                'age' => 18,
-                'dob' => '2005-01-23',
-                'job_role' => 'val1',
-                'email' => 'ricardo@gmail.com',
-                'contact_number' => '666-1234',
-                'image_url' => 'place',
-                'status' => true
-            ];
-
-        $employee_data_2 = [
-                'first_name' => "Monica",
-                'last_name' => "Lee",
-                'other_names' => "Amy",
-                'gender' => false,
-                'age' => 19,
-                'dob' => '2004-01-23',
-                'job_role' => 'val2',
-                'email' => 'monica@gmail.com',
-                'contact_number' => '666-4321',
-                'image_url' => 'place',
-                'status' => true
+            $menu_data = [
+                [
+                    'name' => 'Chocolate Chip Ice Cream',
+                    'price' => 1000,
+                    'description' => 'Creamy vanilla ice cream with swirls of chocolate chips.',
+                    'image' => 'chocolate-chip-ice-cream.png',
+                    'discount' => 0.15,
+                    'tags' => 'chocolate, dessert',
+                    'ingredients' => 'ice cream, chocolate chip, chocolate syrup'
+                ],
+                [
+                    'name' => 'Strawberry Swirl Sundae',
+                    'price' => 1500,
+                    'description' => 'Fresh strawberries layered with vanilla ice cream and topped with whipped cream.',
+                    'image' => 'strawberry-swirl-sundae.png',
+                    'discount' => 0.20,
+                    'tags' => 'strawberry, dessert',
+                    'ingredients' => 'strawberries, ice cream'
+                ]
             ];
         
+            foreach($menu_data as $data) {
+                $statement = $this->connection->prepare($this->initMenuItemSQL);
+                $statement->execute($data);
+            }
+        
+            // Mark the initialization as done
+            $_SESSION['menu_initialized'] = true;
+        }
 
-        $statement = $this->connection->prepare($this->initEmployeeDataSQL);
-        $statement2 = $this->connection->prepare($this->initEmployeeDataSQL);
-        $statement->execute($employee_data_1);
-        $statement2->execute($employee_data_2);
+        private function employeeDataInit(){
 
-        $_SESSION['employee_initialized'] = true;
+            if($_SESSION['employee_initialized']) return;
+            
+            $employee_data = [
+                [
+                    'first_name' => "Ricardo",
+                    'last_name' => "Narine",
+                    'other_names' => "Joshua",
+                    'gender' => true,
+                    'age' => 18,
+                    'dob' => '2005-01-23',
+                    'job_role' => 'val1',
+                    'email' => 'ricardo@gmail.com',
+                    'contact_number' => '666-1234',
+                    'image_url' => 'place',
+                    'status' => true
+                ],
+                [
+                    'first_name' => "Monica",
+                    'last_name' => "Lee",
+                    'other_names' => "Amy",
+                    'gender' => false,
+                    'age' => 19,
+                    'dob' => '2004-01-23',
+                    'job_role' => 'val2',
+                    'email' => 'monica@gmail.com',
+                    'contact_number' => '666-4321',
+                    'image_url' => 'place',
+                    'status' => true
+                ]
+
+            ];
+
+            foreach($employee_data as $data) {
+                $statement = $this->connection->prepare($this->initEmployeeDataSQL);
+                $statement->execute($data);
+            }
+
+            $_SESSION['employee_initialized'] = true;
         } 
 
         public function getConnection() {
