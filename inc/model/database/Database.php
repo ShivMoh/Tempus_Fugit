@@ -131,7 +131,8 @@
 
         private function menuItemInit(){
 
-            if($_SESSION['menu_initialized']) return;
+            if(isset($_SESSION['menu_initialized']))return;
+         
 
             $menu_data = [
                 [
@@ -165,7 +166,7 @@
 
         private function employeeDataInit(){
 
-            if($_SESSION['employee_initialized']) return;
+            if(isset($_SESSION['employee_initialized'])) return;
             
             $employee_data = [
                 [
