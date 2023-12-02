@@ -41,7 +41,6 @@ class EmployeeModel extends BaseModel {
         $statement->execute($new_employee);
 
         $this->id = $this->connection->lastInsertId();
-        header("location: /personal/Practice/oop-mvc"); //send help here
     }
 
     public function findAll() {
