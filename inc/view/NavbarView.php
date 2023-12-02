@@ -10,10 +10,10 @@
 
 <body>
     <div class="navigation-bar">
-        <a class="nav-button" href="<?= BASE_URL."/Register/index"?>">Register</a> 
-        <a class="nav-button" href="<?= BASE_URL."/MenuItem/index/" ?>">Menu</a>
-        <a class="nav-button" href="<?= BASE_URL."/Employee/index/" ?>">Employees</a> 
-        <a class="nav-button" href="<?= BASE_URL."/Bill/index/" ?>">Bills</a>
+        <a class="nav-button" href="<?= BASE_URL."/Register"?>">Register</a> 
+        <a class="nav-button" href="<?= BASE_URL."/MenuItem" ?>">Menu</a>
+        <a class="nav-button" href="<?= BASE_URL."/Employee" ?>">Employees</a> 
+        <a class="nav-button" href="<?= BASE_URL."/Bill" ?>">Bills</a>
     </div>
 </body>
 </html>
