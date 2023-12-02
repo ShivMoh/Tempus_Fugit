@@ -33,11 +33,13 @@ class RegisterController extends BaseController {
         $amount = $_POST['amount'];
 
         $discount = $this->registerManager->queryDiscountForMenuItem($menu_id);
-        $price = ($amount * $this->registerManager->queryPriceForMenuItem($menu_id)) - $discount;
+        $price = $this->registerManager->queryPriceForMenuItem($menu_id);
+        $total = ($amount * $price) - $discount;
         $bill_id = $this->registerManager->retrieveLastBillId();
 
         $this->billItemModel->set_name($name);
         $this->billItemModel->set_price($price);
+        $this->billItemModel->set_total($total);
         $this->billItemModel->set_amount($amount);
         $this->billItemModel->set_bill_id($bill_id);
         $this->billItemModel->set_discount($discount);

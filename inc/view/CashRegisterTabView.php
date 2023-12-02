@@ -16,131 +16,152 @@
 </head>
 
 <body>
-    <form action="<?=BASE_URL."/register/create"?>" method="POST" id="order-form">
-        <table>
-            <thead>
-                <tr>
-                    <th class="col2" scope="col">Name</th>
-                    <th class="col4" scope="col">Amount</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                    <tr>
-                        <td class="col2">
-                            <select name=<?='name';?>>
-                                <option disabled selected>Select an item</option>
-                                <?php foreach($data['menuList'] as $menuItem) :?>
-                                    <option value=<?=$menuItem['id'].",".$menuItem['name'];?>>
-                                        <?=$menuItem['name'];?>
-                                    </option>
-                                <?php endforeach ?>
-                            </select>
-                        </td>
-                        <td class="col3">
-                            <input 
-                                type='text' 
-                                name=<?='amount'?> 
-                            >
-                        </td>
-                        <td>
-                            <button type="submit">Add Item</button>   
-                        </td>
-                        
-                    </tr>
-
-                    
-            </tbody>
-        </table>
-        
-        </div>
-      
-    </form>
+    <h3 class="cash-register-instructions">Input your items here:</h3>
+    <form  action="<?=BASE_URL."/register/create"?>" method="POST" id="order-form">
+        <div class="cash-register-input-section">
             <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Name of Item</th>
+                        <th scope="col">Amount</th>   
+                        <th scope="col">Action</th>   
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>
+                                <select name='name' required>
+                                    <?php foreach($data['menuList'] as $menuItem) :?>
+                                        <option value=<?=$menuItem['id'].",".$menuItem['name'];?>>
+                                            <?=$menuItem['name'];?>
+                                        </option>
+                                    <?php endforeach ?>
+                                </select>
+                            </td>
+                            <td>
+                                <input 
+                                    type='text' 
+                                    name=<?='amount'?> 
+                                    placeholder="Enter the number of items here..."
+                                    required
+                                >
+                            </td>
+                            <td>
+                                <button 
+                                    class="cash-register-add-item-button"
+                                    type="submit">Add Item
+                                </button>  
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+       
+        </div>
+       
+        
+   
+       
+    <h3 class="cash-register-instructions">Items Show up here:</h3>
+    </form>
+        <table >
             <thead>
                 <tr>
                     <th class="col1" scope="col">Item Id</th>
                     <th class="col2" scope="col">Name</th>
-                    <th class="col4" scope="col">Amount</th>
-                    <th class="col3" scope="col">Discount</th>
-                    <th class="col5" scope="col">Total</th>
-                    <th scope="col">Action</th>
+                    <th class="col3" scope="col">Amount</th>
+                    <th class="col4" scope="col">Price</th>
+                    <th class="col5" scope="col">Discount</th>
+                  
+                    <th class="col6" scope="col">Total</th>
+                    <th>Action</th>
                 </tr>
             </thead>
-             
-                <tbody>
-        <?php foreach($data['billItems'] as $item) : ?>
-            
-            <tr>
-                <td class="col1">
-                    <input type='text' 
-                    name=<?='id-x';?>
-                    value=<?=$item['id']?>
-                    >
-                </td>
-                <td class="col2">
-                    <input type='text' 
-                    name=<?='name-x';?>
-                    value=<?=$item['name']?>
-                >
-                </td>
-                <td class="col3">
-                    <input 
-                        type='text' 
-                        name=<?='amount-x'?>
-                        value=<?=$item['amount']?> 
-                    >
-                </td>
-                <td class="col4">
-                    <input type='text' 
-                        name=<?='discount-x';?>
-                        value=<?=$item['discount'];?>>
-                </td>
-                <td class="col5">
-                    <input 
-                        type='text' 
-                        name=<?='total-x'?>
-                        value=<?=$item['price']?>
-                    >   
-                </td>
-                <td>
-                    <form action="<?=BASE_URL."/register/delete/".$item['id']?>" method="POST" id="order-form">
-                        <button type="submit">Delete</button>   
-                    </form>
-                </td>
-            </tr>
-        <?php 
-            $total += $item['price'];
-            $numberOfItems += 1;
-        ?>
-        <?php endforeach ?>
-        </tbody>
+            <tbody >
+                <?php foreach($data['billItems'] as $item) : ?>
+                    
+                    <tr>
+                        <td class="col1">
+                            <input type='text' 
+                            name=<?='id-x';?>
+                            value=<?=$item['id']?>
+                            >
+                        </td>
+                        <td class="col2">
+                            <input type='text' 
+                            name=<?='name-x';?>
+                            value=<?=$item['name']?>
+                        >
+                        </td>
+                        <td class="col3">
+                            <input 
+                                type='text' 
+                                name=<?='amount-x'?>
+                                value=<?=$item['amount']?> 
+                            >
+                        </td>
+                        <td class="col4">
+                            <input 
+                                type='text' 
+                                name=<?='price-x'?>
+                                value=<?=$item['price']?> 
+                            >
+                        </td>
+                        <td class="col5">
+                            <input type='text' 
+                                name=<?='discount-x';?>
+                                value=<?=$item['discount'];?>>
+                        </td>
+                        <td class="col6">
+                            <input 
+                                type='text' 
+                                name=<?='total-x'?>
+                                value=<?=$item['total']?>
+                            >   
+                        </td>
+                        <td>
+                            <form action="<?=BASE_URL."/register/delete/".$item['id']?>" method="POST" id="order-form">
+                                <button type="submit" class="cash-register-delete-button">
+                                    <img src="<?=RESOURCE_URL."trash-icon.png"?>" alt="">
+                                </button>   
+                            </form>
+                        </td>
+                    </tr>
+                <?php 
+                    $total += $item['price'];
+                    $numberOfItems += 1;
+                ?>
+                <?php endforeach ?>
+            </tbody>
         </table>
         
         <form action="<?=BASE_URL."/register/updatebill"?>" method="POST" id="confirm-and-print-bill">
-            <div class="container">
-                <label for="total">Total</label>
-                <textarea 
-                    name="total" 
-                    id="total"
-                    >
-                    <?=$total?>
-                </textarea>
+            <div class="container ">
+                <div class="total-container">
+                    <label for="total">Total</label>
+                    <input readonly
+                        name="total" 
+                        id="total"
+                        value=<?=$total?>
+                        >
+                        
+                    </input>
+                </div>
+            
                 <input type="hidden" name="number-of-items" $value=<?=$numberOfItems?>>
                 
-                <button class="button-1" type="submit" form="confirm-and-print-bill">Confirm & Print Bill</button>
+                <button class="cash-register-button button-1" type="submit" form="confirm-and-print-bill">Confirm & Print Bill</button>
             </div>
         </form>
 
         <form action="<?=BASE_URL."/register/updatebill"?>" method="POST" id="order-form">
             <div class="container">         
-                <button class="button-2" type="submit" form="order-form">Confirm</button>
+                <button class="cash-register-button button-2" type="submit" form="order-form">Confirm</button>
             </div>
         </form>
 
         <form action="<?=BASE_URL."/register/create"?>" method="POST" id="order-form">
             <div class="container">         
-                <button class="button-1" type="submit" form="order-form">Manage Bills</button>
+                <button class="cash-register-button button-1" type="submit" form="order-form">Manage Bills</button>
             </div>
         </form>
 </body>

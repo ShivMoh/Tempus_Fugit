@@ -42,6 +42,7 @@
                 id                  INT AUTO_INCREMENT,
                 name                VARCHAR(30) NOT NULL,
                 price               FLOAT(10, 5) NOT NULL,
+                total               FLOAT(10, 5) NOT NULL,
                 amount              INT(20) NOT NULL,
                 discount            FLOAT(10, 2),
                 bill_id             INT NOT NULL,

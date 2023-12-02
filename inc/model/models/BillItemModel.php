@@ -4,6 +4,7 @@ class BillItemModel extends BaseModel {
     private $id;
     private $name;
     private $price;
+    private $total;
     private $amount;
     private $discount;
     private $bill_id;
@@ -15,12 +16,13 @@ class BillItemModel extends BaseModel {
 
    public function create() {
 
-        $sql =  "INSERT INTO BillItem(name, price, amount, discount, bill_id,  menu_item_id)
-            VALUES (:name, :price, :amount, :discount, :bill_id, :menu_item_id)";
+        $sql =  "INSERT INTO BillItem(name, price, total, amount, discount, bill_id,  menu_item_id)
+            VALUES (:name, :price, :total, :amount, :discount, :bill_id, :menu_item_id)";
 
         $new_bill = [
             "name"=> $this->name,
             "price"=> $this->price,
+            "total"=>$this->total,
             "amount"=> $this->amount,
             "discount"=>$this->discount,
             "bill_id"=> $this->bill_id,
@@ -61,7 +63,7 @@ class BillItemModel extends BaseModel {
 
    public function update() {
     
-    $sql = "UPDATE BillItem SET name = :name, price = :price, amount = :amount, bill_id = :bill_id, menu_item_id = :menu_item_id WHERE id = :id";
+    $sql = "UPDATE BillItem SET name = :name, price = :price, total = :total, amount = :amount, bill_id = :bill_id, menu_item_id = :menu_item_id WHERE id = :id";
     
     $updated_menu_item = [
         "id"=> $this->id,
@@ -98,6 +100,10 @@ class BillItemModel extends BaseModel {
         return $this->price;
     }
 
+    public function get_total() {
+        return $this->total;
+    }
+
     public function get_amount() {
         return $this->amount;
     }
@@ -124,6 +130,10 @@ class BillItemModel extends BaseModel {
     
     public function set_price($price) {
         $this->price = $price;
+    }
+
+    public function set_total($total) {
+        $this->total = $total;
     }
 
     public function set_amount($amount) {
