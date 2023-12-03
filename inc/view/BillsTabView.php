@@ -58,16 +58,14 @@
                     <td><?= $bill['order_date'] ?></td>
                     <td><?=$bill['status'] ?></td>
                     <td>
-                        <div>
-                           
-                            
+                        <div class="action-container">
+                            <form class="button-form" action="<?=BASE_URL."/bill/findOne/".$bill['id']?>" method="POST">
+                                <button class="action-button"><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="Preview"></button>
+                            </form>
+                            <form class="button-form" action="<?=BASE_URL."/bill/delete/".$bill['id']?>" method="POST">
+                                <button class="action-button"><img src="<?= RESOURCE_URL."cancel_icon.png"?>" alt="Cancel Icon" title="Cancel"></button>
+                            </form>   
                         </div>
-                        <form  action="<?=BASE_URL."/bill/findOne/".$bill['id']?>" method="POST">
-                            <button><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="Preview"></button>
-                        </form>
-                        <form action="<?=BASE_URL."/bill/delete/".$bill['id']?>" method="POST">
-                            <button><img src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete Icon" title="Cancel"></button>
-                        </form>
                     </td>
                 </tr>
             <?php endforeach; ?>
