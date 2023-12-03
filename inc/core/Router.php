@@ -74,7 +74,7 @@ class Router {
             //     $this->params = ["401"];
             // }
             
-            // // if the request is get but is not a valid get request path, then return
+            // //if the request is get but is not a valid get request path, then return
             // if (METHOD === GET && !in_array($this->method, $this->validGetPaths)) {
             //     $this->controller = new ErrorController();
             //     $this->method = "error";

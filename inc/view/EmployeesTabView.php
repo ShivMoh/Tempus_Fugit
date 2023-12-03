@@ -58,7 +58,7 @@
                     <td><?= ucfirst($employee['status']) ?></td>
                     <td>
                         <form action=<?=BASE_URL."/employee/findOne/".$employee['id']?> method="POST">
-                            <button type="submit"><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="View"></button>
+                            <button class="action-button" type="submit"><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="View"></button>
                         </form>
                     </td>
                 </tr>

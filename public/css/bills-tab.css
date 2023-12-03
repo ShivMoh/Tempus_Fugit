@@ -16,6 +16,11 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.action-button:hover {
+    transform: scale(1.2);
 }
 
 .button-form {

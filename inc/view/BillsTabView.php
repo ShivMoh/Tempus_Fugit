@@ -84,7 +84,7 @@
                                 <button class="action-button"><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="Preview"></button>
                             </form>
                             <form class="button-form" action="<?=BASE_URL."/bill/delete/".$bill['id']?>" method="POST">
-                                <button class="action-button"><img src="<?= RESOURCE_URL."cancel_icon.png"?>" alt="Cancel Icon" title="Cancel"></button>
+                                <button class="action-button"><img src="<?= RESOURCE_URL."cancel-icon.png"?>" alt="Cancel Icon" title="Cancel"></button>
                             </form>   
                             <form class="button-form" action="<?=BASE_URL."/bill/update/".$bill['id']?>" method="POST">
                                 <button class="action-button"><img src="<?= RESOURCE_URL."done-icon.png"?>" alt="Edit Icon" title="Mark As Completed"></button>

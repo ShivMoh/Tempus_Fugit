@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="http://localhost/personal/Practice/oop-mvc/public/css/bill-preview.css">
+    <link rel="stylesheet" href="<?=CSS_URL."bill-preview.css"?>">
 </head>
 
 <div class="container-sm bill-preview-container">
