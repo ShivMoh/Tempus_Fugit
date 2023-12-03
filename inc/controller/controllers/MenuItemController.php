@@ -29,7 +29,7 @@ class MenuItemController extends BaseController{
         $this->menuItem->set_ingredients($ingredients);
 
         $this->menuItem->create();
-        $this->index();
+        $this->anchor("MenuTab");
     }
 
     public function findBill($id){
@@ -42,7 +42,7 @@ class MenuItemController extends BaseController{
         $id = $_POST['id']; 
         $this->menuItem->set_id($id);
         $this->menuItem->delete();
-        $this->index();
+        $this->anchor("MenuTab");
     }
 
     public function update($id = 0){
@@ -65,7 +65,7 @@ class MenuItemController extends BaseController{
         $this->menuItem->set_ingredients($ingredients);
 
         $this->menuItem->update();
-        $this->index();
+        $this->anchor("MenuTab");
     }
 }
 ?>

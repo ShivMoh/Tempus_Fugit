@@ -51,22 +51,20 @@ class EmployeeController extends BaseController{
         $this->model-> set_id($id);
         $employee = $this->model -> findById();
 
-        // view logic pending
-
     }
 
     public function delete($id = 0){
-        //id from where?
         $this->model = new EmployeeModel();
-        //$this->model-> delete();
-
-        // view logic pending
+        $id = $_POST['id']; 
+        $this->model->set_id($id);
+        $this->model->delete();
+        $this->anchor("employee");
     }
 
     public function update($id = 0){
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+            $id =$_POST['id'];
             $first_name = $_POST['first_name'];
             $last_name = $_POST['last_name'];
             $other_names = $_POST['other_names'];
@@ -78,9 +76,9 @@ class EmployeeController extends BaseController{
             $contact_number = $_POST['contact_number'];
 
             $this->model = new EmployeeModel();
-            //$this->model-> set_id();
             $employee = $this->model -> findById();
 
+            $this->model-> set_id($id);
             $this->model->set_first_name($first_name);
             $this->model->set_last_name($last_name);
             $this->model->set_other_names($other_names);
@@ -92,8 +90,7 @@ class EmployeeController extends BaseController{
             $this->model->set_contact_number($contact_number);
 
             $this->model->update();
-            
-            // view logic pending
+            $this->anchor("employee");
         }   
     }
 
