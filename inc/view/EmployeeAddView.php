@@ -16,6 +16,9 @@
         <p class="form-name-text">
             EMPLOYEE REGISTRATION
         </p>
+        <h5 class="form-info-text">
+            Hover over input bar to see specific instructions (if any)
+        </h5>
         <label for="first-name">First Name</label>
         <input type="text" name="first-name" required>
 
@@ -23,7 +26,7 @@
         <input type="text" name="last-name" required>
 
         <label for="other-names">Other Names</label>
-        <input type="text" name="other-names">
+        <input type="text" name="other-names" title="No spaces, separate by ','">
 
         <label for="gender">Gender</label>
         <select name="gender" required>
