@@ -55,9 +55,9 @@
                     <td><?= $row['contact_number'] ?></td>
                     <td><?= $row['status'] ?></td>
                     <td>
-                        <button><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="Expand"></button>
-                        <button><img src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete Icon" title="Delete"></button>
-                        <button><img src="<?= RESOURCE_URL."trash-icon.png"?>" alt="Edit Icon" title="Edit"></button>
+                        <form action=<?=BASE_URL."/employee/findOne/".$row['id']?> method="POST">
+                            <button type="submit"><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="View"></button>
+                        </form>
                     </td>
                 </tr>
             <?php endforeach; ?>

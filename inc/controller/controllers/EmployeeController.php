@@ -96,4 +96,10 @@ class EmployeeController extends BaseController{
             // view logic pending
         }   
     }
+
+    public function findOne($id) {
+        $this->model->set_id($id);
+        $data = $this->model->findById();
+        $this->view("Employee", $data);
+    }
 }

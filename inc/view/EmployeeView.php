@@ -1,19 +1,8 @@
 <?php 
     include "NavbarView.php";
 
-    $data = [
-        "id"=>1,
-        "first_name"=>"John",
-        "last_name"=>"Doe",
-        "other_names"=>" ",
-        "gender"=>"M",
-        "age"=>34,
-        "dob"=>"yyyy/mm/dd",
-        "job_role"=>"clerk",
-        "email"=>"johndoe@gmail.com",
-        "contact_number"=>"xxxx-xxxx-xxxx",
-        "image_url"=>"office_guy.png"
-    ]
+
+    print_r($data);
 
 
 ?>
