@@ -1,0 +1,24 @@
+.return-button {
+    margin-top: 12vh;
+    width: 250px;
+    height: 40px;
+    border: auto 1pt;
+    background-color: black;
+    border-radius: 0.5vw;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.return-button:hover {
+    transform: scale(1.05);
+}
+
+.return-button:hover {
+    background-color: #449AFF;
+    transform: scale(1.05);
+}
+
+.return-container {
+    margin-top: 40px;
+}
