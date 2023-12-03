@@ -10,7 +10,7 @@
     <link rel="stylesheet" href=<?=CSS_URL."main.css"?>>
     <link rel="stylesheet" href=<?=CSS_URL."search-bar.css"?>>
     <link rel="stylesheet" href=<?=CSS_URL."table.css"?>>
-    <link rel="stylesheet" href=<?=CSS_URL."employees-tab.css"?>>
+    <link rel="stylesheet" href=<?=CSS_URL."employee-tab.css"?>>
 </head>
 
 <body>
