@@ -135,7 +135,7 @@
                         </td>
                     </tr>
                 <?php 
-                    $total += $item['price'];
+                    $total += $item['total'];
                     $numberOfItems += 1;
                 ?>
                 <?php endforeach ?>
