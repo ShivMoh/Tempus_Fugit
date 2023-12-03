@@ -101,6 +101,17 @@ class EmployeeModel extends BaseModel {
         return $statement->fetch();
     }
 
+    public function findAllByStatus() {
+
+        $sql = "SELECT * FROM Employee WHERE status = :status";
+    
+        $statement = $this->connection->prepare($sql);
+        $statement->execute(['status' => $this->status]);
+    
+        return $statement->fetchAll();
+    
+    }
+
     public function get_first_name() {
         return $this->first_name;
     }
