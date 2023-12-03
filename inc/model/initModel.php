@@ -16,4 +16,3 @@ require __DIR__."/models/BillItemModel.php";
 require __DIR__."/managers/UserManager.php";
 require __DIR__."/managers/BillManager.php";
 require __DIR__."/managers/RegisterManager.php";
-require __DIR__."/managers/EmployeeManager.php";
