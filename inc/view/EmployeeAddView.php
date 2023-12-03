@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=<?=CSS_URL."main.css"?>>
-    <link rel="stylesheet" href=<?=CSS_URL."employee-add.css"?>>
+    <link rel="stylesheet" href=<?=CSS_URL."error-pages-buttons.css"?>>
     <title>Employee Registration Form</title>
 </head>
 
