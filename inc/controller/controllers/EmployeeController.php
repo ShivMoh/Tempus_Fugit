@@ -109,9 +109,6 @@ class EmployeeController extends BaseController{
     public function filterByStatus() {
         $this->model->set_status($_POST['status']);
         $data = $this->model->findByStatus();
-        if (empty($data)) $data = [
-            
-        ];
         $this->view("EmployeesTab", $data = [$data]);
     }
 }

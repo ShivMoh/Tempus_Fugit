@@ -75,20 +75,22 @@
         </thead>
     
         <tbody>
-            <?php foreach ($data as $employee): ?>
-                <tr>
-                    <td><?= $employee['first_name'] . ' ' . implode(" ", explode(",", trim($employee['other_names'], ","))) . ' ' . $employee['last_name'] ?></td>
-                    <td><?= $employee['job_role'] ?></td>
-                    <td><?= $employee['email'] ?></td>
-                    <td><?= $employee['contact_number'] ?></td>
-                    <td><?= ucfirst($employee['status']) ?></td>
-                    <td>
-                        <form action=<?=BASE_URL."/employee/findOne/".$employee['id']?> method="POST">
-                            <button class="action-button" type="submit"><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="View"></button>
-                        </form>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
+            <?php if(!empty($data[0])) : ?>
+                <?php foreach ($data as $employee): ?>
+                    <tr>
+                        <td><?= $employee['first_name'] . ' ' . implode(" ", explode(",", trim($employee['other_names'], ","))) . ' ' . $employee['last_name'] ?></td>
+                        <td><?= $employee['job_role'] ?></td>
+                        <td><?= $employee['email'] ?></td>
+                        <td><?= $employee['contact_number'] ?></td>
+                        <td><?= ucfirst($employee['status']) ?></td>
+                        <td>
+                            <form action=<?=BASE_URL."/employee/findOne/".$employee['id']?> method="POST">
+                                <button class="action-button" type="submit"><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="View"></button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </tbody>
     </table>
   
