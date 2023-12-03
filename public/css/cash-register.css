@@ -109,21 +109,21 @@ label {
 }
 
 .button-1 {
-    color: white;
-    background-color: #449AFF;
+    color: #449AFF;
+    background-color: white;
 }
 
 .button-1:hover {
     color: white;
-    background-color: #45a049;
+    background-color: #449AFF;
 }
 
 .button-2 {
-    color: white;
-    background-color: #449AFF;
+    color: #449AFF;
+    background-color: white;
 }
 
 .button-2:hover {
     color: white;
-    background-color: #45a049;
+    background-color: #449AFF;
 }
