@@ -26,7 +26,7 @@
                 order_date          DATE,
                 status              ENUM('empty', 'pending', 'cancelled', 'completed') NOT NULL,
                 PRIMARY KEY         (id)
-                );",
+            );",
             "CREATE TABLE IF NOT EXISTS MenuItem(
                 id                  INT AUTO_INCREMENT,
                 name                VARCHAR(30) NOT NULL,

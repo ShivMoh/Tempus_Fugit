@@ -35,25 +35,7 @@
     </div>
     <!-- SEARCH BAR -->
 
-    <?php
-        // Select * query here
-        $data = [
-            [
-                'id' => 1,
-                'number_of_items' => 10,
-                'total_cost' => 50.00,
-                'order_date' => '2023-11-22',
-                'status' => 'Completed',
-            ],
-            [
-                'id' => 2,
-                'number_of_items' => 5,
-                'total_cost' => 25.50,
-                'order_date' => '2023-11-23',
-                'status' => 'Pending',
-            ],
-        ];
-    ?>
+
 
     <table class="bills-table">
         <thead>
@@ -68,16 +50,24 @@
         </thead>
 
         <tbody>
-            <?php foreach ($data as $row): ?>
+            <?php foreach ($data as $bill): ?>
                 <tr>
-                    <td><?= $row['id'] ?></td>
-                    <td><?= $row['number_of_items'] ?></td>
-                    <td><?= '$' . $row['total_cost'] ?></td>
-                    <td><?= $row['order_date'] ?></td>
-                    <td><?=$row['status'] ?></td>
+                    <td><?= $bill['id'] ?></td>
+                    <td><?= $bill['number_of_items'] ?></td>
+                    <td><?= '$' . $bill['total_cost'] ?></td>
+                    <td><?= $bill['order_date'] ?></td>
+                    <td><?=$bill['status'] ?></td>
                     <td>
-                        <button><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="Expand"></button>
-                        <button><img src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete Icon" title="Delete"></button>
+                        <div>
+                           
+                            
+                        </div>
+                        <form  action="<?=BASE_URL."/bill/findOne/".$bill['id']?>" method="POST">
+                            <button><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="Expand"></button>
+                        </form>
+                        <form action="<?=BASE_URL."/bill/delete/".$bill['id']?>" method="POST">
+                            <button><img src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete Icon" title="Delete"></button>
+                        </form>
                     </td>
                 </tr>
             <?php endforeach; ?>

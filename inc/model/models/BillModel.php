@@ -43,7 +43,6 @@ class BillModel extends BaseModel {
 
     $statement = $this->connection->prepare($sql);
     $statement->execute(['id' => $this->id]);
-
     return $statement->fetch();
 
    }
@@ -87,6 +86,23 @@ class BillModel extends BaseModel {
 
         return $statement->fetch();
 
+   }
+
+   public function updateStatus() {
+        $sql = "UPDATE Bill SET status = :status WHERE id = :id";
+        
+        $change_bill_state = [
+            "status" => $this->status,
+            "id" => $this->id
+        ];
+
+        $statement = $this->connection->prepare($sql);
+        $statement->execute($change_bill_state);
+   }
+
+   public function findAllNonEmptyBills() {
+    $statement = $this->connection->query("SELECT * FROM Bill WHERE status != 'empty'");
+    return $statement->fetchAll();
    }
 
    public function get_id() {
