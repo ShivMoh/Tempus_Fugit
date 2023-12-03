@@ -63,7 +63,7 @@
                 email               VARCHAR(20) NOT NULL,
                 contact_number      VARCHAR(20) NOT NULL,
                 image_url           VARCHAR(100),
-                status              ENUM('active', 'onleave','dismissed'),
+                status              ENUM('active', 'onleave','dismissed') DEFAULT 'active',
                 PRIMARY KEY         (id)
             );"
         ];
