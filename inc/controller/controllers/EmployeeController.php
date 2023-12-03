@@ -45,54 +45,54 @@ class EmployeeController extends BaseController{
         $this->anchor("employee");
     }
 
-    public function findBill($id){
-        //id from where?
-        $this->model = new EmployeeModel();
-        $this->model-> set_id($id);
-        $employee = $this->model -> findById();
+    // public function findBill($id){
+    //     //id from where?
+    //     $this->model = new EmployeeModel();
+    //     $this->model-> set_id($id);
+    //     $employee = $this->model -> findById();
 
-    }
+    // }
 
-    public function delete($id = 0){
-        $this->model = new EmployeeModel();
-        $id = $_POST['id']; 
-        $this->model->set_id($id);
-        $this->model->delete();
-        $this->anchor("employee");
-    }
+    // public function delete($id = 0){
+    //     $this->model = new EmployeeModel();
+    //     $id = $_POST['id']; 
+    //     $this->model->set_id($id);
+    //     $this->model->delete();
+    //     $this->anchor("employee");
+    // }
 
-    public function update($id = 0){
+    // public function update($id = 0){
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $id =$_POST['id'];
-            $first_name = $_POST['first_name'];
-            $last_name = $_POST['last_name'];
-            $other_names = $_POST['other_names'];
-            $gender = $_POST['gender'];
-            $age = $_POST['age'];
-            $dob = $_POST['dob'];
-            $job_role = $_POST['job_role'];
-            $email = $_POST['email'];
-            $contact_number = $_POST['contact_number'];
+    //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    //         $id =$_POST['id'];
+    //         $first_name = $_POST['first_name'];
+    //         $last_name = $_POST['last_name'];
+    //         $other_names = $_POST['other_names'];
+    //         $gender = $_POST['gender'];
+    //         $age = $_POST['age'];
+    //         $dob = $_POST['dob'];
+    //         $job_role = $_POST['job_role'];
+    //         $email = $_POST['email'];
+    //         $contact_number = $_POST['contact_number'];
 
-            $this->model = new EmployeeModel();
-            $employee = $this->model -> findById();
+    //         $this->model = new EmployeeModel();
+    //         $employee = $this->model -> findById();
 
-            $this->model-> set_id($id);
-            $this->model->set_first_name($first_name);
-            $this->model->set_last_name($last_name);
-            $this->model->set_other_names($other_names);
-            $this->model->set_gender($gender);
-            $this->model->set_age($age);
-            $this->model->set_dob($dob);
-            $this->model->set_job_role($job_role);
-            $this->model->set_email($email);
-            $this->model->set_contact_number($contact_number);
+    //         $this->model-> set_id($id);
+    //         $this->model->set_first_name($first_name);
+    //         $this->model->set_last_name($last_name);
+    //         $this->model->set_other_names($other_names);
+    //         $this->model->set_gender($gender);
+    //         $this->model->set_age($age);
+    //         $this->model->set_dob($dob);
+    //         $this->model->set_job_role($job_role);
+    //         $this->model->set_email($email);
+    //         $this->model->set_contact_number($contact_number);
 
-            $this->model->update();
-            $this->anchor("employee");
-        }   
-    }
+    //         $this->model->update();
+    //         $this->anchor("employee");
+    //     }   
+    // }
 
     public function findOne($id) {
         $this->model->set_id($id);

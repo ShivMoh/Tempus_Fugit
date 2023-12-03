@@ -66,9 +66,8 @@
                     <img class="action-button-image" src="<?= RESOURCE_URL."edit-icon.png"?>" alt="Edit" title="Edit">
                 </button>
                 
-                <form action="<?=BASE_URL."/MenuItem/delete"?>" method="post">
-                    <input type="hidden" name="id" value="<?= $item['id']; ?>">
-                    <button class="action-button-right-most" formaction="<?=BASE_URL."/MenuItem/delete/".$item['id']?>"><img class="action-button-image" src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete" title="Delete"></button>
+                <form action="<?=BASE_URL."/MenuItem/delete/".$item['id']?>" method="post">
+                    <button class="action-button-right-most"><img class="action-button-image" src="<?= RESOURCE_URL."delete-icon.png"?>" alt="Delete" title="Delete"></button>
                 </form>
             </div>
         </div>
@@ -103,9 +102,7 @@
         <div class="modal edit-modal" id="edit-modal-<?php echo $item['id']; ?>">
             <div class="modal-content">
 
-                <form action="<?= BASE_URL . "/MenuItem/update"?>" method="post">
-                    <input type="hidden" name="id" value="<?= $item['id']; ?>">
-
+                <form action=<?= BASE_URL."/MenuItem/update/".$item['id']?> method="post">
                     <label for="edit-item-name">Name</label>
                     <input type="text" id="edit-item-name" name="edit-item-name" value="<?php echo $item['name']; ?>" required>
 
