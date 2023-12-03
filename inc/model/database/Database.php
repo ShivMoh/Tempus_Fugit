@@ -63,7 +63,7 @@
                 email               VARCHAR(20) NOT NULL,
                 contact_number      VARCHAR(20) NOT NULL,
                 image_url           VARCHAR(100),
-                status              BOOLEAN DEFAULT FALSE,
+                status              ENUM('active', 'onleave','dismissed'),
                 PRIMARY KEY         (id)
             );"
         ];
@@ -173,27 +173,27 @@
                     'first_name' => "Ricardo",
                     'last_name' => "Narine",
                     'other_names' => "Joshua",
-                    'gender' => true,
+                    'gender' => 1,
                     'age' => 18,
                     'dob' => '2005-01-23',
                     'job_role' => 'manager',
                     'email' => 'ricardo@gmail.com',
                     'contact_number' => '666-1234',
                     'image_url' => 'place',
-                    'status' => true
+                    'status' => 'active'
                 ],
                 [
                     'first_name' => "Monica",
                     'last_name' => "Lee",
                     'other_names' => "Amy",
-                    'gender' => false,
+                    'gender' => 0,
                     'age' => 19,
                     'dob' => '2004-01-23',
                     'job_role' => 'clerk',
                     'email' => 'monica@gmail.com',
                     'contact_number' => '666-4321',
                     'image_url' => 'place',
-                    'status' => true
+                    'status' => 'active'
                 ]
 
             ];

@@ -78,12 +78,16 @@ class Router {
             //     return;
             // }
             
+    
             // calls the assigned controller and method
             call_user_func_array(
                 [$this->controller,$this->method], 
                 $this->params
             );
 
+    
+         
+            
             // reset attributes
             $this->controller = "";
             $this->method = "";
