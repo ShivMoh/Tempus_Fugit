@@ -9,7 +9,10 @@
 </head>
 
 <body>
-    <form class="employee-registration-form" action="<?=BASE_URL."/employee/create"?>" method="post">
+    <form id="employee-back-form" class="employee-back-form" action=<?=BASE_URL."/employee"?> method="POST">
+        
+    </form>
+    <form id="employee-registration-form" class="employee-registration-form" action="<?=BASE_URL."/employee/create"?>" method="post">
         <p class="form-name-text">
             EMPLOYEE REGISTRATION
         </p>
@@ -51,14 +54,9 @@
         <label for="image-url">Image URL</label>
         <input type="text" name="image-url">
 
-        <!-- <label for="status">Status</label>
-        <select name="status" required>
-            <option value="active">Active</option>
-            <option value="onleave">On Leave</option>
-            <option value="dismissed">Dismissed</option>
-        </select> -->
-
-        <button type="submit">Submit</button>
+        <button type="submit" form="employee-registration-form">Submit</button>
+        <button type="submit" class="employee-add-back-button" form="employee-back-form">Back To List</button>
     </form>
+ 
 </body>
 </html>
