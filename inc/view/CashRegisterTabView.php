@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <h3 class="cash-register-instructions">Input your items here:</h3>
+    <h3 class="cash-register-instructions">Select your items from the dropdown menu below.</h3>
     <form  action="<?=BASE_URL."/register/create"?>" method="POST" id="order-form">
         <div class="cash-register-input-section">
             <table>
@@ -61,7 +61,7 @@
         
    
        
-    <h3 class="cash-register-instructions">Items Show up here:</h3>
+    <h3 class="cash-register-instructions">Items added will populate this table:</h3>
     </form>
         <table >
             <thead>
