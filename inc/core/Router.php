@@ -19,7 +19,8 @@ class Router {
         "create",
         "update",
         "delete",
-        "findOne"
+        "findOne",
+        "error"
     ];
 
     public function __construct() {
@@ -68,36 +69,36 @@ class Router {
 
             // if the request is post but is not a valid post request path, then return
             // if (METHOD === POST && !in_array($this->method, $this->validPostPaths)) {
-            //     echo "INVALID REQUEST ON METHOD: $this->method";
-            //     return;
+            //     $this->controller = new ErrorController();
+            //     $this->method = "error";
+            //     $this->params = ["401"];
             // }
             
             // // if the request is get but is not a valid get request path, then return
             // if (METHOD === GET && !in_array($this->method, $this->validGetPaths)) {
-            //     echo "INVALID REQUEST ON METHOD: $this->method";
-            //     return;
+            //     $this->controller = new ErrorController();
+            //     $this->method = "error";
+            //     $this->params = ["401"];
             // }
-            
     
-            // calls the assigned controller and method
-            call_user_func_array(
-                [$this->controller,$this->method], 
-                $this->params
-            );
-
-    
-         
-            
-            // reset attributes
-            $this->controller = "";
-            $this->method = "";
-            $this->params = [];
+           
         } else {
             // redirect to 404 page
-            echo "404 Page Not available";
-            $this->controller = "";
-            $this->method = "";
+            $this->controller = new ErrorController();
+            $this->method = "error";
+            $this->params = ["404"];
         }
+
+        // calls the assigned controller and method
+        call_user_func_array(
+            [$this->controller,$this->method], 
+            $this->params
+        );
+
+        // reset attributes
+        $this->controller = "";
+        $this->method = "";
+        $this->params = [];
       
     }
 
