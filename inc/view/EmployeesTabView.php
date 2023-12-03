@@ -16,20 +16,46 @@
 <body>
     <!-- SEARCH BAR -->
     <div class="search-bar-container">
-        <input class="search-bar" type="text" placeholder="Search Bills by Transaction ID">
-        <button class="search-button"><img title="Search" class="search-icon" src="<?= RESOURCE_URL."search.png"?>" alt="Search Button"></button>
-        <select class="search-bar-dropdown-1" name="status" id="status">
-            <option disabled selected>Status</option>
-            <option value="completed">Completed</option>
-            <option value="pending">Pending</option>
-            <option value="cancelled">Cancelled</option>
-        </select>
-        <select class="search-bar-dropdown-2" name="date" id="date">
-            <option disabled selected>Date</option>
-            <option value="last-week">Last Week</option>
-            <option value="last-month">Last Month</option>
-            <option value="last-six-months">Last 6 Months</option>
-        </select>
+        <form 
+            action=<?=BASE_URL."/employee/searchById"?> 
+            method="POST">
+            <input 
+                class="search-bar" 
+                name="search-query"
+                type="text" 
+                placeholder="Search Bills by Transaction ID">
+            
+            <button 
+                type="submit"
+                class="search-button">
+                <img 
+                    title="Search" 
+                    class="search-icon" 
+                    src="<?= RESOURCE_URL."search.png"?>" 
+                    alt="Search Button">
+            </button>
+        </form>
+      
+   
+       
+        <form action=<?=BASE_URL."/employee/filterByStatus"?> method="POST">
+            <select class="search-bar-dropdown-1" name="status" id="status" onchange="this.form.submit()">
+                <option disabled selected>Status</option>
+                <option value="active">Active</option>
+                <option value="onleave">On Leave</option>
+                <option value="dismissed">Dismissed</option>
+            </select>
+        </form>
+       
+        <!-- <form action=<?=BASE_URL."/employee/filterByDate"?> method="POST">
+            <select class="search-bar-dropdown-2" name="date" id="date" onchange="this.form.submit()">
+                <option disabled selected>Date</option>
+                <option value="last-week">Last Week</option>
+                <option value="last-month">Last Month</option>
+                <option value="last-six-months">Last 6 Months</option>
+            </select >
+        </form>
+      -->
         <form action="<?=BASE_URL."/MenuItem/view/EmployeeAdd"?>" method="POST">
             <button class="search-bar-add-button"><img title="Add Bill" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
         </form>

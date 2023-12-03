@@ -102,4 +102,19 @@ class EmployeeController extends BaseController{
         $data = $this->model->findById();
         $this->view("Employee", $data);
     }
+
+    public function searchById() {
+        $this->model->set_id($_POST['search-query']);
+        $data = $this->model->findById();
+        $this->view("EmployeesTab", $data = [$data]);
+    }
+
+    public function filterByStatus() {
+        $this->model->set_status($_POST['status']);
+        $data = $this->model->findByStatus();
+        if (empty($data)) $data = [
+            
+        ];
+        $this->view("EmployeesTab", $data = [$data]);
+    }
 }

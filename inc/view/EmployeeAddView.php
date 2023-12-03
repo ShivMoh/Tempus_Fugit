@@ -9,9 +9,7 @@
 </head>
 
 <body>
-    <form id="employee-back-form" class="employee-back-form" action=<?=BASE_URL."/employee"?> method="POST">
-        
-    </form>
+    <form id="employee-back-form" class="employee-back-form" action=<?=BASE_URL."/employee"?> method="POST"></form>
     <form id="employee-registration-form" class="employee-registration-form" action="<?=BASE_URL."/employee/create"?>" method="post">
         <p class="form-name-text">
             EMPLOYEE REGISTRATION

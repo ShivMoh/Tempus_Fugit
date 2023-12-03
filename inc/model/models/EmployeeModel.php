@@ -92,6 +92,15 @@ class EmployeeModel extends BaseModel {
         $statement->execute($deleted_employee);
     }
 
+    public function findByStatus() {
+        $sql = "SELECT * FROM Employee WHERE status = :status";
+
+        $statement = $this->connection->prepare($sql);
+        $statement->execute(['status' => $this->status]);
+
+        return $statement->fetch();
+    }
+
     public function get_first_name() {
         return $this->first_name;
     }
