@@ -56,7 +56,28 @@
                     <td><?= $bill['number_of_items'] ?></td>
                     <td><?= '$' . $bill['total_cost'] ?></td>
                     <td><?= $bill['order_date'] ?></td>
-                    <td><?=$bill['status'] ?></td>
+                    <td>
+                        <?php
+                            $imageSource = '';
+                            switch ($bill['status']) {
+                                case 'pending':
+                                    $imageSource = RESOURCE_URL . "pending_icon.png";
+                                    break;
+                                case 'completed':
+                                    $imageSource = RESOURCE_URL . "active_icon.png";
+                                    break;
+                                case 'cancelled':
+                                    $imageSource = RESOURCE_URL . "cancelled_icon.png";
+                                    break;
+                                default:
+                                    $imageSource = RESOURCE_URL . "empty_icon.png"; 
+                            }
+                        ?>
+                        <div class="status-container">
+                            <img src="<?= $imageSource ?>" title="status-icon">
+                            <span class="status-text"><?= ucfirst($bill['status']) ?></span>
+                        </div>
+                    </td>
                     <td>
                         <div class="action-container">
                             <form class="button-form" action="<?=BASE_URL."/bill/findOne/".$bill['id']?>" method="POST">
