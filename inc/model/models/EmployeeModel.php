@@ -54,7 +54,7 @@ class EmployeeModel extends BaseModel {
         $statement = $this->connection->prepare($sql);
         $statement->execute(['id' => $this->id]);
 
-        return $statement->fetchObject();
+        return $statement->fetchAll();
     }
 
     public function update() {
