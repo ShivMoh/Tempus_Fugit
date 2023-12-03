@@ -2,31 +2,31 @@
     border-radius: 60px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
-    justify-content: center;
     align-items: center;
-    max-width: 85%; /* Set a maximum width for the container */
-    width: 100%;
-    padding: 15px; /* Add padding as needed */
-    margin: 30px auto; /* Center the container horizontally */
+    width: 85%;
+    padding: 15px;
+    margin: 2vh auto;
+    justify-content: space-evenly;
+}
+
+.search-form {
+    width: 60%;
+    margin-left: 2%;
+    display: flex;
 }
 
 /* Style for the text input */
 .search-bar {
+    flex-grow: 1; /* Take as much space as possible */
     padding: 8px;
     border: none;
     border-radius: 4px;
     margin-right: 5px;
-    flex-grow: 1; /* Take remaining space */
-}
-
-.search-icon,.add-icon {
-    width: 20px; /* Adjust the width to your preference */
-    height: 20px; /* Adjust the height to your preference */
 }
 
 /* Style for the search button */
 .search-button {
-    background-color: #fff; /* Green background color */
+    background-color: #fff;
     border: none;
     color: white;
     padding: 8px 10px;
@@ -34,17 +34,27 @@
     cursor: pointer;
 }
 
-/* Style for the dropdowns */
+/* Style for the image buttons */
+.search-icon, .add-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Style for the dropdowns and clear search button */
 .search-bar-dropdown-1,
-.search-bar-dropdown-2 {
-    border: none;
-    padding: 8px;
+.search-bar-dropdown-2,
+.clear-search {
+    border: 2px solid #95C5FF;
+    border-radius: 20px; 
+    padding: 8px 10px;
+    background-color: #95C5FF;
+    color: white;
+    cursor: pointer;
     margin-right: 5px;
 }
 
-/* Style for the add button */
 .search-bar-add-button {
-    background-color: #fff; /* Blue background color */
+    background-color: #fff;
     border: none;
     color: white;
     padding: 8px 10px;
@@ -52,8 +62,11 @@
     cursor: pointer;
 }
 
-/* Add some space between the elements */
-.search-bar-container > * {
-
-    margin-right: 5px;
+.clear-search:hover,
+.search-bar-dropdown-1:hover,
+.search-bar-dropdown-2:hover {
+    background-color: white;
+    color: #95C5FF;
+    border: 2px solid #95C5FF;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
