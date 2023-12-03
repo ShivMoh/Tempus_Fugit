@@ -60,12 +60,12 @@
 
             <div class="action-buttons">
                 <form>
-                    <button class="action-button expand-button" data-id="<?php echo $item['id']; ?>">
+                    <button type="button" class="action-button expand-button" data-id="<?php echo $item['id']; ?>">
                         <img class="action-button-image" src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand" title="Expand">
                     </button>
                 </form>
                 <form>
-                    <button class="action-button edit-button" data-id="<?php echo $item['id']; ?>">
+                    <button type="button" class="action-button edit-button" data-id="<?php echo $item['id']; ?>">
                         <img class="action-button-image" src="<?= RESOURCE_URL."edit-icon.png"?>" alt="Edit" title="Edit">
                     </button>
                 </form>
