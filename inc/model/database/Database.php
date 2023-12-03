@@ -179,7 +179,7 @@
                     'job_role' => 'manager',
                     'email' => 'ricardo@gmail.com',
                     'contact_number' => '666-1234',
-                    'image_url' => 'place',
+                    'image_url' => 'employee1.jpg',
                     'status' => 'active'
                 ],
                 [
@@ -192,7 +192,7 @@
                     'job_role' => 'clerk',
                     'email' => 'monica@gmail.com',
                     'contact_number' => '666-4321',
-                    'image_url' => 'place',
+                    'image_url' => 'employee2.jpg',
                     'status' => 'active'
                 ]
 

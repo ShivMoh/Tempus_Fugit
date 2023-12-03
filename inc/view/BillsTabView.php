@@ -17,7 +17,7 @@
 <body>
     <!-- SEARCH BAR -->
     <div class="search-bar-container">
-        <form action=<?=BASE_URL."/bill/searchById"?> method="POST">
+        <form class="search-form" action=<?=BASE_URL."/bill/searchById"?> method="POST">
             <input class="search-bar" type="text" placeholder="Search Bills by ID" name="search-query">
             <button type="submit" class="search-button"><img title="Search" class="search-icon" src="<?= RESOURCE_URL."search.png"?>" alt="Search Button"></button>
         </form>

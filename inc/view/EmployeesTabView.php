@@ -17,6 +17,7 @@
     <!-- SEARCH BAR -->
     <div class="search-bar-container">
         <form 
+            class="search-form"
             action=<?=BASE_URL."/employee/searchById"?> 
             method="POST">
             <input 
