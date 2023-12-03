@@ -26,7 +26,6 @@
             <button class="clear-search" type="submit">Clear Search</button>
         </form>
       
-
         <form action=<?=BASE_URL."/bill/filterByStatus"?> method="POST">
             <select class="search-bar-dropdown-1" name="status" id="status" onchange="this.form.submit()">
                 <option disabled selected>Status</option>
