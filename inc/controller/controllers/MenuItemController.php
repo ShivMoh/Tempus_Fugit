@@ -1,87 +1,71 @@
 <?php
-
-
 class MenuItemController extends BaseController{
+    private $menuItem;
+
+    public function __construct(){
+        $this->menuItem = new MenuItemModel();
+    }
 
     public function index(){
-
-        $MenuItem = new MenuItemModel();
-        $Menu = $MenuItem->findAll();
-
+        $Menu = $this->menuItem->findAll();
         $this->view("/MenuTab", $data = $Menu);
     }
 
     public function create(){
-        if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $name = $_POST['name'];
-            $price = $_POST['price'];
-            $description = $_POST['description'];
-            $image = $_POST['image'];
-            $discount = $_POST['discount'];
-            $tags = $_POST['tags'];
-            $ingredients = $_POST['ingredients'];
+        $name = $_POST['name'];
+        $price = $_POST['price'];
+        $description = $_POST['description'];
+        $image = $_POST['image'];
+        $discount = $_POST['discount'];
+        $tags = $_POST['tags'];
+        $ingredients = $_POST['ingredients'];
 
-            $MenuItem = new MenuItemModel();
-            $MenuItem->set_name($name);
-            $MenuItem->set_price($price);
-            $MenuItem->set_description($description);
-            $MenuItem->set_image($image);
-            $MenuItem->set_discount($discount);
-            $MenuItem->set_tags($tags);
-            $MenuItem->set_ingredients($ingredients);
+        $this->menuItem->set_name($name);
+        $this->menuItem->set_price($price);
+        $this->menuItem->set_description($description);
+        $this->menuItem->set_image($image);
+        $this->menuItem->set_discount($discount);
+        $this->menuItem->set_tags($tags);
+        $this->menuItem->set_ingredients($ingredients);
 
-            $MenuItem->create();
-            $this->index();
-
-        } 
+        $this->menuItem->create();
+        $this->index();
     }
 
     public function findBill($id){
-        //id from where?
-        $MenuItem = new MenuItemModel();
-        $MenuItem-> set_id($id);
-        $Menu = $MenuItem -> findById();
-
+        $this->menuItem->set_id($id);
+        $Menu = $this->menuItem->findById();
         // view logic pending
-
     }
 
     public function delete($id = 0){
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $id = $_POST['id']; 
-            $MenuItem = new MenuItemModel();
-            $MenuItem->set_id($id);
-            $MenuItem->delete();
-            $this->index();
-        }
+        $id = $_POST['id']; 
+        $this->menuItem->set_id($id);
+        $this->menuItem->delete();
+        $this->index();
     }
 
     public function update($id = 0){
+        $id =$_POST['id'];
+        $name = $_POST['edit-item-name'];
+        $price = $_POST['edit-item-price'];
+        $description = $_POST['edit-item-description'];
+        $image = $_POST['edit-item-image'];
+        $discount = $_POST['edit-item-discount'];
+        $tags = $_POST['edit-item-tags'];
+        $ingredients = $_POST['edit-item-ingredients'];
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $id =$_POST['id'];
-            $name = $_POST['edit-item-name'];
-            $price = $_POST['edit-item-price'];
-            $description = $_POST['edit-item-description'];
-            $image = $_POST['edit-item-image'];
-            $discount = $_POST['edit-item-discount'];
-            $tags = $_POST['edit-item-tags'];
-            $ingredients = $_POST['edit-item-ingredients'];
+        $this->menuItem->set_id($id);
+        $this->menuItem->set_name($name);
+        $this->menuItem->set_price($price);
+        $this->menuItem->set_description($description);
+        $this->menuItem->set_image($image);
+        $this->menuItem->set_discount($discount);
+        $this->menuItem->set_tags($tags);
+        $this->menuItem->set_ingredients($ingredients);
 
-            $MenuItem = new MenuItemModel();
-            
-            $MenuItem-> set_id($id);
-            $MenuItem->set_name($name);
-            $MenuItem->set_price($price);
-            $MenuItem->set_description($description);
-            $MenuItem->set_image($image);
-            $MenuItem->set_discount($discount);
-            $MenuItem->set_tags($tags);
-            $MenuItem->set_ingredients($ingredients);
-
-            $MenuItem->update();
-            $this->index();
-
-        }   
+        $this->menuItem->update();
+        $this->index();
     }
 }
+?>

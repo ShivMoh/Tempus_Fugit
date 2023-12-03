@@ -26,11 +26,12 @@
             <option value="dessert">Dessert</option>
         </select>
 
-        <select class="search-bar-dropdown-2" name="price" id="price">
-            <option disabled selected>Price</option>
-            <option value="under-1000">Under 1000</option>
-            <option value="1000-to-5000">1000 to 5000</option>
-            <option value="over-5000">Over 5000</option>
+        <select class="search-bar-dropdown-2" name="Sort" id="sort">
+            <option disabled selected>Sort</option>
+            <option value="Price-High-to-Low">Price: High to Low</option>
+            <option value="Price-Low-to-Hight">Price: Low to High</option>
+            <option value="A-to-Z">A to Z</option>
+            <option value="Z-to-A">Z to A</option>
         </select>
         <form action="<?=BASE_URL."/MenuItem/view/MenuItemAdd"?>" method="POST">        
             <button class="search-bar-add-button"><img title="Add Item" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
