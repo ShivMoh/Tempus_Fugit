@@ -27,5 +27,9 @@
     <h1>401</h1>
     <p>Unauthorized Access</p>
     <p>You are not authorized to access this page!</p>
+
+    <form action = <?=BASE_URL."/register"?> method="POST">
+        <button>Back to home</button> 
+    </form>
 </body>
 </html>
