@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=<?=CSS_URL."error-pages-buttons.css"?>>
     <title>401 Unauthorized Access</title>
     <style>
         body {
@@ -26,10 +27,10 @@
 <body>
     <h1>404</h1>
     <p>Not Found</p>
-    <p>The resource requested could not be found on this server!</p>
+    <p>The resource requested could not be found on this server!<br></p>
 
     <form action = <?=BASE_URL."/register"?> method="POST">
-        <button>Back to home</button> 
+        <button class = "return-button">Back to homepage</button> 
     </form>
 </body>
 </html>
