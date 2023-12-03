@@ -4,11 +4,9 @@
 
 class EmployeeController extends BaseController{
     private $model;
-    private $employeeManager;
 
     public function __construct() {
         $this->model = new EmployeeModel();
-        $this->employeeManager = new EmployeeManager();
     }
 
     public function index(){
@@ -31,12 +29,6 @@ class EmployeeController extends BaseController{
         $jobRole = $_POST['job-role'];
         $email = $_POST['email'];
         $contactNumber = $_POST['contact-number'];
-
-        // Verify employee age
-        if (!$this->employeeManager->verifyEmployeeAge($_POST['id'])) {
-            // Handle underage employee (e.g., show error message)
-            return;
-        }
 
         $this->model->set_first_name($firstName);
         $this->model->set_last_name($lastName);
@@ -88,12 +80,6 @@ class EmployeeController extends BaseController{
             $this->model = new EmployeeModel();
             //$this->model-> set_id();
             $employee = $this->model -> findById();
-
-            // Verify employee age
-            if (!$this->employeeManager->verifyEmployeeAge($_POST['id'])) {
-                // Handle underage employee (e.g., show error message)
-                return;
-            }
 
             $this->model->set_first_name($first_name);
             $this->model->set_last_name($last_name);
