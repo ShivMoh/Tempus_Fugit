@@ -45,9 +45,7 @@ class EmployeeModel extends BaseModel {
 
     public function findAll() {
         $statement = $this->connection->query("SELECT * FROM Employee");
-        return $statement->fetchAll(); //Similarly for this one
-                                                    //a manager may be necessary
-                                                    //for handling the return
+        return $statement->fetchAll();
     }
 
     public function findById() {
