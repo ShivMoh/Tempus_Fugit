@@ -4,80 +4,40 @@
 
 class BillController extends BaseController{
 
+    private $model;
+    private $manager;
+
+    public function __construct() {
+        $this->model = new BillModel();
+        $this->manager = new BillManager();
+    }
+
     public function index(){
-        $billModel = new BillModel();
-        $bill = $billModel->findAll();
-        $this->view("/BillsTab", $data = $bill);
+        $this->findAll();
     }
 
-    public function create(){
-        if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $customer = $_POST['customer'];
-            $number_of_items = $_POST['number_of_items'];
-            $total_cost = $_POST['total_cost'];
-            $order_date = $_POST['order_date'];
-            $status = $_POST['status'];
-
-            $billModel = new BillModel();
-            $billModel->set_customer($customer);
-            $billModel->set_number_of_items($number_of_items);
-            $billModel->set_total_cost($total_cost);
-            $billModel->set_order_date($order_date);
-            $billModel->set_status($status);
-
-            $billModel->create();   
-            
-            
-        // view logic pending 
-        // back to index
-        }
-
+    public function findAll() {
+        $bills = $this->model->findAllNonEmptyBills();
+        $this->view("BillsTab", $data = $bills);
     }
 
-    public function findBill($id){
-        //id from where?
-        $billModel = new BillModel();
-        $billModel-> set_id($id);
-        $bill = $billModel -> findById();
+    public function findOne($id) {
+        $this->model->set_id($id);
+        $bill = $this->model->findById();
+        $billItems = $this->manager->getItemsForBill($bill['id']);
 
-        // view logic pending
-        $this->view("Whatever", $bill);
+        $billData = [
+            "bill"=>$bill,
+            "billItems"=>$billItems
+        ];
 
+        $this->view("BillPreview", $data = $billData);
     }
 
-    public function delete($id = 0){
-        //id from where?
-        $billModel = new BillModel();
-        //$billModel->set_id();
-        $billModel-> delete();
+    // doesn't actually delete the bill, simply changes its status to cancel
+    public function delete($id) {
 
-        // view logic pending
-
-    }
-
-    public function update($id = 0){
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-            $customer = $_POST['customer'];
-            $number_of_items = $_POST['number_of_items'];
-            $total_cost = $_POST['total_cost'];
-            $order_date = $_POST['order_date'];
-            $status = $_POST['status'];
-
-            $billModel = new BillModel();
-            //$billModel->set_id();
-            $existingBill = $billModel->findById();
-
-            $existingBill->set_customer($customer);
-            $existingBill->set_number_of_items($number_of_items);
-            $existingBill->set_total_cost($total_cost);
-            $existingBill->set_order_date($order_date);
-            $existingBill->set_status($status);
-
-            $existingBill->update();
-            
-            // view logic pending
-        }   
+        $this->manager->changeBillState($id, "cancelled");
+        $this->anchor("bill");
     }
 }

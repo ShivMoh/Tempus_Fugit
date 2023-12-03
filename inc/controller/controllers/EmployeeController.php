@@ -10,39 +10,39 @@ class EmployeeController extends BaseController{
     }
 
     public function index(){
-        $employee = $this->model->findAll();
-        $this->view("/EmployeesTab", $data = $employee);
+       $this->findAll();
+    }
+
+    public function findAll() {
+        $employees = $this->model->findAll();
+        $this->view("/EmployeesTab", $data = $employees);
     }
 
     public function create(){
-        if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-            $first_name = $_POST['first_name'];
-            $last_name = $_POST['last_name'];
-            $other_names = $_POST['other_names'];
-            $gender = $_POST['gender'];
-            $age = $_POST['age'];
-            $dob = $_POST['dob'];
-            $job_role = $_POST['job_role'];
-            $email = $_POST['email'];
-            $contact_number = $_POST['contact_number'];
+        $firstName = $_POST['first-name'];
+        $lastName = $_POST['last-name'];
+        $otherNames = $_POST['other-names'];
+        $age = $_POST['gender'];
+        $gender = $_POST['age'];
+        $dob = $_POST['dob'];
+        $jobRole = $_POST['job-role'];
+        $email = $_POST['email'];
+        $contactNumber = $_POST['contact-number'];
 
-            $this->model = new EmployeeModel();
-            $this->model->set_first_name($first_name);
-            $this->model->set_last_name($last_name);
-            $this->model->set_other_names($other_names);
-            $this->model->set_gender($gender);
-            $this->model->set_age($age);
-            $this->model->set_dob($dob);
-            $this->model->set_job_role($job_role);
-            $this->model->set_email($email);
-            $this->model->set_contact_number($contact_number);
+        $this->model->set_first_name($firstName);
+        $this->model->set_last_name($lastName);
+        $this->model->set_other_names($otherNames);
+        $this->model->set_gender($gender);
+        $this->model->set_age($age);
+        $this->model->set_dob($dob);
+        $this->model->set_job_role($jobRole);
+        $this->model->set_email($email);
+        $this->model->set_contact_number($contactNumber);
+        $this->model->set_status("active");
 
-            $this->model->create();
-
-        // view logic pending 
-        // back to index
-        }
+        $this->model->create();
+        $this->anchor("employee");
     }
 
     public function findBill($id){
@@ -95,5 +95,11 @@ class EmployeeController extends BaseController{
             
             // view logic pending
         }   
+    }
+
+    public function findOne($id) {
+        $this->model->set_id($id);
+        $data = $this->model->findById();
+        $this->view("Employee", $data);
     }
 }

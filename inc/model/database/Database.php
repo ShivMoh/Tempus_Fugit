@@ -26,7 +26,7 @@
                 order_date          DATE,
                 status              ENUM('empty', 'pending', 'cancelled', 'completed') NOT NULL,
                 PRIMARY KEY         (id)
-                );",
+            );",
             "CREATE TABLE IF NOT EXISTS MenuItem(
                 id                  INT AUTO_INCREMENT,
                 name                VARCHAR(30) NOT NULL,
@@ -63,7 +63,7 @@
                 email               VARCHAR(20) NOT NULL,
                 contact_number      VARCHAR(20) NOT NULL,
                 image_url           VARCHAR(100),
-                status              ENUM('active', 'onleave','dismissed'),
+                status              ENUM('active', 'onleave','dismissed') DEFAULT 'active',
                 PRIMARY KEY         (id)
             );"
         ];

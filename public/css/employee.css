@@ -12,6 +12,7 @@
 }
 
 .employee-view-save-button {
+    margin-top: 20px;
     width: 250px;
     height: 40px;
     border: none;
@@ -49,6 +50,10 @@
 
 .employee-view-save-button:disabled {
     opacity: 0;
+}
+
+.employee-view-container {
+    margin-top: 50px;
 }
 
 .employee-view-status-container {
