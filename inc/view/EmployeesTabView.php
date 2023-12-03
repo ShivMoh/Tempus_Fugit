@@ -47,17 +47,17 @@
                 <th class="column-6">Actions</th>
             </tr>
         </thead>
-
+    
         <tbody>
-            <?php foreach ($data as $row): ?>
+            <?php foreach ($data as $employee): ?>
                 <tr>
-                    <td><?= $row['first_name'] . ' ' . $row['other_names'] . ' ' . $row['last_name'] ?></td>
-                    <td><?= $row['job_role'] ?></td>
-                    <td><?= $row['email'] ?></td>
-                    <td><?= $row['contact_number'] ?></td>
-                    <td><?= ucfirst($row['status']) ?></td>
+                    <td><?= $employee['first_name'] . ' ' . implode(" ", explode(",", trim($employee['other_names'], ","))) . ' ' . $employee['last_name'] ?></td>
+                    <td><?= $employee['job_role'] ?></td>
+                    <td><?= $employee['email'] ?></td>
+                    <td><?= $employee['contact_number'] ?></td>
+                    <td><?= ucfirst($employee['status']) ?></td>
                     <td>
-                        <form action=<?=BASE_URL."/employee/findOne/".$row['id']?> method="POST">
+                        <form action=<?=BASE_URL."/employee/findOne/".$employee['id']?> method="POST">
                             <button class="action-button" type="submit"><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="View"></button>
                         </form>
                     </td>
@@ -65,4 +65,5 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+  
 </body>

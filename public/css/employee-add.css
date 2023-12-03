@@ -16,6 +16,13 @@
     padding: 0.5em;
 }
 
+.employee-back-form {
+    width: 80%;
+    margin: 4vh auto;
+}
+
+
+
 .employee-registration-form label {
     font-size: 2em;
     margin: 0 3%;
@@ -32,14 +39,32 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.employee-registration-form .employee-add-back-button {
+    background-color: #449AFF;
 }
 
 .employee-registration-form button:hover {
     background-color: #45a049;
 }
 
+
+.employee-registration-form .employee-add-back-button:hover {
+    background-color: #4c9fff;
+}
+
+
 .form-name-text {
     text-align: center;
     font-size: 2.5em; 
+    margin-bottom: 1%;
+}
+
+
+.form-info-text {
+    text-align: center;
+    font-size: 1.2em; 
     margin-bottom: 1%;
 }

@@ -9,10 +9,16 @@
 </head>
 
 <body>
-    <form class="employee-registration-form" action="<?=BASE_URL."/employee/create"?>" method="post">
+    <form id="employee-back-form" class="employee-back-form" action=<?=BASE_URL."/employee"?> method="POST">
+        
+    </form>
+    <form id="employee-registration-form" class="employee-registration-form" action="<?=BASE_URL."/employee/create"?>" method="post">
         <p class="form-name-text">
             EMPLOYEE REGISTRATION
         </p>
+        <h5 class="form-info-text">
+            Hover over input bar to see specific instructions (if any)
+        </h5>
         <label for="first-name">First Name</label>
         <input type="text" name="first-name" required>
 
@@ -20,7 +26,7 @@
         <input type="text" name="last-name" required>
 
         <label for="other-names">Other Names</label>
-        <input type="text" name="other-names">
+        <input type="text" name="other-names" title="No spaces, separate by ','">
 
         <label for="gender">Gender</label>
         <select name="gender" required>
@@ -51,14 +57,9 @@
         <label for="image-url">Image URL</label>
         <input type="text" name="image-url">
 
-        <!-- <label for="status">Status</label>
-        <select name="status" required>
-            <option value="active">Active</option>
-            <option value="onleave">On Leave</option>
-            <option value="dismissed">Dismissed</option>
-        </select> -->
-
-        <button type="submit">Submit</button>
+        <button type="submit" form="employee-registration-form">Submit</button>
+        <button type="submit" class="employee-add-back-button" form="employee-back-form">Back To List</button>
     </form>
+ 
 </body>
 </html>
