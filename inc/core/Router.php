@@ -83,7 +83,7 @@ class Router {
                 [$this->controller,$this->method], 
                 $this->params
             );
-            
+
             // reset attributes
             $this->controller = "";
             $this->method = "";

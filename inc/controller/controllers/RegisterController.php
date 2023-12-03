@@ -1,5 +1,9 @@
 <?php
 
+if(session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 class RegisterController extends BaseController {
 
     private $registerManager;
@@ -11,7 +15,10 @@ class RegisterController extends BaseController {
     }
 
     public function index() {
-        $this->registerManager->createEmptyBill();
+        if (!isset($_SESSION['empty_bill_created'])) {
+            $this->registerManager->createEmptyBill();
+            $_SESSION['empty_bill_created'] = true;
+        }
         $this->findAll();
     }
 
@@ -34,7 +41,7 @@ class RegisterController extends BaseController {
 
         $discount = $this->registerManager->queryDiscountForMenuItem($menu_id);
         $price = $this->registerManager->queryPriceForMenuItem($menu_id);
-        $total = ($amount * $price) - $discount;
+        $total = ($amount * $price) - ($discount * ($price * $amount));
         $bill_id = $this->registerManager->retrieveLastBillId();
 
         $this->billItemModel->set_name($name);
@@ -45,13 +52,13 @@ class RegisterController extends BaseController {
         $this->billItemModel->set_discount($discount);
         $this->billItemModel->set_menu_item_id($menu_id);
         $this->billItemModel->create();
-        $this->findAll();
+        $this->anchor("register");
     }
 
     public function delete($id) {
         $this->billItemModel->set_id($id);
         $this->billItemModel->delete();
-        $this->findAll();
+        $this->anchor("register");
     }
 
     public function updateBill() {
@@ -59,14 +66,13 @@ class RegisterController extends BaseController {
         
         $bill = [
             "id"=>$bill_id,
-            "number_of_items"=>10,
+            "number_of_items"=>$_POST['number-of-items'],
             "total_cost"=>$_POST['total']
         ];
 
         $this->registerManager->submitBill($bill);
-
-        $this->index();
-
+        unset($_SESSION['empty_bill_created']);
+        $this->anchor("register");
     }
     
 

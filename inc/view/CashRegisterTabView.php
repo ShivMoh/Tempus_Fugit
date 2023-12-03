@@ -151,18 +151,18 @@
                         id="total"
                         value=<?=$total?>
                         >
-                        
-                    </input>
                 </div>
             
-                <input type="hidden" name="number-of-items" $value=<?=$numberOfItems?>>
+                <input type="hidden" name="number-of-items" id="number-of-items" value=<?=$numberOfItems?>>
                 
                 <button class="cash-register-button button-1" type="submit" form="confirm-and-print-bill">Confirm & Print Bill</button>
             </div>
         </form>
 
         <form action="<?=BASE_URL."/register/updatebill"?>" method="POST" id="order-form">
-            <div class="container">         
+            <div class="container">  
+                <input type="hidden" name="total" id="total" value=<?=$total?>>
+                <input type="hidden" name="number-of-items" id="number-of-items" value=<?=$numberOfItems?>>       
                 <button class="cash-register-button button-2" type="submit" form="order-form">Confirm</button>
             </div>
         </form>

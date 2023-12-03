@@ -7,6 +7,12 @@ class BaseController implements Controller {
     }
     
     public function index() {}
+
+    public function anchor($path) {
+        $url = BASE_URL."/".$path;
+        header("Location: ".$url);
+    }
+
     public function create() {}
     public function findAll() {}
     public function findOne($id) {}

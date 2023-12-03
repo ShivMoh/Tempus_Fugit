@@ -4,6 +4,7 @@ interface Controller {
     
     public function index();
     public function view($path, $data = []); 
+    public function anchor($path);
     public function create();  
     public function findAll();
     public function findOne($id);
