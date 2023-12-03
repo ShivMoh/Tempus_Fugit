@@ -61,7 +61,7 @@
 }
 
 .action-button, .action-button-right-most {
-    width: 75%;
+    width: 50%;
     background-color: transparent;
     border: none;
     cursor: pointer;
