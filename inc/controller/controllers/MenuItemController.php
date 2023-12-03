@@ -1,14 +1,14 @@
 <?php
 class MenuItemController extends BaseController{
-    private $menuItem;
+    private $model;
 
     public function __construct(){
-        $this->menuItem = new MenuItemModel();
+        $this->model = new MenuItemModel();
     }
 
     public function index(){
-        $Menu = $this->menuItem->findAll();
-        $this->view("/MenuTab", $data = $Menu);
+        $menu = $this->model->findAll();
+        $this->view("/MenuTab", $data = $menu);
     }
 
     public function create(){
@@ -20,26 +20,21 @@ class MenuItemController extends BaseController{
         $tags = $_POST['tags'];
         $ingredients = $_POST['ingredients'];
 
-        $this->menuItem->set_name($name);
-        $this->menuItem->set_price($price);
-        $this->menuItem->set_description($description);
-        $this->menuItem->set_image($image);
-        $this->menuItem->set_discount($discount);
-        $this->menuItem->set_tags($tags);
-        $this->menuItem->set_ingredients($ingredients);
+        $this->model->set_name($name);
+        $this->model->set_price($price);
+        $this->model->set_description($description);
+        $this->model->set_image($image);
+        $this->model->set_discount($discount);
+        $this->model->set_tags($tags);
+        $this->model->set_ingredients($ingredients);
 
-        $this->menuItem->create();
+        $this->model->create();
         $this->anchor("menuitem");
     }
 
-    public function findBill($id){
-        $this->menuItem->set_id($id);
-        $Menu = $this->menuItem->findById();
-    }
-
     public function delete($id){
-        $this->menuItem->set_id($id);
-        $this->menuItem->delete();
+        $this->model->set_id($id);
+        $this->model->delete();
         $this->anchor("menuitem");
     }
 
@@ -52,17 +47,23 @@ class MenuItemController extends BaseController{
         $tags = $_POST['edit-item-tags'];
         $ingredients = $_POST['edit-item-ingredients'];
 
-        $this->menuItem->set_id($id);
-        $this->menuItem->set_name($name);
-        $this->menuItem->set_price($price);
-        $this->menuItem->set_description($description);
-        $this->menuItem->set_image($image);
-        $this->menuItem->set_discount($discount);
-        $this->menuItem->set_tags($tags);
-        $this->menuItem->set_ingredients($ingredients);
+        $this->model->set_id($id);
+        $this->model->set_name($name);
+        $this->model->set_price($price);
+        $this->model->set_description($description);
+        $this->model->set_image($image);
+        $this->model->set_discount($discount);
+        $this->model->set_tags($tags);
+        $this->model->set_ingredients($ingredients);
 
-        $this->menuItem->update();
+        $this->model->update();
         $this->anchor("menuitem");
     }
-}
+
+    public function searchById() {
+        $this->model->set_id($_POST['search-query']);
+        $data = $this->model->findById();
+        $this->view("MenuTab", $data = [$data]);
+    }
+    }
 ?>

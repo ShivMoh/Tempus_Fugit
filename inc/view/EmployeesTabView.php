@@ -23,7 +23,7 @@
                 class="search-bar" 
                 name="search-query"
                 type="text" 
-                placeholder="Search Bills by Transaction ID">
+                placeholder="Search Employees by ID">
             
             <button 
                 type="submit"
@@ -35,9 +35,11 @@
                     alt="Search Button">
             </button>
         </form>
+
+        <form action=<?=BASE_URL."/employee"?> method="POST">
+            <button class="clear-search" type="submit">Clear Search</button>
+        </form>
       
-   
-       
         <form action=<?=BASE_URL."/employee/filterByStatus"?> method="POST">
             <select class="search-bar-dropdown-1" name="status" id="status" onchange="this.form.submit()">
                 <option disabled selected>Status</option>
@@ -46,6 +48,9 @@
                 <option value="dismissed">Dismissed</option>
             </select>
         </form>
+
+    
+      
        
         <!-- <form action=<?=BASE_URL."/employee/filterByDate"?> method="POST">
             <select class="search-bar-dropdown-2" name="date" id="date" onchange="this.form.submit()">

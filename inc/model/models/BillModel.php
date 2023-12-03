@@ -79,7 +79,7 @@ class BillModel extends BaseModel {
 
    public function findByStatus() {
 
-        $sql = "SELECT * FROM Bill WHERE status = :status";
+        $sql = "SELECT * FROM Bill WHERE status = :status LIMIT 1";
 
         $statement = $this->connection->prepare($sql);
         $statement->execute(['status' => $this->status]);
@@ -87,6 +87,28 @@ class BillModel extends BaseModel {
         return $statement->fetch();
 
    }
+
+   public function findAllByStatus() {
+
+    $sql = "SELECT * FROM Bill WHERE status = :status";
+
+    $statement = $this->connection->prepare($sql);
+    $statement->execute(['status' => $this->status]);
+
+    return $statement->fetchAll();
+
+    }
+
+    public function findAllWhereDateGreaterThan() {
+        
+        $sql = "SELECT * FROM Bill WHERE order_date >= :order_date";
+
+        $statement = $this->connection->prepare($sql);
+        $statement->execute(['order_date' => $this->order_date]);
+
+        return $statement->fetchAll();
+
+    }
 
    public function updateStatus() {
         $sql = "UPDATE Bill SET status = :status WHERE id = :id";

@@ -17,22 +17,34 @@
 <body>
     <!-- SEARCH BAR -->
     <div class="search-bar-container">
-        <input class="search-bar" type="text" placeholder="Search Menu item by name">
+        <form action=<?=BASE_URL."/menuitem/searchById"?> method="POST">
+        <input name="search-query" class="search-bar" type="text" placeholder="Search Menu item by name">
         <button class="search-button"><img title="Search" class="search-icon" src="<?= RESOURCE_URL."search.png"?>" alt="Search Button"></button>
-        <select class="search-bar-dropdown-1" name="tags" id="tags">
-            <option disabled selected>Tags</option>
-            <option value="savory">Savory</option>
-            <option value="healthy">Healthy</option>
-            <option value="dessert">Dessert</option>
-        </select>
+        </form>
 
-        <select class="search-bar-dropdown-2" name="Sort" id="sort">
+      
+      
+        <!-- THIS IS ALSO TOO MUCH WORK -->
+        <!-- <form action=<?=BASE_URL."/menutab/filterByTags"?>>
+            <select class="search-bar-dropdown-1" name="tags" id="tags" onchange="this.form.submit()">
+                <option disabled selected>Cheap</option>
+                <option value="savory">Mid</option>
+                <option value="healthy"></option>
+                <option value="dessert">Dessert</option>
+            </select>
+        </form> -->
+    
+        <!-- NO. NO. I'M NOT DOING THIS. TOO MUCH WORK. -->
+        <!-- <select class="search-bar-dropdown-2" name="Sort" id="sort">
             <option disabled selected>Sort</option>
             <option value="Price-High-to-Low">Price: High to Low</option>
             <option value="Price-Low-to-Hight">Price: Low to High</option>
             <option value="A-to-Z">A to Z</option>
             <option value="Z-to-A">Z to A</option>
-        </select>
+        </select> -->
+        <form action=<?=BASE_URL."/menuitem"?> method="POST"> 
+            <button class="clear-search" type="submit">Clear Search</button>
+        </form>
         <form action="<?=BASE_URL."/MenuItem/view/MenuItemAdd"?>" method="POST">        
             <button class="search-bar-add-button"><img title="Add Item" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
         </form>
@@ -40,6 +52,7 @@
     <!-- SEARCH BAR -->
 
     <!-- SELECT * QUERY -->
+    <?php if(!empty($data[0])) : ?>
     <?php foreach ($data as $item): ?>
         <div class="menu-item-container">
             <div class="image-and-tags">
@@ -102,6 +115,7 @@
             </div>
         </div>
 
+
         <!-- Edit Modal -->
         <div class="modal edit-modal" id="edit-modal-<?php echo $item['id']; ?>">
             <div class="modal-content">
@@ -127,15 +141,13 @@
 
                     <label for="edit-item-discount">Tags</label>
                     <input type="text" id="edit-item-tags" name="edit-item-tags" value="<?php echo $item['tags']; ?>" required>
-
-
-
                     <button type="submit">Save Changes</button>
                     
                 </form>
             </div>
         </div>
     <?php endforeach; ?>
+    <?php endif; ?>
 
     <script>
         var modals = document.querySelectorAll('.modal');
