@@ -20,7 +20,8 @@ class Router {
         "update",
         "delete",
         "findOne",
-        "error"
+        "error",
+        "index"
     ];
 
     public function __construct() {
