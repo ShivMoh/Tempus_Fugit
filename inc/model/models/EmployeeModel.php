@@ -14,6 +14,7 @@ class EmployeeModel extends BaseModel {
     private $job_role;
     private $email;
     private $contact_number;
+    private $status;
     
 
     public function __construct() {
@@ -22,8 +23,8 @@ class EmployeeModel extends BaseModel {
     
     public function create() {
 
-        $sql =  "INSERT INTO Employee(first_name, last_name, other_names, gender, age, dob, job_role, email, contact_number)
-            VALUES (:first_name,:last_name, :other_names, :gender, :age, :dob, :job_role, :email, :contact_number)";
+        $sql =  "INSERT INTO Employee(first_name, last_name, other_names, gender, age, dob, job_role, email, contact_number, status)
+            VALUES (:first_name,:last_name, :other_names, :gender, :age, :dob, :job_role, :email, :contact_number, :status)";
 
         $new_employee = [
             "first_name"=> $this->first_name,
@@ -34,7 +35,8 @@ class EmployeeModel extends BaseModel {
             "dob"=> $this->dob,
             "job_role"=> $this->job_role,
             "email"=> $this->email,
-            "contact_number"=> $this->contact_number
+            "contact_number"=> $this->contact_number,
+            "status"=>$this->status
         ];
 
         $statement = $this->connection->prepare($sql);
@@ -59,7 +61,7 @@ class EmployeeModel extends BaseModel {
 
     public function update() {
 
-        $sql = "UPDATE Employee SET first_name = :first_name, last_name = :last_name, other_names = :other_names, gender = :gender, age = :age, dob = :dob, job_role = :job_role, email = :email, contact_number = :contact_number WHERE id = :id";
+        $sql = "UPDATE Employee SET first_name = :first_name, last_name = :last_name, other_names = :other_names, gender = :gender, age = :age, dob = :dob, job_role = :job_role, email = :email, contact_number = :contact_number, status = :status WHERE id = :id";
         
         $updated_employee = [
             "id"=> $this->id,
@@ -71,7 +73,8 @@ class EmployeeModel extends BaseModel {
             "dob"=> $this->dob,
             "job_role"=> $this->job_role,
             "email"=> $this->email,
-            "contact_number"=> $this->contact_number
+            "contact_number"=> $this->contact_number,
+            "status"=>$this->status
         ];
     
         $statement = $this->connection->prepare($sql);
@@ -125,6 +128,10 @@ class EmployeeModel extends BaseModel {
         return $this->contact_number;
     }
 
+    public function get_status() {
+        return $this->status;
+    }
+
     public function set_id($id){
         $this->id = $id;
     }
@@ -162,5 +169,9 @@ class EmployeeModel extends BaseModel {
 
     public function set_contact_number($contact_number) {
         $this->contact_number = $contact_number;
+    }
+
+    public function set_status($status) {
+        $this->status = $status;
     }
 }

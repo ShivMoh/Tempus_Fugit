@@ -10,7 +10,7 @@
     <link rel="stylesheet" href=<?=CSS_URL."main.css"?>>
     <link rel="stylesheet" href=<?=CSS_URL."search-bar.css"?>>
     <link rel="stylesheet" href=<?=CSS_URL."table.css"?>>
-    <link rel="stylesheet" href=<?=CSS_URL."employee-tab.css"?>>
+    <link rel="stylesheet" href=<?=CSS_URL."employees-tab.css"?>>
 </head>
 
 <body>
@@ -30,7 +30,9 @@
             <option value="last-month">Last Month</option>
             <option value="last-six-months">Last 6 Months</option>
         </select>
-        <button class="search-bar-add-button"><img title="Add Bill" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
+        <form action="<?=BASE_URL."/MenuItem/view/EmployeeAdd"?>" method="POST">
+            <button class="search-bar-add-button"><img title="Add Bill" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
+        </form>
     </div>
     <!-- SEARCH BAR -->
 
@@ -53,7 +55,7 @@
                     <td><?= $row['job_role'] ?></td>
                     <td><?= $row['email'] ?></td>
                     <td><?= $row['contact_number'] ?></td>
-                    <td><?= $row['status'] ?></td>
+                    <td><?= ucfirst($row['status']) ?></td>
                     <td>
                         <form action=<?=BASE_URL."/employee/findOne/".$row['id']?> method="POST">
                             <button type="submit"><img src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand Icon" title="View"></button>

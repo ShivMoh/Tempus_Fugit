@@ -1,10 +1,5 @@
 <?php 
     include "NavbarView.php";
-
-
-    print_r($data);
-
-
 ?>
 <head>
     <link rel="stylesheet" href=<?=CSS_URL."employee.css"?>>
@@ -15,7 +10,9 @@
             <img src=<?=RESOURCE_URL.$data['image_url']?> alt="profile-picture-of-employee" class="employee-view-picture">
             <div class="employee-view-status-container">
                 <img src=<?=RESOURCE_URL."active_icon.png"?> alt="profile-status-icon" class="employee-view-status-icon">
-                <p class="employee-view-status">Active</p>
+                <p class="employee-view-status">
+                    <?=ucfirst($data['status']) ?>
+                </p>
             </div>
         </div>
 
@@ -23,63 +20,96 @@
             <div class="row employee-view-row-container">
                 <div class="employee-view-input-container first-name-container">
                     <label for="first-name">First Name</label>
-                    <input type="text" name="first-name" id="first-name" value=<?=$data['first_name'];?>>
+                    <input 
+                        readonly
+                        type="text" 
+                        name="first-name" 
+                        id="first-name" 
+                        value=<?=$data['first_name'];?>>
                 </div>
                 <div class="employee-view-input-container last-name-container">
                     <label for="last-name">Last Name</label>
-                    <input type="text" name="last-name" id="last-name" value=<?=$data['last_name'];?> >
+                    <input 
+                        readonly
+                        type="text" 
+                        name="last-name" 
+                        id="last-name" 
+                        value=<?=$data['last_name'];?> >
                 </div>
             </div>
             <div class="row employee-view-input-container">
                 <label for="other-names">Other Names</label>
-                <input type="text" name="other-names" id="other-names" value=<?=$data['other_names'] ?>>
+                <input 
+                    readonly
+                    type="text" 
+                    name="other-names" 
+                    id="other-names" 
+                    value=<?=$data['other_names'] ?>>
             </div>
             <div class="row employee-view-input-container">
                 <label for="gender">Gender</label>
-                <input type="text" name="gender" id="gender" value=<?=$data['gender'];?>>
+                <input 
+                    readonly
+                    type="text" 
+                    name="gender" 
+                    id="gender" v
+                    value=<?=$data['gender'] === 1 ? 'Male' : 'Female';?>>
             </div>
             <div class="row employee-view-input-container">
                 <label for="age">Age</label>
-                <input type="text" name="age" id="age" value=<?=$data['age'];?>>
+                <input 
+                    readonly
+                    type="text" 
+                    name="age" 
+                    id="age" 
+                    value=<?=$data['age'];?>>
             </div>
             <div class="row employee-view-input-container">
                 <label for="dob">Date of Birth</label>
-                <input type="text" name="dob" id="dob" value=<?=$data['dob'];?>>
+                <input 
+                    readonly
+                    type="text" 
+                    name="dob" 
+                    id="dob" 
+                    value=<?=$data['dob'];?>>
             </div>
             <div class="row employee-view-input-container">
                 <label for="job-role">Job Role</label>
-                <input type="text" name="job-role" id="job-role" value=<?=$data['job_role'];?>>
+                <input 
+                    readonly
+                    type="text" 
+                    name="job-role" 
+                    id="job-role" 
+                    value=<?=$data['job_role'];?>>
             </div>
             <div class="row employee-view-row-container">
                 <div class="employee-view-input-container phone-number-container">
                     <label for="contact-number">Phone Number</label>
-                    <input type="text" name="contact-number" id="contact-number"  value=<?=$data['contact_number'];?>>
+                    <input 
+                        readonly
+                        type="text" 
+                        name="contact-number" 
+                        id="contact-number"  
+                        value=<?=$data['contact_number'];?>>
                 </div>
                 <div class="employee-view-input-container email-container">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email"  value=<?=$data['email'];?>>
+                    <input 
+                        readonly
+                        type="text" 
+                        name="email" 
+                        id="email"  
+                        value=<?=$data['email'];?>>
                 </div>
             </div>
             <div class="row">
-                <button class="employee-view-cancel-button" type="submit">Cancel</button>
-                <button class="employee-view-save-button" type="submit">Save Changes</button>
+                <form action=<?=BASE_URL."/employee"?> method="POST">
+                    <button class="employee-view-save-button">Back To List</button>
+                </form>
             </div>
-            
-        </div>
 
-        <div class="col-1 employee-view-actions-container">
-            <form action=<?=BASE_URL."/employee/view/employee"?>>
-                <button class="employee-view-edit-button" type="submit">
-                    <img src=<?=RESOURCE_URL."edit-icon.png"?> alt="Edit">
-                </button>
-            </form>
-          
-            <form action=<?=BASE_URL."/employee/view/employee"?>>
-                <button class="employee-view-ed-button" type="submit">
-                    <img src=<?=RESOURCE_URL."trash-icon.png"?> alt="Delete">
-                </button>
-            </form>
         </div>
+        
     </div>
 
 </div>

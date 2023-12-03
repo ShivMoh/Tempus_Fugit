@@ -9,18 +9,18 @@
 </head>
 
 <body>
-    <form class="employee-registration-form" action="" method="post">
+    <form class="employee-registration-form" action="<?=BASE_URL."/employee/create"?>" method="post">
         <p class="form-name-text">
             EMPLOYEE REGISTRATION
         </p>
-        <label for="first_name">First Name</label>
-        <input type="text" name="first_name" required>
+        <label for="first-name">First Name</label>
+        <input type="text" name="first-name" required>
 
-        <label for="last_name">Last Name</label>
-        <input type="text" name="last_name" required>
+        <label for="last-name">Last Name</label>
+        <input type="text" name="last-name" required>
 
-        <label for="other_names">Other Names</label>
-        <input type="text" name="other_names">
+        <label for="other-names">Other Names</label>
+        <input type="text" name="other-names">
 
         <label for="gender">Gender</label>
         <select name="gender" required>
@@ -34,28 +34,29 @@
         <label for="dob">Date of Birth</label>
         <input type="date" name="dob" required>
 
-        <label for="job_role">Job Role</label>
-        <select name="job_role" required>
-            <option value="val1">Value 1</option>
-            <option value="val2">Value 2</option>
-            <option value="val3">Value 3</option>
-            <option value="val4">Value 4</option>
+        <label for="job-role">Job Role</label>
+        <select name="job-role" required>
+            <option value="clerk">Clerk</option>
+            <option value="manager">Manager</option>
+            <option value="cook">Cook</option>
+            <option value="server">Server</option>
         </select>
 
         <label for="email">Email</label>
         <input type="email" name="email" required>
 
-        <label for="contact_number">Contact Number</label>
-        <input type="text" name="contact_number" required>
+        <label for="contact-number">Contact Number</label>
+        <input type="text" name="contact-number" required>
 
-        <label for="image_url">Image URL</label>
-        <input type="text" name="image_url">
+        <label for="image-url">Image URL</label>
+        <input type="text" name="image-url">
 
-        <label for="status">Status</label>
+        <!-- <label for="status">Status</label>
         <select name="status" required>
-            <option value="1">Active</option>
-            <option value="0">Inactive</option>
-        </select>
+            <option value="active">Active</option>
+            <option value="onleave">On Leave</option>
+            <option value="dismissed">Dismissed</option>
+        </select> -->
 
         <button type="submit">Submit</button>
     </form>
