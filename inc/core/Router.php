@@ -67,16 +67,16 @@ class Router {
             // decisions based on HTTP requests
 
             // if the request is post but is not a valid post request path, then return
-            if (METHOD === POST && !in_array($this->method, $this->validPostPaths)) {
-                echo "INVALID REQUEST ON METHOD: $this->method";
-                return;
-            }
+            // if (METHOD === POST && !in_array($this->method, $this->validPostPaths)) {
+            //     echo "INVALID REQUEST ON METHOD: $this->method";
+            //     return;
+            // }
             
-            // if the request is get but is not a valid get request path, then return
-            if (METHOD === GET && !in_array($this->method, $this->validGetPaths)) {
-                echo "INVALID REQUEST ON METHOD: $this->method";
-                return;
-            }
+            // //if the request is get but is not a valid get request path, then return
+            // if (METHOD === GET && !in_array($this->method, $this->validGetPaths)) {
+            //     echo "INVALID REQUEST ON METHOD: $this->method";
+            //     return;
+            // }
             
     
             // calls the assigned controller and method
