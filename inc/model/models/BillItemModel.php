@@ -34,35 +34,40 @@ class BillItemModel extends BaseModel {
         $statement->execute($new_bill);
 
         $this->id = $this->connection->lastInsertId();
+
    }
 
    public function findAll() {
+
     $statement = $this->connection->query("SELECT * FROM BillItem");
-    return $statement->fetchAll(PDO::FETCH_OBJ); //Similarly for this one
-                                                //a manager may be necessary
-                                                //for handling the return
+    return $statement->fetchAll();
+    
     }
 
    public function findById() {
+
     $sql = "SELECT * FROM BillItem WHERE id = :id";
 
     $statement = $this->connection->prepare($sql);
     $statement->execute(['id' => $this->id]);
 
     return $statement->fetch();
+
    }
 
    public function findAllForBill() {
+
     $sql = "SELECT * FROM BillItem WHERE bill_id = :bill_id";
 
     $statement = $this->connection->prepare($sql);
     $statement->execute(['bill_id' => $this->bill_id]);
 
     return $statement->fetchAll();
+
    }
 
    public function update() {
-    
+
     $sql = "UPDATE BillItem SET name = :name, price = :price, total = :total, amount = :amount, bill_id = :bill_id, menu_item_id = :menu_item_id WHERE id = :id";
     
     $updated_menu_item = [
@@ -75,9 +80,11 @@ class BillItemModel extends BaseModel {
 
     $statement = $this->connection->prepare($sql);
     $statement->execute($updated_menu_item);
+
 }
 
    public function delete() {
+
     $sql = "DELETE FROM BillItem WHERE id = :id";
         
             $deleted_bill = [
@@ -86,6 +93,7 @@ class BillItemModel extends BaseModel {
         
             $statement = $this->connection->prepare($sql);
             $statement->execute($deleted_bill);
+
    }
 
    public function get_id() {

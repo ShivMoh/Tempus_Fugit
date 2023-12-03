@@ -32,22 +32,24 @@ class BillModel extends BaseModel {
    }
 
    public function findAll() {
+
     $statement = $this->connection->query("SELECT * FROM Bill");
-    return $statement->fetchAll(PDO::FETCH_OBJ); //Similarly for this one
-                                                //a manager may be necessary
-                                                //for handling the return
+    return $statement->fetchAll();
     }
 
    public function findById() {
+
     $sql = "SELECT * FROM Bill WHERE id = :id";
 
     $statement = $this->connection->prepare($sql);
     $statement->execute(['id' => $this->id]);
 
     return $statement->fetch();
+
    }
 
    public function update() {
+
         $sql = "UPDATE Bill SET number_of_items = :number_of_items, total_cost = :total_cost, order_date = :order_date, status = :status WHERE id = :id";
             
         $updated_bill = [
@@ -60,8 +62,11 @@ class BillModel extends BaseModel {
 
         $statement = $this->connection->prepare($sql);
         $statement->execute($updated_bill);
+
     }
+
    public function delete() {
+
     $sql = "DELETE FROM Bill WHERE id = :id";
         
             $deleted_bill = [
@@ -70,15 +75,18 @@ class BillModel extends BaseModel {
         
             $statement = $this->connection->prepare($sql);
             $statement->execute($deleted_bill);
+
    }
 
    public function findByStatus() {
+
         $sql = "SELECT * FROM Bill WHERE status = :status";
 
         $statement = $this->connection->prepare($sql);
         $statement->execute(['status' => $this->status]);
 
         return $statement->fetch();
+
    }
 
    public function get_id() {
