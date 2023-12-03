@@ -80,8 +80,8 @@
   <div class="row">
     <div class="col-lg-2"></div>
     <div class="col-lg-5 col-sm">
-        <form action="<?=BASE_URL."/bill/delete/".$data['bill']['id']?>" method="POST">
-            <button class="bill-preview-cancel-button" type="submit">Cancel Bill</button>
+        <form action=<?=BASE_URL."/bill"?> method="POST">
+            <button class="bill-preview-cancel-button" type="submit">Back</button>
         </form>
     </div>
     <div class="col-lg-5 col-sm">

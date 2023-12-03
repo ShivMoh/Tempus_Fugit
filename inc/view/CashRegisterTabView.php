@@ -141,8 +141,8 @@
                 <?php endforeach ?>
             </tbody>
         </table>
-        
-        <form action="<?=BASE_URL."/register/updatebill"?>" method="POST" id="confirm-and-print-bill">
+<!--         
+        <form action="<?=BASE_URL."/register/update"?>" method="POST" id="confirm-and-print-bill">
             <div class="container ">
                 <div class="total-container">
                     <label for="total">Total</label>
@@ -153,24 +153,57 @@
                         >
                 </div>
             
-                <input type="hidden" name="number-of-items" id="number-of-items" value=<?=$numberOfItems?>>
+                <input 
+                    type="hidden" 
+                    name="number-of-items" 
+                    id="confirm-and-print-button-number-of-items" 
+                    value=<?=$numberOfItems?>
+                    
+                    >
                 
-                <button class="cash-register-button button-1" type="submit" form="confirm-and-print-bill">Confirm & Print Bill</button>
+                <button 
+                    class="cash-register-button button-1" 
+                    type="submit" 
+                    form="confirm-and-print-bill">
+                        Confirm & Print Bill
+                    </button>
             </div>
-        </form>
+        </form> -->
 
-        <form action="<?=BASE_URL."/register/updatebill"?>" method="POST" id="order-form">
+        <form action="<?=BASE_URL."/register/update"?>" method="POST" id="confirm-form">
             <div class="container">  
-                <input type="hidden" name="total" id="total" value=<?=$total?>>
-                <input type="hidden" name="number-of-items" id="number-of-items" value=<?=$numberOfItems?>>       
-                <button class="cash-register-button button-2" type="submit" form="order-form">Confirm</button>
+                <input 
+                    type="hidden" 
+                    name="total" 
+                   
+                    value=<?=$total?>
+                    >
+                <input 
+                    type="hidden" 
+                    name="number-of-items" 
+                    id="confirm-button-number-of-items" 
+                    value=<?=$numberOfItems?>
+                    >       
+                <button 
+                    class="cash-register-button button-2" 
+                    type="submit" 
+                    form="confirm-form">
+                        Confirm
+                    </button>
             </div>
         </form>
 
-        <form action="<?=BASE_URL."/register/create"?>" method="POST" id="order-form">
+        <form action="<?=BASE_URL."/bill"?>" method="POST" id="manage-bills-form">
             <div class="container">         
-                <button class="cash-register-button button-1" type="submit" form="order-form">Manage Bills</button>
+                <button class="cash-register-button button-1" type="submit" form="manage-bills-form">Manage Bills</button>
             </div>
         </form>
+
+        <script>
+            let confirmButtonItems = document.getElementById("confirm-button-number-of-items");
+            let confirmButton = document.getElementsByClassName("button-2")[0];
+
+            confirmButtonItems.value == 0 ? confirmButton.disabled = true : confirmButton.disabled = false;
+        </script>
 </body>
 </html>

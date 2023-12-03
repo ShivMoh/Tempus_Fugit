@@ -40,4 +40,9 @@ class BillController extends BaseController{
         $this->manager->changeBillState($id, "cancelled");
         $this->anchor("bill");
     }
+
+    public function update($id) {
+        $this->manager->changeBillState($id, "completed");
+        $this->anchor("bill");
+    }
 }

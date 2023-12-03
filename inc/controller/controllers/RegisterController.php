@@ -61,11 +61,11 @@ class RegisterController extends BaseController {
         $this->anchor("register");
     }
 
-    public function updateBill() {
-        $bill_id = $this->registerManager->retrieveLastBillId();
+    public function update($id = 0) {
+        $id = $this->registerManager->retrieveLastBillId();
         
         $bill = [
-            "id"=>$bill_id,
+            "id"=>$id,
             "number_of_items"=>$_POST['number-of-items'],
             "total_cost"=>$_POST['total']
         ];
