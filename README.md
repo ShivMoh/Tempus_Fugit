@@ -47,10 +47,11 @@ If the webpage styling isn't appearing, perform these steps:
 
 _For a visual reference of the intended website design, please refer to the Figma file:_ <https://www.figma.com/file/CpIRBICRaH4dku8PVfwDsJ/CSE3101_Design_Assigment_2?type=design&node-id=0%3A1&mode=design&t=FQXvdimrpZpFMqSp-1>.
 
-## Inserting Values
+## Inserting Multiple Values
 
-When inserting values for columns that could require multiple values such as employee field _othernames_ and menuitem _tags_ or _ingredients_, type values separated by commas and no space such as "tag1,tag2,tag3". The respective fields loads instructions, via html's _title_ attribute, when hovered over but may sometimes take a while to load or may not work at all.
+When you need to insert multiple values into fields like _othernames_ for employees or _tags_ and _ingredients_ for menu items, enter the values separated by commas without spaces, like "tag1,tag2,tag3". These fields display instructions through the HTML _title_ attribute when you hover over them. However, be aware that these instructions might take some time to appear or, in some cases, might not load correctly.
 
-## Action Buttons
+## Understanding Action Buttons
 
-If uncertain, hover over action buttons to see what they do. This may take about half a second to load.
+For clarity on the function of each action button, simply hover your cursor over them. A brief description will appear, usually within half a second, to guide you on their specific purpose.
+
