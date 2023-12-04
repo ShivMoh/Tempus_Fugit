@@ -22,7 +22,7 @@
         <div class="row justify-content-center bill-preview-item-row">
             
             <div class="col-10 col-sm-9">
-                <?=$item['name'] ?>
+                <?=$item['amount']." of ".$item['name'] ?>
             </div>
 
             <div class="col col-sm-auto">

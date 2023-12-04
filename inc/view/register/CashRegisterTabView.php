@@ -144,12 +144,17 @@
 
         <form action="<?=BASE_URL."/register/update"?>" method="POST" id="confirm-form">
             <div class="container">  
-                <input 
-                    type="hidden" 
-                    name="total" 
-                   
-                    value=<?=$total?>
-                    >
+                <div class="total-container">
+                    <label for="total">Total: </label>
+                    <input 
+                        readonly
+                        type="text" 
+                        name="total" 
+                        id="total"
+                        value=<?=$total?>
+                        >
+                </div>
+           
                 <input 
                     type="hidden" 
                     name="number-of-items" 

@@ -24,8 +24,8 @@
 }
 
 .logo {
-    position: relative;
-    left: -31vw;
+    position: absolute;
+    left: 0vw;
 }
 
 .logo img {

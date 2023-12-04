@@ -29,6 +29,7 @@ input:focus, select:focus {
 .total-container {
     position: relative;
     left: 11%;
+    margin-bottom: 20px;
 }
 
 label {
@@ -44,7 +45,6 @@ label {
     height: 40px;
     color: #5f5f5f;
     cursor: default;
- 
 }
 
 #total:focus {
