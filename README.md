@@ -1,7 +1,7 @@
 
 # Quick Setup Guide
 
-1. **Extract** the `proj` folder into the `htdocs` directory or use `git clone` to clone the repository from <https://github.com/ShivMoh/Tempus_Fugit.git> into `htdocs`.
+1. **Extract** the `Tempus_Fugit` folder into the `htdocs` directory or use `git clone` to clone the repository from <https://github.com/ShivMoh/Tempus_Fugit.git> into `htdocs`.
 2. **Start** XAMPP and MySQL.
 3. **Create** a database named `karens_kitchen` in PhpMyAdmin.
 4. **Navigate** to the `/Tempus_Fugit` directory.
