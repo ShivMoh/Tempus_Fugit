@@ -1,6 +1,6 @@
 <?php
 
-// Include the database configuration
+// Include the database 
 require __DIR__ . "/database/Database.php";
 
 // Include the base model and other models
