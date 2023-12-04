@@ -32,13 +32,14 @@
                             <td>
                                 <select name='name' required>
                                     <?php foreach($data['menuList'] as $menuItem) :?>
-                                        <option value=<?=$menuItem['id'].",".$menuItem['name'];?>>
+                                        <option value="<?=$menuItem['name'].",".$menuItem['id'];?>">
                                             <?=$menuItem['name'];?>
                                         </option>
                                     <?php endforeach ?>
                                 </select>
                             </td>
                             <td>
+                                
                                 <input 
                                     type='text' 
                                     name=<?='amount'?> 
@@ -90,7 +91,7 @@
                         <td class="col2">
                             <input type='text' 
                                 name=<?='name-x';?>
-                                value=<?=$item['name']?>
+                                value="<?=$item['name']?>"
                                 readonly
                         >
                         </td>
@@ -106,7 +107,7 @@
                             <input 
                                 type='text' 
                                 name=<?='price-x'?>
-                                value=<?=$item['price']?> 
+                                value="<?="$ ".$item['price']?>"
                                 readonly
                             >
                         </td>
@@ -122,7 +123,7 @@
                             <input 
                                 type='text' 
                                 name=<?='total-x'?>
-                                value=<?=$item['total']?>
+                                value="<?="$ ".$item['total']?>"
                                 readonly
                             >   
                         </td>
@@ -145,13 +146,13 @@
         <form action="<?=BASE_URL."/register/update"?>" method="POST" id="confirm-form">
             <div class="container">  
                 <div class="total-container">
-                    <label for="total">Total: </label>
+                    <label for="total">Total $: </label>
                     <input 
                         readonly
                         type="text" 
                         name="total" 
                         id="total"
-                        value=<?=$total?>
+                        value="<?=$total?>"
                         >
                 </div>
            

@@ -21,7 +21,6 @@ class BillItemModel extends BaseModel {
         $sql = "INSERT INTO BillItem(name, price, total, amount, discount, bill_id, menu_item_id)
                 VALUES (:name, :price, :total, :amount, :discount, :bill_id, :menu_item_id)";
 
-    
         $new_bill = [
             "name" => $this->name,
             "price" => $this->price,

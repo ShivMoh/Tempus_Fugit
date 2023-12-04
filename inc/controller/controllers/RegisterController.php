@@ -36,9 +36,9 @@ class RegisterController extends BaseController {
     }
 
     public function create() {
-        list($menu_id, $name) = explode(",", $_POST['name']);
+        list($name, $menu_id) = explode(",", $_POST['name']);
         $amount = $_POST['amount'];
-
+       
         $discount = $this->registerManager->queryDiscountForMenuItem($menu_id);
         $price = $this->registerManager->queryPriceForMenuItem($menu_id);
         $total = ($amount * $price) - ($discount * ($price * $amount));

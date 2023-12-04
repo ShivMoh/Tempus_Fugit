@@ -21,8 +21,8 @@ class Database {
         );",
         "CREATE TABLE IF NOT EXISTS MenuItem(
             id                  INT AUTO_INCREMENT,
-            name                VARCHAR(30) NOT NULL,
-            price               INT(10) NOT NULL,
+            name                VARCHAR(100) NOT NULL,
+            price               FLOAT(10, 5) NOT NULL,
             description         TEXT,
             image               VARCHAR(100),
             discount            FLOAT(2, 2),
@@ -32,7 +32,7 @@ class Database {
         );",
         "CREATE TABLE IF NOT EXISTS BillItem(
             id                  INT AUTO_INCREMENT,
-            name                VARCHAR(30) NOT NULL,
+            name                VARCHAR(100) NOT NULL,
             price               FLOAT(10, 5) NOT NULL,
             total               FLOAT(10, 5) NOT NULL,
             amount              INT(20) NOT NULL,

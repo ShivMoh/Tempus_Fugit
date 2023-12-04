@@ -23,7 +23,7 @@ class BillController extends BaseController {
         $this->model->set_id($id);
         $bill = $this->model->findById();
         $billItems = $this->manager->getItemsForBill($bill['id']);
-
+        
         $billData = [
             "bill" => $bill,
             "billItems" => $billItems
