@@ -25,11 +25,11 @@
 
 .logo {
     position: relative;
-    left: -32vw;
+    left: -31vw;
 }
 
 .logo img {
     width: 75%;
     margin-left: 1vw; 
-    margin-top: 1.2vh;
+    margin-top: 3.2vh;
 }
