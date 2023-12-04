@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <form action="<?=BASE_URL."/MenuItem"?>"method="POST" id="menu-back-form"></form>
     <form class="menu-item-add-form" action="<?=BASE_URL."/MenuItem/create"?>" method="post">
         <p class="form-name-text">
             MENU ITEM REGISTRATION
@@ -35,6 +36,7 @@
         <input type="text" name="ingredients" required>
 
         <button type="submit">Submit</button>
+        <button type="submit" class="menu-back-button" form="menu-back-form">Back To List</button>
     </form>
 </body>
 </html>

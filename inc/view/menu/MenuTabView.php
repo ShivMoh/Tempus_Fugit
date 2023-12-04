@@ -1,5 +1,5 @@
 <?php
-    include "NavbarView.php";
+    include __DIR__."/../NavbarView.php";
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
             <button class="clear-search" type="submit">Clear Search</button>
         </form>
         
-        <form action="<?=BASE_URL."/MenuItem/view/MenuItemAdd"?>" method="POST">        
+        <form action="<?=BASE_URL."/MenuItem/view/menu=MenuItemAdd"?>" method="POST">        
             <button class="search-bar-add-button"><img title="Add Item" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
         </form>
     </div>

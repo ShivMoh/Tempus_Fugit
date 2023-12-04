@@ -8,7 +8,7 @@ class MenuItemController extends BaseController{
 
     public function index(){
         $menu = $this->model->findAll();
-        $this->view("/MenuTab", $data = $menu);
+        $this->view("menu/MenuTab", $data = $menu);
     }
 
     public function create(){
@@ -63,7 +63,7 @@ class MenuItemController extends BaseController{
     public function searchById() {
         $this->model->set_id($_POST['search-query']);
         $data = $this->model->findById();
-        $this->view("MenuTab", $data = [$data]);
+        $this->view("menu/MenuTab", $data = [$data]);
     }
     }
 ?>

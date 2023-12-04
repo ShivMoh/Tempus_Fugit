@@ -33,6 +33,14 @@
     cursor: pointer;
 }
 
+.menu-item-add-form .menu-back-button {
+    background-color: #449AFF;
+}
+
+.menu-item-add-form .menu-back-button:hover {
+    background-color: #4c9fff;
+}
+
 .menu-item-add-form button:hover {
     background-color: #45a049;
 }

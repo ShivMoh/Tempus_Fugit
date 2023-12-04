@@ -1,5 +1,5 @@
 <?php
-    include "NavbarView.php";
+    include __DIR__."/../NavbarView.php";
     $total = 0;
     $numberOfItems = 0;
 ?>
@@ -141,34 +141,6 @@
                 <?php endforeach ?>
             </tbody>
         </table>
-<!--         
-        <form action="<?=BASE_URL."/register/update"?>" method="POST" id="confirm-and-print-bill">
-            <div class="container ">
-                <div class="total-container">
-                    <label for="total">Total</label>
-                    <input readonly
-                        name="total" 
-                        id="total"
-                        value=<?=$total?>
-                        >
-                </div>
-            
-                <input 
-                    type="hidden" 
-                    name="number-of-items" 
-                    id="confirm-and-print-button-number-of-items" 
-                    value=<?=$numberOfItems?>
-                    
-                    >
-                
-                <button 
-                    class="cash-register-button button-1" 
-                    type="submit" 
-                    form="confirm-and-print-bill">
-                        Confirm & Print Bill
-                    </button>
-            </div>
-        </form> -->
 
         <form action="<?=BASE_URL."/register/update"?>" method="POST" id="confirm-form">
             <div class="container">  

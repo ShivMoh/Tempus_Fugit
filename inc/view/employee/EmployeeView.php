@@ -1,5 +1,5 @@
 <?php 
-    include "NavbarView.php";
+    include __DIR__."/../NavbarView.php";
 ?>
 <head>
     <link rel="stylesheet" href=<?=CSS_URL."employee.css"?>>

@@ -32,7 +32,7 @@ class RegisterController extends BaseController {
             "menuList"=>$this->registerManager->getMenuItemsList()
         ];
 
-        $this->view("CashRegisterTab", $data);
+        $this->view("register/CashRegisterTab", $data);
     }
 
     public function create() {
@@ -74,7 +74,5 @@ class RegisterController extends BaseController {
         unset($_SESSION['empty_bill_created']);
         $this->anchor("register");
     }
-    
-
     
 }

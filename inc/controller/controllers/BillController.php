@@ -18,7 +18,7 @@ class BillController extends BaseController{
 
     public function findAll() {
         $bills = $this->model->findAllNonEmptyBills();
-        $this->view("BillsTab", $data = $bills);
+        $this->view("bill/BillsTab", $data = $bills);
     }
 
     public function findOne($id) {
@@ -31,7 +31,7 @@ class BillController extends BaseController{
             "billItems"=>$billItems
         ];
 
-        $this->view("BillPreview", $data = $billData);
+        $this->view("bill/BillPreview", $data = $billData);
     }
 
     // doesn't actually delete the bill, simply changes its status to cancel
@@ -67,20 +67,17 @@ class BillController extends BaseController{
                 break;
             
             default:
-                // Default case or fallback behavior
                 break;
         }
 
-        echo $date;
-
         $this->model->set_order_date($date);
         $data = $this->model->findAllWhereDateGreaterThan();
-        $this->view("BillsTab", $data);
+        $this->view("bill/BillsTab", $data);
     }
 
     public function filterByStatus() {
         $this->model->set_status($_POST['status']);
         $data = $this->model->findAllByStatus();
-        $this->view("BillsTab", $data = $data);
+        $this->view("bill/BillsTab", $data = $data);
     }
 }

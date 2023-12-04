@@ -1,5 +1,5 @@
 <?php
-    include "NavbarView.php";
+    include __DIR__."/../NavbarView.php";
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +62,7 @@
             </select >
         </form>
       -->
-        <form action="<?=BASE_URL."/MenuItem/view/EmployeeAdd"?>" method="POST">
+        <form action="<?=BASE_URL."/employee/view/employee=EmployeeAdd"?>" method="POST">
             <button class="search-bar-add-button"><img title="Add Bill" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
         </form>
     </div>
