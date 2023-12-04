@@ -56,11 +56,13 @@ label {
     display: block;
     width: 100%;
     height: 3.5vh;
-    background-color: #449AFF;
-    color: white;
-    /* border-radius: 5%; */
+    color: #449AFF;
     cursor: pointer;
-    border-radius: 3vw;
+    transition: all 0.2 linear;
+}
+
+.cash-register-add-item-button:hover {
+   border: solid #449AFF 2px;
 }
 
 .cash-register-add-item-button:focus {
