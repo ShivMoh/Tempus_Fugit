@@ -37,29 +37,29 @@
     <?php foreach ($data as $item): ?>
         <div class="menu-item-container">
             <div class="image-and-tags">
-                <img class="menu-item-img" src="<?= RESOURCE_URL . $item['image']; ?>" alt="<?php echo $item['name']; ?>">
+                <img class="menu-item-img" src="<?= RESOURCE_URL . $item['image']; ?>" alt="<?=$item['name']; ?>">
                 <div class="tag-buttons">
                     <?php $tags = explode(',', $item['tags']); ?>
                     <?php foreach ($tags as $tag): ?>
-                        <button class="tag-button"><?php echo $tag; ?></button>
+                        <button class="tag-button"><?=$tag; ?></button>
                     <?php endforeach; ?>
                 </div>
             </div>
 
             <div class="menu-item-details">
-                <p class="item-name"><?php echo $item['name']; ?></p>
-                <p class="item-description"><?php echo $item['description']; ?></p>
-                <p class="item-price">Price: $<?php echo $item['price']; ?></p>
+                <p class="item-name"><?=$item['name']; ?></p>
+                <p class="item-description"><?=$item['description']; ?></p>
+                <p class="item-price">Price: $<?=$item['price']; ?></p>
             </div>
 
             <div class="action-buttons">
                 <form>
-                    <button type="button" class="action-button expand-button" data-id="<?php echo $item['id']; ?>">
+                    <button type="button" class="action-button expand-button" data-id="<?=$item['id']; ?>">
                         <img class="action-button-image" src="<?= RESOURCE_URL."expand-icon.png"?>" alt="Expand" title="Expand">
                     </button>
                 </form>
                 <form>
-                    <button type="button" class="action-button edit-button" data-id="<?php echo $item['id']; ?>">
+                    <button type="button" class="action-button edit-button" data-id="<?=$item['id']; ?>">
                         <img class="action-button-image" src="<?= RESOURCE_URL."edit-icon.png"?>" alt="Edit" title="Edit">
                     </button>
                 </form>
@@ -71,25 +71,25 @@
         </div>
 
         <!-- Expand Modal -->
-        <div class="modal" id="modal-<?php echo $item['id']; ?>">
+        <div class="modal" id="modal-<?=$item['id']; ?>">
             <div class="modal-content">
                 <div class="image-and-tags-modal-div">
-                    <img class="modal-menu-item-img" src="<?=RESOURCE_URL.$item['image'];?>" alt="<?php echo $item['name']; ?>">
+                    <img class="modal-menu-item-img" src="<?=RESOURCE_URL.$item['image'];?>" alt="<?=$item['name']; ?>">
                     <div class="modal-tag-buttons">
                         <?php $tags = explode(',', $item['tags']); ?>
                         <?php foreach ($tags as $tag): ?>
-                            <button class="modal-tag-button"><?php echo $tag; ?></button>
+                            <button class="modal-tag-button"><?=$tag; ?></button>
                         <?php endforeach; ?>
                     </div>
                 </div>
                 <div class="menu-item-details-modal-div">
-                    <p class="modal-item-name"><?php echo $item['name']; ?></p>
-                    <p class="modal-item-description"><?php echo $item['description']; ?></p>
+                    <p class="modal-item-name"><?=$item['name']; ?></p>
+                    <p class="modal-item-description"><?=$item['description']; ?></p>
                     <ul class="item-ingredients">
                         <p class="modal-item-ingredients">Ingredients</p>
                         <?php $ingredients = explode(',', $item['ingredients']); ?>
                         <?php foreach ($ingredients as $ingredient): ?>
-                            <li><?php echo $ingredient; ?></li>
+                            <li><?=$ingredient; ?></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -98,30 +98,30 @@
 
 
         <!-- Edit Modal -->
-        <div class="modal edit-modal" id="edit-modal-<?php echo $item['id']; ?>">
+        <div class="modal edit-modal" id="edit-modal-<?=$item['id']; ?>">
             <div class="modal-content">
 
                 <form action=<?= BASE_URL."/MenuItem/update/".$item['id']?> method="post">
                     <label for="edit-item-name">Name</label>
-                    <input type="text" id="edit-item-name" name="edit-item-name" value="<?php echo $item['name']; ?>" required>
+                    <input type="text" id="edit-item-name" name="edit-item-name" value="<?=$item['name']; ?>" required>
 
                     <label for="edit-item-description">Description</label>
-                    <input type="text" id="edit-item-description" name="edit-item-description" value="<?php echo $item['description']; ?>" required>
+                    <input type="text" id="edit-item-description" name="edit-item-description" value="<?=$item['description']; ?>" required>
 
                     <label for="edit-item-ingredients">Ingredients</label>
-                    <input type="text" id="edit-item-ingredients" name="edit-item-ingredients" value="<?php echo $item['ingredients']; ?>" required>
+                    <input type="text" id="edit-item-ingredients" name="edit-item-ingredients" value="<?=$item['ingredients']; ?>" required>
 
                     <label for="edit-item-price">Price</label>
-                    <input type="text" id="edit-item-price" name="edit-item-price" value="<?php echo $item['price']; ?>" required>
+                    <input type="text" id="edit-item-price" name="edit-item-price" value="<?=$item['price']; ?>" required>
 
                     <label for="edit-item-image">Image</label>
-                    <input type="text" id="edit-item-image" name="edit-item-image" value="<?php echo $item['image']; ?>" required>
+                    <input type="text" id="edit-item-image" name="edit-item-image" value="<?=$item['image']; ?>" required>
 
                     <label for="edit-item-discount">Discount</label>
-                    <input type="text" id="edit-item-discount" name="edit-item-discount" value="<?php echo $item['discount']; ?>" required>
+                    <input type="text" id="edit-item-discount" name="edit-item-discount" value="<?=$item['discount']; ?>" required>
 
                     <label for="edit-item-discount">Tags</label>
-                    <input type="text" id="edit-item-tags" name="edit-item-tags" value="<?php echo $item['tags']; ?>" required>
+                    <input type="text" id="edit-item-tags" name="edit-item-tags" value="<?=$item['tags']; ?>" required>
                     <button type="submit">Save Changes</button>
                     
                 </form>

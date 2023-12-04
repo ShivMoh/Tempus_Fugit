@@ -3,6 +3,7 @@
     overflow: hidden;
     display: flex;
     justify-content: flex-end; 
+    height: 4.5vw;
 }
 
 .navigation-bar .nav-button {
@@ -23,12 +24,10 @@
 }
 
 .logo {
-    margin-left: 1vw;
-    margin-right: 35%;
-    margin-bottom: 5px;
+    position: absolute;
+    left: 0;
 }
 
 .logo img {
     width: 90%; 
-    height: auto;
 }
