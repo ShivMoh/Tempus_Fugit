@@ -33,7 +33,7 @@
         </select>
 
         <label for="age">Age</label>
-        <input type="text" name="age" required>
+        <input type="number" name="age" min="18" max="70" required>
 
         <label for="dob">Date of Birth</label>
         <input type="date" name="dob" required>

@@ -96,7 +96,7 @@
                     <label for="email">Email</label>
                     <input 
                         readonly
-                        type="text" 
+                        type="email" 
                         name="email" 
                         id="email"  
                         value=<?=$data['email'];?>>
