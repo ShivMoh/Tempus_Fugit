@@ -50,3 +50,7 @@ _For a visual reference of the intended website design, please refer to the Figm
 ## Inserting Values
 
 When inserting values for columns that could require multiple values such as employee field _othernames_ and menuitem _tags_ or _ingredients_, type values separated by commas and no space such as "tag1,tag2,tag3". The respective fields loads instructions, via html's _title_ attribute, when hovered over but may sometimes take a while to load or may not work at all.
+
+## Action Buttons
+
+If uncertain, hover over action buttons to see what they do. This may take about half a second to load.
