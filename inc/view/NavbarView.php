@@ -10,6 +10,9 @@
 
 <body>
     <div class="navigation-bar">
+        <div class="logo">
+        <img src="<?= RESOURCE_URL."karens-kitchen-logo.png" ?>" alt="Logo" > 
+        </div>
         <a class="nav-button" href="<?= BASE_URL."/Register"?>">Register</a> 
         <a class="nav-button" href="<?= BASE_URL."/MenuItem" ?>">Menu</a>
         <a class="nav-button" href="<?= BASE_URL."/Employee" ?>">Employees</a> 

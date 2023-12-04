@@ -21,3 +21,13 @@
 .navigation-bar .nav-button:hover {
     background-color: white;
 }
+
+.logo {
+    margin-right: 35%;
+    margin-bottom: 5px;
+}
+
+.logo img {
+    width: 90%; 
+    height: auto;
+}
