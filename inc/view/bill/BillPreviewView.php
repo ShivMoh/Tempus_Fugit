@@ -37,7 +37,7 @@
             Total: 
         </div>
         <div class="col-lg-2 col-2 col-sm-5 col-sm-auto">
-            <?= $data['bill']['total_cost']?>
+            $ <?= $data['bill']['total_cost']?>
         </div>
     </div>
 
