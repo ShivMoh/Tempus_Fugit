@@ -1,45 +1,44 @@
-## Quick Setup
 
-1. Extract folder proj into htdocs directory or in htdocs git clone https://github.com/ShivMoh/Tempus_Fugit_PHP_Assignment_II.git
-2. Start XAMMP and MySql
-3. Create database test in PhpMyAdmin
-3. Navigate to /proj
+# Quick Setup Guide
 
-## Config
+1. **Extract** the `proj` folder into the `htdocs` directory or use `git clone` to clone the repository from <https://github.com/ShivMoh/Tempus_Fugit.git> into `htdocs`.
+2. **Start** XAMPP and MySQL.
+3. **Create** a database named `karens_kitchen` in PhpMyAdmin.
+4. **Navigate** to the `/Tempus_Fugit` directory.
 
-If desirable to run the project within a subdirectory within htdocs, simply change global variables BASE_URL, RESOURCE_PATH and CSS_PATH found within inc/core/config.php
+## Configuration Settings
 
-For example if you want to run the application from a subfolder within htdocs called personal such that personal can be found within htdocs and the project folder, proj, can be found within personal, change the global variables as shown below:
+To run the project in a subdirectory within `htdocs`, adjust the global variables `BASE_URL`, `RESOURCE_PATH`, and `CSS_PATH` in `inc/core/config.php`.
 
-#### Example Folder Structure
+For instance, to run the application from a subfolder named `personal` (located within `htdocs` and containing the `Tempus_Fugit` project folder), modify the global variables as follows:
+
+#### Example Folder Structure:
+
     htdocs
-        ..personal
-            ..proj
+    ├── personal
+        └── proj
 
-1. BASE_URL = "/personal/proj";
-2. CSS_PATH = "http://localhost/personal/proj/public/css/"
-3. RESOURCE_URL = "http://localhost/personal/proj/public/images/"
+1. `BASE_URL = "/personal/Tempus_Fugit";`
+2. `CSS_PATH = "http://localhost/personal/Tempus_Fugit/public/css/"`
+3. `RESOURCE_URL = "http://localhost/personal/Tempus_Fugit/public/images/"`
 
-## Database Initialize
+## Database Initialization
 
-The project will initialize the database with data upon running the project the first time. If an issue occurs or it is desirable to reinitialize the database values, do the following steps:
+The project automatically initializes the database with data on the first run. To reinitialize the database, if needed, follow these steps:
 
-1. Drop existing tables in database test
-2. Delete existing session cookie 
-    - Inspect webpage
-    - Naviate to Application Tab
-    - Find cookies
-    - Delete session cookie under http://localhost...
+1. **Drop** existing tables in the `test` database.
+2. **Delete** the existing session cookie:
+   - Open browser's inspect tool.
+   - Navigate to the Application Tab.
+   - Locate and delete the session cookie under `http://localhost`...
 
-## CSS Not Loading
+## CSS Loading Issues
 
-In the unlikely event that the styling of the webpage does is not present, the do the following steps:
+If the webpage styling isn't appearing, perform these steps:
 
-1. Go to Browser settings
-2. Search for clear browsing history
-3. Select option to clear _Cache image and files_ (or similar option. Instructions based off of Chrome Web Browser)
-4. Reload webpage
+1. Go to your browser's settings.
+2. Search for and select the option to clear browsing history.
+3. Specifically, choose to clear _Cache images and files_ (instructions based on Chrome Web Browser).
+4. Reload the webpage.
 
- _Please see figma file for intended design of the website to get an idea_: https://www.figma.com/file/CpIRBICRaH4dku8PVfwDsJ/CSE3101_Design_Assigment_2?type=design&node-id=0%3A1&mode=design&t=FQXvdimrpZpFMqSp-1. 
-
-
+_For a visual reference of the intended website design, please refer to the Figma file:_ <https://www.figma.com/file/CpIRBICRaH4dku8PVfwDsJ/CSE3101_Design_Assigment_2?type=design&node-id=0%3A1&mode=design&t=FQXvdimrpZpFMqSp-1>.
