@@ -22,6 +22,8 @@ For instance, to run the application from a subfolder named `personal` (located 
 2. `CSS_PATH = "http://localhost/personal/Tempus_Fugit/public/css/"`
 3. `RESOURCE_URL = "http://localhost/personal/Tempus_Fugit/public/images/"`
 
+Note that `inc/core/config.php` is where the configurations for the database are set. If desirable, go here to change database settings.
+
 ## Database Initialization
 
 The project automatically initializes the database with data on the first run. To reinitialize the database, if needed, follow these steps:
