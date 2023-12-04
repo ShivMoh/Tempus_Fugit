@@ -5,7 +5,7 @@
  */
 define("DB_DRIVER", 'mysql');        // Database driver 
 define("DB_HOST", "127.0.0.1");       // Database host 
-define("DB_NAME", "karens_diner");   // Database name
+define("DB_NAME", "karens_kitchen");   // Database name
 define("DB_USER", "root");            // Database username
 define("DB_USER_PASSWORD", '');       // Database password
 
