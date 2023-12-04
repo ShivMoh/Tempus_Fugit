@@ -44,6 +44,7 @@
 .search-bar-dropdown-1,
 .search-bar-dropdown-2,
 .clear-search {
+    text-align: center;
     border: 2px solid #95C5FF;
     border-radius: 20px; 
     padding: 8px 10px;

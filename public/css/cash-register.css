@@ -58,17 +58,14 @@ label {
     height: 3.5vh;
     background-color: #449AFF;
     color: white;
-    border-radius: 5%;
+    /* border-radius: 5%; */
     cursor: pointer;
+    border-radius: 3vw;
 }
 
 .cash-register-add-item-button:focus {
     outline: none;
     border: none;
-}
-
-.cash-register-add-item-button :hover {
-    background-color: #45a049;
 }
 
 .cash-register-delete-button img {
