@@ -26,7 +26,7 @@
         <label for="description">Description</label>
         <input type="text" name="description" required>
 
-        <label for="image">Image</label>
+        <label for="image">Image Url</label>
         <input type="text" name="image" required>
 
         <label for="discount">Discount</label>
