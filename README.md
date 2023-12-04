@@ -34,6 +34,8 @@ The project automatically initializes the database with data on the first run. T
    - Navigate to the Application Tab.
    - Locate and delete the session cookie under `http://localhost`...
 
+Note that the application only initializes menuitems and employees. To see bill on bill tab, please create one or more using the cash register interface.
+
 ## CSS Loading Issues
 
 If the webpage styling isn't appearing, perform these steps:
