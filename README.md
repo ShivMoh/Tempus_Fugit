@@ -16,7 +16,7 @@ For instance, to run the application from a subfolder named `personal` (located 
 
     htdocs
     ├── personal
-        └── proj
+        └── Tempus_Fugit
 
 1. `BASE_URL = "/personal/Tempus_Fugit";`
 2. `CSS_PATH = "http://localhost/personal/Tempus_Fugit/public/css/"`
