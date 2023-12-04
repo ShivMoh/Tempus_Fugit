@@ -1,7 +1,5 @@
 <?php
 
-//dir for the this->model here
-
 class EmployeeController extends BaseController{
     private $model;
 

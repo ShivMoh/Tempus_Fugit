@@ -16,7 +16,6 @@ class BillManager {
 
         $this->billModel->set_status($status);
         $this->billModel->updateStatus();
-
         
     }
 

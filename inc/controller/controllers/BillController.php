@@ -1,7 +1,5 @@
 <?php
 
-//dir for the model here
-
 class BillController extends BaseController{
 
     private $model;

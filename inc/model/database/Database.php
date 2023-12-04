@@ -33,7 +33,7 @@
                 price               INT(10) NOT NULL,
                 description         TEXT,
                 image               VARCHAR(100),
-                discount            FLOAT(10, 2),
+                discount            FLOAT(2, 2),
                 tags                VARCHAR(100),
                 ingredients         VARCHAR(100),
                 PRIMARY KEY         (id)
@@ -44,7 +44,7 @@
                 price               FLOAT(10, 5) NOT NULL,
                 total               FLOAT(10, 5) NOT NULL,
                 amount              INT(20) NOT NULL,
-                discount            FLOAT(10, 2),
+                discount            FLOAT(2, 2),
                 bill_id             INT NOT NULL,
                 menu_item_id        INT NOT NULL,
                 FOREIGN KEY         (bill_id) REFERENCES Bill(id) ON DELETE CASCADE, 

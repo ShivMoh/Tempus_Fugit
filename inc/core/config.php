@@ -10,6 +10,7 @@ define("DB_USER_PASSWORD", '');
 // change this to match your base directory 
 define("BASE_URL", "/proj");
 
+// change this to match your base directory relative to localhost
 define("CSS_URL", "http://localhost/proj/public/css/");
 define("RESOURCE_URL", "http://localhost/proj/public/images/");
 

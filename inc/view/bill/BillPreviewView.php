@@ -19,48 +19,17 @@
     </div>
     
     <?php foreach($data['billItems'] as $item) : ?>
-    <div class="row justify-content-center bill-preview-item-row">
-        
-        <div class="col-10 col-sm-9">
-            <?=$item['name'] ?>
-        </div>
+        <div class="row justify-content-center bill-preview-item-row">
+            
+            <div class="col-10 col-sm-9">
+                <?=$item['name'] ?>
+            </div>
 
-        <div class="col col-sm-auto">
-            $ <?=$item['total'] ?>
+            <div class="col col-sm-auto">
+                $ <?=$item['total'] ?>
+            </div>
         </div>
-    </div>
     <?php endforeach ?>
- 
-    <!-- <div class="separator"></div>
-    <div class="row justify-content-center bill-preview-title-row">
-        <div class="col-lg-8 col-sm-2"></div>
-        <div class="col-lg-2 col-sm-5 bill-preview-heading-3">
-            Subtotal:
-        </div>
-        <div class="col-lg-2 col-sm-5">
-            $xxxx
-        </div>
-    </div> -->
-
-    <!-- <div class="row justify-content-center bill-preview-title-row">
-        <div class="col-lg-8 col-sm-2"></div>
-        <div class="col-lg-2 col-sm-5 col-sm-auto bill-preview-heading-3">
-            VAT:
-        </div>
-        <div class="col-lg-2 col-sm-5 col-sm-auto">
-            $xxxx
-        </div>
-    </div> -->
-
-    <!-- <div class="row justify-content-center bill-preview-title-row">
-        <div class="col-lg-8 col-sm-2"></div>
-        <div class="col-lg-2 col-sm-5 bill-preview-heading-3">
-            Discount:
-        </div>
-        <div class="col-lg-2 col-sm-5">
-            $xxxx
-        </div>
-    </div> -->
 
     <div class="row justify-content-center bill-preview-title-row">
         <div class="col-lg-8 col-sm-2"></div>

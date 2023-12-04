@@ -8,8 +8,6 @@ class Router {
     // you can use get requests to call these methods
     private $validGetPaths = [
         "index",
-        "test",
-        "test2"
     ];
 
     // you can use post requests to call these methods
@@ -20,8 +18,12 @@ class Router {
         "update",
         "delete",
         "findOne",
+        "anchor",
         "error",
-        "index"
+        "index",
+        "filterByStatus",
+        "filterByDate",
+        "searchById"
     ];
 
     public function __construct() {
@@ -69,19 +71,19 @@ class Router {
             // decisions based on HTTP requests
 
             // if the request is post but is not a valid post request path, then return
-            // if (METHOD === POST && !in_array($this->method, $this->validPostPaths)) {
-            //     $this->controller = new ErrorController();
-            //     $this->method = "error";
-            //     $this->params = ["401"];
-            // }
+            if (METHOD === POST && !in_array($this->method, $this->validPostPaths)) {
+                $this->controller = new ErrorController();
+                $this->method = "error";
+                $this->params = ["401"];
+            }
             
             // //if the request is get but is not a valid get request path, then return
-            // if (METHOD === GET && !in_array($this->method, $this->validGetPaths)) {
-            //     $this->controller = new ErrorController();
-            //     $this->method = "error";
-            //     $this->params = ["401"];
-            // }
-    
+            if (METHOD === GET && !in_array($this->method, $this->validGetPaths)) {
+                $this->controller = new ErrorController();
+                $this->method = "error";
+                $this->params = ["401"];
+            }
+
            
         } else {
             // redirect to 404 page
