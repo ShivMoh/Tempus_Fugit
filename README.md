@@ -36,6 +36,8 @@ The project automatically initializes the database with data on the first run. T
 
 Note that the application only initializes menuitems and employees. To see bill on bill tab, please create one or more using the cash register interface.
 
+Also to note, with the set database values for menuitem, bill item and bill, the max price and total is 999999999999999999999999.99999. Therefore, in the unlikely event a number higher than this is calculated or added as the price for an item, it will appear as a math error in calculation. However, it is not so. The values in the database are simply limited to their given size.
+
 ## CSS Loading Issues
 
 If the webpage styling isn't appearing, perform these steps:

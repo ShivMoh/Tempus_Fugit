@@ -14,7 +14,7 @@ class Database {
         "CREATE TABLE IF NOT EXISTS Bill(
             id                  INT AUTO_INCREMENT,
             number_of_items     INT(20) NOT NULL,
-            total_cost          FLOAT(10, 5) NOT NULL,
+            total_cost          FLOAT(25, 5) NOT NULL,
             order_date          DATE,
             status              ENUM('empty', 'pending', 'cancelled', 'completed') NOT NULL,
             PRIMARY KEY         (id)
@@ -22,7 +22,7 @@ class Database {
         "CREATE TABLE IF NOT EXISTS MenuItem(
             id                  INT AUTO_INCREMENT,
             name                VARCHAR(100) NOT NULL,
-            price               FLOAT(10, 5) NOT NULL,
+            price               FLOAT(25, 5) NOT NULL,
             description         TEXT,
             image               VARCHAR(100),
             discount            FLOAT(2, 2),
@@ -33,8 +33,8 @@ class Database {
         "CREATE TABLE IF NOT EXISTS BillItem(
             id                  INT AUTO_INCREMENT,
             name                VARCHAR(100) NOT NULL,
-            price               FLOAT(10, 5) NOT NULL,
-            total               FLOAT(10, 5) NOT NULL,
+            price               FLOAT(25, 5) NOT NULL,
+            total               FLOAT(25, 5) NOT NULL,
             amount              INT(20) NOT NULL,
             discount            FLOAT(2, 2),
             bill_id             INT NOT NULL,
