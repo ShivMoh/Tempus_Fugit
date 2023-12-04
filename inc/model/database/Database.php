@@ -1,32 +1,16 @@
 <?php
 
-/*
- * Start the session if it hasn't been started yet.
- */
+
+// Start the session if it hasn't been started yet.
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-/*
- * Handles database connection, table creation, and initialization.
- */
+// Handles database connection, table creation, and initialization.
 class Database {
     protected $connection;
 
-    // SQL statements for table creation
     private $create_statements = [
-        // Account table
-        "CREATE TABLE IF NOT EXISTS Account(
-            id                  INT AUTO_INCREMENT,
-            first_name          VARCHAR(30) NOT NULL,
-            last_name           VARCHAR(30) NOT NULL,
-            email               VARCHAR(50) NOT NULL,
-            passcode            VARCHAR(100) NOT NULL,
-            role                VARCHAR(10),
-            PRIMARY KEY         (id)
-        );",
-
-        // Bill table
         "CREATE TABLE IF NOT EXISTS Bill(
             id                  INT AUTO_INCREMENT,
             number_of_items     INT(20) NOT NULL,
@@ -35,8 +19,6 @@ class Database {
             status              ENUM('empty', 'pending', 'cancelled', 'completed') NOT NULL,
             PRIMARY KEY         (id)
         );",
-
-        // MenuItem table
         "CREATE TABLE IF NOT EXISTS MenuItem(
             id                  INT AUTO_INCREMENT,
             name                VARCHAR(30) NOT NULL,
@@ -48,8 +30,6 @@ class Database {
             ingredients         VARCHAR(100),
             PRIMARY KEY         (id)
         );",
-
-        // BillItem table
         "CREATE TABLE IF NOT EXISTS BillItem(
             id                  INT AUTO_INCREMENT,
             name                VARCHAR(30) NOT NULL,
@@ -63,8 +43,6 @@ class Database {
             FOREIGN KEY         (menu_item_id) REFERENCES MenuItem(id) ON DELETE CASCADE,
             PRIMARY KEY         (id)
         );",
-
-        // Employee table
         "CREATE TABLE IF NOT EXISTS Employee(
             id                  INT AUTO_INCREMENT,
             first_name          VARCHAR(30) NOT NULL,
@@ -82,27 +60,16 @@ class Database {
         );"
     ];
 
-    // SQL statement for initializing superuser data
-    private $initUserSQL = 
-        "INSERT IGNORE INTO account(first_name, last_name, email, passcode, role)
-         VALUES (:fName,:lName,:email,:passcode, 'superuser')
-        ";
-
-    // SQL statement for initializing menu item data
     private $initMenuItemSQL =
         "INSERT INTO MenuItem(name, price, description, image, discount, tags, ingredients)
          VALUES (:name, :price, :description, :image, :discount, :tags, :ingredients)
         ";
 
-    // SQL statement for initializing employee data
     private $initEmployeeDataSQL =
         "INSERT INTO Employee(first_name, last_name, other_names, gender, age, dob, job_role, email, contact_number, image_url, status)
          VALUES (:first_name, :last_name, :other_names, :gender, :age, :dob, :job_role, :email, :contact_number, :image_url, :status)
         ";
 
-    /*
-     * Establishes a database connection.
-     */
     public function connect() {
         $driver = DB_DRIVER;
         $host = DB_HOST;
@@ -112,23 +79,18 @@ class Database {
 
         $dsn = "$driver:host=$host;dbname=$db;charset=UTF8";
 
-        // Connect to the database and configure PDO to throw an exception if errors occur
         $this->connection = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
     }
 
-    /*
-     * Initializes the database by creating tables and seeding initial data.
-     */
     public function init() {
         $this->connect();
         try {
             if ($this->connection) {
-                // Execute SQL create table functions
+                
                 foreach ($this->create_statements as $statement) {
                     $this->connection->exec($statement);
                 }
-                // Seed initial data
-                $this->seed();
+      
                 $this->menuItemInit();
                 $this->employeeDataInit();
             }
@@ -137,33 +99,7 @@ class Database {
         }
     }
 
-    /*
-     * Seeds initial data into the database.
-     */
-    private function seed() {
-        // Check if the superuser account already exists
-        $result = $this->connection->query("SELECT count(id) as count FROM account WHERE role = 'superuser'");
-        $data = $result->fetch();
-        if ($data["count"] > 0) {
-            return;
-        }
-
-        $passcode = password_hash("vnkdqoi483023=;.1?", PASSWORD_DEFAULT);
-        $superuser = [
-            "fName" => "Ramchun",
-            "lName" => "Omatayo",
-            "email" => "cse3101@gmail.com",
-            "passcode" => $passcode
-        ];
-        $statement = $this->connection->prepare($this->initUserSQL);
-        $statement->execute($superuser);
-    }
-
-    /*
-     * Initializes menu item data.
-     */
     private function menuItemInit() {
-        // Check if menu items are already initialized
         if (isset($_SESSION['menu_initialized'])) {
             return;
         }
@@ -189,7 +125,6 @@ class Database {
             ]
         ];
 
-        // Insert menu items into the database
         foreach ($menu_data as $data) {
             $statement = $this->connection->prepare($this->initMenuItemSQL);
             $statement->execute($data);
@@ -199,11 +134,9 @@ class Database {
         $_SESSION['menu_initialized'] = true;
     }
 
-    /*
-     * Initializes employee data.
-     */
+
     private function employeeDataInit() {
-        // Check if employee data is already initialized
+
         if (isset($_SESSION['employee_initialized'])) {
             return;
         }
@@ -237,7 +170,6 @@ class Database {
             ]
         ];
 
-        // Insert employee data into the database
         foreach ($employee_data as $data) {
             $statement = $this->connection->prepare($this->initEmployeeDataSQL);
             $statement->execute($data);
@@ -247,9 +179,6 @@ class Database {
         $_SESSION['employee_initialized'] = true;
     }
 
-    /*
-     * Gets the database connection.
-     */
     public function getConnection() {
         return $this->connection;
     }
