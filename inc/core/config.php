@@ -1,22 +1,28 @@
 <?php
 
-// define db constants
-define("DB_DRIVER", 'mysql');
-define("DB_HOST", "127.0.0.1");
-define("DB_NAME", "test");
-define("DB_USER", "root");
-define("DB_USER_PASSWORD", '');
+/*
+ * Database Configuration
+ */
+define("DB_DRIVER", 'mysql');        // Database driver 
+define("DB_HOST", "127.0.0.1");       // Database host 
+define("DB_NAME", "karens_diner");   // Database name
+define("DB_USER", "root");            // Database username
+define("DB_USER_PASSWORD", '');       // Database password
 
-// change this to match your base directory 
-define("BASE_URL", "/proj");
+/*
+ * Base URL Configuration
+ */
+define("BASE_URL", "/Tempus_Fugit");          // Base URL for the application
 
-// change this to match your base directory relative to localhost
-define("CSS_URL", "http://localhost/proj/public/css/");
-define("RESOURCE_URL", "http://localhost/proj/public/images/");
+/*
+ * Resource URLs Configuration
+ */
+define("CSS_URL", "http://localhost/proj/public/css/");        // URL for CSS files
+define("RESOURCE_URL", "http://localhost/proj/public/images/");// URL for resource files (images, etc.)
 
-// define constants
-// to get some intellisense
-// and prevent typoes
-define("POST", "POST");
-define("GET", "GET");
-define("METHOD", $_SERVER["REQUEST_METHOD"]);
+/*
+ * Request Method Constants
+ */
+define("POST", "POST");   // Constant for POST request method
+define("GET", "GET");     // Constant for GET request method
+define("METHOD", $_SERVER["REQUEST_METHOD"]); // Constant for the current request method
