@@ -1,33 +1,52 @@
 <?php
-class BillManager { 
-   private $billModel;
-   private $billItemModel;
 
-   public function __construct() {
-       $this->billModel = new BillModel();
-       $this->billItemModel = new BillItemModel();
-   }
+/*
+ * Manages bill-related operations such as changing the bill state and retrieving bill information.
+ */
+class BillManager {
+    private $billModel;
+    private $billItemModel;
 
-    public function changeBillState($id,$status) {
+    /*
+     * BillManager constructor.
+     * Initializes the BillManager with instances of the BillModel and BillItemModel.
+     */
+    public function __construct() {
+        $this->billModel = new BillModel();
+        $this->billItemModel = new BillItemModel();
+    }
+
+    /*
+     * Changes the state of a bill.
+     */
+    public function changeBillState($id, $status) {
         $this->billModel->set_id($id);
         $result = $this->billModel->findById($id);
-        
-        if ($result['status'] === $status) return;
+
+        // Check if the current status is already the desired status
+        if ($result['status'] === $status) {
+            return;
+        }
 
         $this->billModel->set_status($status);
         $this->billModel->updateStatus();
-        
     }
 
-    #logic to find bill information to be outputted when the view is called
+    /*
+     * Retrieves information about a bill.
+     */
     public function getBillInfo($id) {
         $result = $this->billModel->findById($id);
         return $result;
     }
 
+    /*
+     * Retrieves items associated with a bill.
+     */
     public function getItemsForBill($id) {
         $this->billItemModel->set_bill_id($id);
         return $this->billItemModel->findAllForBill();
     }
 }
+
 ?>

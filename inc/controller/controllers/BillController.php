@@ -1,6 +1,6 @@
 <?php
 
-/**
+/*
  * Controller for handling bill-related actions.
  */
 class BillController extends BaseController {
@@ -8,7 +8,7 @@ class BillController extends BaseController {
     private $model;
     private $manager;
 
-    /**
+    /*
      * Constructor for BillController.
      * Initializes the model and manager instances.
      */
@@ -17,14 +17,14 @@ class BillController extends BaseController {
         $this->manager = new BillManager();
     }
 
-    /**
+    /*
      * Default action for displaying all non-empty bills.
      */
     public function index() {
         $this->findAll();
     }
 
-    /**
+    /*
      * Retrieves and displays all non-empty bills.
      */
     public function findAll() {
@@ -32,7 +32,7 @@ class BillController extends BaseController {
         $this->view("bill/BillsTab", $data = $bills);
     }
 
-    /**
+    /*
      * Retrieves and displays details for a specific bill.
      */
     public function findOne($id) {
@@ -48,7 +48,7 @@ class BillController extends BaseController {
         $this->view("bill/BillPreview", $data = $billData);
     }
 
-    /**
+    /*
      * Cancels a bill by changing its status to "cancelled".
      */
     public function delete($id) {
@@ -56,7 +56,7 @@ class BillController extends BaseController {
         $this->anchor("bill");
     }
 
-    /**
+    /*
      * Updates a bill by changing its status to "completed".
      */
     public function update($id) {
@@ -64,7 +64,7 @@ class BillController extends BaseController {
         $this->anchor("bill");
     }
 
-    /**
+    /*
      * Searches for a bill by its ID and displays the result.
      */
     public function searchById() {
@@ -73,7 +73,7 @@ class BillController extends BaseController {
         $this->view("BillsTab", $data = [$data]);
     }
 
-    /**
+    /*
      * Filters bills by date based on user selection.
      */
     public function filterByDate() {
@@ -101,7 +101,7 @@ class BillController extends BaseController {
         $this->view("bill/BillsTab", $data);
     }
 
-    /**
+    /*
      * Filters bills by status based on user selection.
      */
     public function filterByStatus() {

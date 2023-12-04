@@ -3,15 +3,13 @@
 // Include the initialization file
 require __DIR__."/init.php";
 
-/**
- * Class App
- * 
+/*
  * Main application class responsible for initialization.
  * Extends the Database class
  */
 class App extends Database {
 
-    /**
+    /*
      * Constructor for the App class.
      * Initializes the application by calling the 'init' method and creating a Router instance.
      */

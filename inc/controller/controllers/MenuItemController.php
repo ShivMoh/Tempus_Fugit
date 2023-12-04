@@ -1,14 +1,13 @@
 <?php
 
-/**
- * Class MenuItemController
+/*
  * Controller for handling menu item-related actions.
  */
 class MenuItemController extends BaseController {
 
     private $model;
 
-    /**
+    /*
      * Constructor for MenuItemController.
      * Initializes the model instance.
      */
@@ -16,7 +15,7 @@ class MenuItemController extends BaseController {
         $this->model = new MenuItemModel();
     }
 
-    /**
+    /*
      * Displays all menu items.
      */
     public function index() {
@@ -24,7 +23,7 @@ class MenuItemController extends BaseController {
         $this->view("menu/MenuTab", $data = $menu);
     }
 
-    /**
+    /*
      * Creates a new menu item.
      */
     public function create() {
@@ -51,7 +50,7 @@ class MenuItemController extends BaseController {
         $this->anchor("menuitem");
     }
 
-    /**
+    /*
      * Deletes a menu item.
      */
     public function delete($id) {
@@ -60,7 +59,7 @@ class MenuItemController extends BaseController {
         $this->anchor("menuitem");
     }
 
-    /**
+    /*
      * Updates a menu item.
      */
     public function update($id) {
@@ -88,7 +87,7 @@ class MenuItemController extends BaseController {
         $this->anchor("menuitem");
     }
 
-    /**
+    /*
      * Searches for a menu item by ID and displays the result.
      */
     public function searchById() {

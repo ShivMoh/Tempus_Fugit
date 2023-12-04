@@ -1,14 +1,13 @@
 <?php
 
-/**
- * Class EmployeeController
+/*
  * Controller for handling employee-related actions.
  */
 class EmployeeController extends BaseController {
 
     private $model;
 
-    /**
+    /*
      * Constructor for EmployeeController.
      * Initializes the model instance.
      */
@@ -16,14 +15,14 @@ class EmployeeController extends BaseController {
         $this->model = new EmployeeModel();
     }
 
-    /**
+    /*
      * Default action for displaying all employees.
      */
     public function index() {
        $this->findAll();
     }
 
-    /**
+    /*
      * Retrieves and displays all employees.
      */
     public function findAll() {
@@ -31,7 +30,7 @@ class EmployeeController extends BaseController {
         $this->view("employee/EmployeesTab", $data = $employees);
     }
 
-    /**
+    /*
      * Creates a new employee.
      */
     public function create() {
@@ -63,7 +62,7 @@ class EmployeeController extends BaseController {
         $this->anchor("employee");
     }
 
-    /**
+    /*
      * Retrieves and displays details for a specific employee.
      */
     public function findOne($id) {
@@ -72,7 +71,7 @@ class EmployeeController extends BaseController {
         $this->view("employee/Employee", $data);
     }
 
-    /**
+    /*
      * Searches for an employee by ID and displays the result.
      */
     public function searchById() {
@@ -81,7 +80,7 @@ class EmployeeController extends BaseController {
         $this->view("employee/EmployeesTab", $data = [$data]);
     }
 
-    /**
+    /*
      * Filters employees by status based on user selection.
      */
     public function filterByStatus() {

@@ -17,8 +17,8 @@ define("BASE_URL", "/Tempus_Fugit");          // Base URL for the application
 /*
  * Resource URLs Configuration
  */
-define("CSS_URL", "http://localhost/proj/public/css/");        // URL for CSS files
-define("RESOURCE_URL", "http://localhost/proj/public/images/");// URL for resource files (images, etc.)
+define("CSS_URL", "http://localhost/Tempus_Fugit/public/css/");        // URL for CSS files
+define("RESOURCE_URL", "http://localhost/Tempus_Fugit/public/images/");// URL for resource files (images, etc.)
 
 /*
  * Request Method Constants

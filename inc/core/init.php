@@ -1,7 +1,14 @@
 <?php
 
-require __DIR__."/config.php";
-require __DIR__."/Router.php";
+/*
+ * Include Configuration and Router Files
+ */
+require __DIR__."/config.php";  // Include configuration constants
+require __DIR__."/Router.php";   // Include the Router class
 
-require __DIR__."/../model/initModel.php";
-require __DIR__."/../controller/initControllers.php";
+/*
+ * Include Model and Controller Initialization Files
+ */
+
+require __DIR__."/../model/initModel.php";         // Include model initialization
+require __DIR__."/../controller/initControllers.php"; // Include controller initialization
