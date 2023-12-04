@@ -18,7 +18,7 @@ For example if you want to run the application from a subfolder within htdocs ca
 
 1. BASE_URL = "/personal/proj";
 2. CSS_PATH = "http://localhost/personal/proj/public/css/"
-3. RESOURCE_URL = "http://localhost/proj/public/images/"
+3. RESOURCE_URL = "http://localhost/personal/proj/public/images/"
 
 ## Database Initialize
 
