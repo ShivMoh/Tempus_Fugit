@@ -3,20 +3,17 @@
 ## Bill
 
 - Bill Id
-- Customer (Full Name)
-- Number Items
+- Number of Items
 - Total Cost
 - Order Date
 - Status
-- MenuItemsList
-
-_Note to self: When creating a Bill, the attached Bill Items must afterwards be created and linked to the newly created Bill_
 
 ## BillItem
 
 - ItemId
 - Name
 - Price
+- Total
 - Amount
 - Bill Id - links to bill (many to one)
 - Menu Item Id - links to the menu item (one to one)
