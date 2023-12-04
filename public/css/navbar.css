@@ -7,7 +7,7 @@
 }
 
 .navigation-bar .nav-button {
-    margin: 1vh 0.2vw 0;
+    margin: 4vh 0.2vw 0;
     padding: 14px 16px;
     background-color: #98C7FF;
     border-radius: 10px 10px 0 0;
@@ -29,5 +29,7 @@
 }
 
 .logo img {
-    width: 90%; 
+    width: 75%;
+    margin-left: 1vw; 
+    margin-top: 1.2vh;
 }
