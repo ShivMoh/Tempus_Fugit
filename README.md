@@ -54,4 +54,3 @@ When you need to insert multiple values into fields like _othernames_ for employ
 ## Understanding Action Buttons
 
 For clarity on the function of each action button, simply hover your cursor over them. A brief description will appear, usually within half a second, to guide you on their specific purpose.
-
