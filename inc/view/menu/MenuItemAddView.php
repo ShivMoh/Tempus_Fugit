@@ -18,7 +18,7 @@
         <input type="text" name="name" required>
 
         <label for="tags">Tags</label>
-        <input type="text" name="tags" required>
+        <input type="text" name="tags" title="No spaces, separated by commas(,)" required>
 
         <label for="price">Price</label>
         <input type="text" name="price" required>
@@ -33,7 +33,7 @@
         <input type="text" name="discount" required>
 
         <label for="ingredients">Ingredients</label>
-        <input type="text" name="ingredients" required>
+        <input type="text" name="ingredients" title="No spaces, separated by commas(,)" required>
 
         <button type="submit">Submit</button>
         <button type="submit" class="menu-back-button" form="menu-back-form">Back To List</button>

@@ -46,3 +46,7 @@ If the webpage styling isn't appearing, perform these steps:
 4. Reload the webpage.
 
 _For a visual reference of the intended website design, please refer to the Figma file:_ <https://www.figma.com/file/CpIRBICRaH4dku8PVfwDsJ/CSE3101_Design_Assigment_2?type=design&node-id=0%3A1&mode=design&t=FQXvdimrpZpFMqSp-1>.
+
+## Inserting Values
+
+When inserting values for columns that could require multiple values such as employee field _othernames_ and menuitem _tags_ or _ingredients_, type values separated by commas and no space such as "tag1,tag2,tag3". The respective fields loads instructions, via html's _title_ attribute, when hovered over but may sometimes take a while to load or may not work at all.
