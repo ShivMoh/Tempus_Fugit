@@ -1,8 +1,5 @@
 <?php
 
-/*
- * Handles routing for incoming requests.
- */
 class Router {
     private $controller = '';
     private $method = '';
@@ -29,17 +26,10 @@ class Router {
         "searchById"
     ];
 
-    /*
-     * Constructor for the Router class.
-     * Initiates the routing process.
-     */
     public function __construct() {
         $this->loadController();
     }
 
-    /*
-     * Loads the appropriate controller based on the incoming request.
-     */
     private function loadController() {
         $path = $_SERVER["REQUEST_URI"];
         $url = $this->getUrl($path);
@@ -65,8 +55,9 @@ class Router {
                     }
                 }
             } else {
-                // Default controller when the app starts
                 $this->controller = "";
+                $this->method = "";
+                $this->params = "";
             }
         } 
 
@@ -109,33 +100,21 @@ class Router {
         $this->params = [];
     }
 
-    /*
-     * Gets the URL relative to the BASE_URL.
-     */
     private function getUrl($url) {
         $url = explode("/", trim(explode("?", trim($url))[0], "/"));
         $base_url = explode("/", trim(BASE_URL, "/"));
         return array_slice($url, count($base_url));	
     }
 
-    /*
-     * Requires the controller so that it can be used.
-     */
     private function getController($controller_name = "") {
         require __DIR__."/../controller/controllers/".$controller_name.".php";
         $this->controller = new $this->controller;
     }
 
-    /*
-     * Returns the name of the controller.
-     */
     private function getControllerName($path) {
         return ucfirst($path)."Controller";
     }
 
-    /*
-     * Checks if the controller exists.
-     */
     private function controllerExists($filename) {
         $filename = __DIR__."/../controller/controllers/".$filename.".php";
         return file_exists($filename);
