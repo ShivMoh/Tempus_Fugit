@@ -50,18 +50,6 @@
             </select>
         </form>
 
-    
-      
-       
-        <!-- <form action=<?=BASE_URL."/employee/filterByDate"?> method="POST">
-            <select class="search-bar-dropdown-2" name="date" id="date" onchange="this.form.submit()">
-                <option disabled selected>Date</option>
-                <option value="last-week">Last Week</option>
-                <option value="last-month">Last Month</option>
-                <option value="last-six-months">Last 6 Months</option>
-            </select >
-        </form>
-      -->
         <form action="<?=BASE_URL."/employee/view/employee=EmployeeAdd"?>" method="POST">
             <button class="search-bar-add-button"><img title="Add Bill" class="add-icon" src="<?= RESOURCE_URL."add.png"?>" alt="Add button"></button>
         </form>
