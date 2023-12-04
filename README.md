@@ -26,7 +26,7 @@ For instance, to run the application from a subfolder named `personal` (located 
 
 The project automatically initializes the database with data on the first run. To reinitialize the database, if needed, follow these steps:
 
-1. **Drop** existing tables in the `test` database.
+1. **Drop** existing tables in the `karens_kitchen` database.
 2. **Delete** the existing session cookie:
    - Open browser's inspect tool.
    - Navigate to the Application Tab.
